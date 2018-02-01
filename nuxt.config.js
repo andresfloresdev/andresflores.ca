@@ -1,0 +1,52 @@
+module.exports = {
+  css: [
+    {
+      src: '~assets/main.scss',
+      lang: 'scss'
+    }
+  ],
+  loading: {
+    color: '#427fed'
+  },
+  build: {
+    postcss: [
+      require('autoprefixer')(),
+    ]
+  },
+  modules: [
+    '@nuxtjs/font-awesome',
+    ['@nuxtjs/google-analytics', { ua: 'UA-68693066-1' }]
+  ],
+  plugins: [
+    '~/plugins/vue-scrollto'
+  ],
+  head: {
+    meta: [
+      { charset: 'utf-8' },
+      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+      { hid: 'description', name: 'description', content: 'I am a Front-end Web Developer based in Montreal, Canada.' },
+      { name: 'google-site-verification', content: 'xwhKOFzo4bWJqw11wkUWRQp1mQoXVMSFXGUHX8y72rc'},
+      { name: 'theme-color', content: '#427fed' }
+    ],
+    link: [
+      {
+        rel: 'icon',
+        type: 'image/png',
+        sizes: '16x16',
+        href: '/favicons/favicon-16x16.png'
+      },
+      {
+        rel: 'icon',
+        type: 'image/png',
+        sizes: '32x32',
+        href: '/favicons/favicon-32x32.png'
+      },
+      {
+        rel: 'icon',
+        type: 'image/png',
+        sizes: '96x96',
+        href: '/favicons/favicon-96x96.png'
+      },
+    ]
+  }
+}
