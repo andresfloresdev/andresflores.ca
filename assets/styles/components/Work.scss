@@ -186,6 +186,10 @@
 
   left: initial;
   right: $spacer;
+
+  @include media-breakpoint-up(lg) {
+    right: 0;
+  }
 }
 
 .work-action-prev-button {
