@@ -8,8 +8,8 @@ h6 {
   font-weight: 700;
 }
 
+// Add the xxl max-width
 .container {
-  @media (min-width: $screen-xxl) {
-    max-width: 1440px;
-  }
+  @include make-container();
+  @include make-container-max-widths();
 }

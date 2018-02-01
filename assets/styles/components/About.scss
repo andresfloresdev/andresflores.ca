@@ -11,7 +11,7 @@
     flex-direction: row;
   }
 
-  @media (min-width: $screen-xxl) {
+  @include media-breakpoint-up(xxl) {
     padding: $spacer-xxl $spacer;
   }
 }
@@ -29,7 +29,7 @@
     width: 420px;
   }
 
-  @media (min-width: $screen-xxl) {
+  @include media-breakpoint-up(xxl) {
     width: 600px;
   }
 }
