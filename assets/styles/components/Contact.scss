@@ -1,0 +1,31 @@
+.contact {
+  padding: $spacer-lg 0;
+  text-align: left;
+  background-color: $light;
+
+  @include media-breakpoint-up(lg) {
+    padding: $spacer-xl 0;
+  }
+}
+
+.contact-container {
+  @extend .container;
+}
+
+.contact-heading {
+  @extend .about-heading;
+}
+
+.contact-text {
+  max-width: 640px;
+}
+
+.contact-actions {
+  @extend .list-unstyled;
+
+  margin: $spacer-md 0 0;
+}
+
+.contact-action-link {
+  @extend .about-action-link;
+}

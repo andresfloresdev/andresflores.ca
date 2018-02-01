@@ -1,0 +1,15 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700|Roboto:400,700');
+
+@import '~bootstrap/scss/bootstrap';
+
+@import 'styles/vendors/variables', 
+        'styles/vendors/animations',
+        'styles/vendors/default';
+
+@import 'styles/components/MainNavigation',
+        'styles/components/Hero',
+        'styles/components/About',
+        'styles/components/Clients',
+        'styles/components/Work',
+        'styles/components/Contact',
+        'styles/components/Footer';

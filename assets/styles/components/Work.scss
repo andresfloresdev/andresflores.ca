@@ -1,0 +1,222 @@
+.work {
+  background-image: url('~assets/images/work-background.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-color: $secondary;
+  padding: $spacer-lg 0;
+
+  @include media-breakpoint-up(lg) {
+    padding: $spacer-xl 0;
+  }
+}
+
+.work-container {
+  @extend .container;
+
+  position: relative;
+}
+
+.work-heading {
+  @extend .about-heading;
+
+  color: $white;
+  margin-bottom: $spacer-md;
+
+  @include media-breakpoint-up(lg) {
+    margin-bottom: $spacer-lg;
+  }
+}
+
+.work-single {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start; 
+  min-height: 585px;
+
+  @include media-breakpoint-up(sm) {
+    min-height: 590px;
+  }
+
+  @include media-breakpoint-up(md) {
+    min-height: 640px;
+  }
+
+  @include media-breakpoint-up(lg) {
+    min-height: 400px;
+  }
+
+  @include media-breakpoint-up(xl) {
+    min-height: 330px;
+  }
+
+  @media (min-width: $screen-xxl) {
+    min-height: auto;
+    justify-content: space-between;
+  }
+}
+
+.work-single-content {
+  order: 1;
+
+  @include media-breakpoint-up(lg) {
+    order: 0;
+    width: 50%;
+    padding-right: $spacer-lg;
+  }
+
+  @media (min-width: $screen-xxl) {
+    width: 40%;
+    padding-right: $spacer-xl;
+  }
+}
+
+.work-single-heading {
+  color: $white;
+  font-size: 1.2rem;
+  margin-bottom: $spacer;
+
+  @include media-breakpoint-up(md) {
+    font-size: 1.6rem;
+  }
+
+  @include media-breakpoint-up(lg) {
+    margin-bottom: $spacer-md;
+  }
+}
+
+.work-single-heading-link {
+  border-bottom: solid 2px $primary;
+  padding-bottom: $spacer-xs;
+  color: $white;
+  transition: color 200ms ease-out;
+
+  &:hover {
+    color: $primary;
+    text-decoration: none;
+  }
+}
+
+.work-single-text {
+  @extend .about-text;
+
+  color: $light;
+
+  a {
+    color: $primary;
+
+    &:hover {
+      color: $primary;
+      text-decoration: underline;
+    }
+  }
+
+  @include media-breakpoint-up(lg) {
+    margin-bottom: $spacer-lg;
+  }
+}
+
+.work-single-figure {
+  width: 100%;
+  margin-bottom: $spacer-md;
+
+  @include media-breakpoint-up(lg) {
+    width: 50%;
+    margin-bottom: 0;
+  }
+
+  @media (min-width: $screen-xxl) {
+    width: 60%;
+  }
+}
+
+.work-single-image {
+  display: block;
+  width: 100%;
+}
+
+.work-count {
+  color: $white;
+  font-family: $headings-ff;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-align: center;
+  line-height: 1.45rem;
+  font-size: 0.9rem;
+
+  @include media-breakpoint-up(lg) {
+    width: calc(50% - #{$spacer-lg});
+  }
+
+  @media (min-width: $screen-xxl) {
+    width: calc(40% - #{$spacer-xl});
+    position: relative;
+    top: -$spacer-md;
+  }
+}
+
+.work-actions {
+  @extend .list-unstyled;
+
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+
+  @include media-breakpoint-up(lg) {
+    width: calc(50% - #{$spacer-lg});
+  }
+
+  @media (min-width: $screen-xxl) {
+    width: calc(40% - #{$spacer-xl});
+    bottom: $spacer-md;
+  }
+}
+
+.work-action-prev {
+  position: absolute;
+  left: $spacer;
+  bottom: 0;
+}
+
+.work-action-next {
+  @extend .work-action-prev;
+
+  left: initial;
+  right: $spacer;
+}
+
+.work-action-prev-button {
+  width: auto;
+  height: 0;
+  padding: 0;
+  background: none;
+  border: none;
+  outline: none;
+  color: $white;
+  cursor: pointer;
+  font-size: 1.2rem;
+  transition: color 200ms ease-out;
+
+  &:focus {
+    outline: none;
+  }
+
+  &:hover {
+    color: $primary;
+  }
+
+  &.is-disabled {
+    opacity: 0.2;
+
+    &:hover {
+      color: $white;
+    }
+  }
+}
+
+.work-action-next-button {
+  @extend .work-action-prev-button;
+}

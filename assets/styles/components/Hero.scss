@@ -1,0 +1,72 @@
+.hero {
+  background-image: url('~assets/images/hero-background.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-color: $secondary;
+  padding: $spacer-xl 0 $spacer-lg;
+
+  @include media-breakpoint-up(lg) {
+    padding: $spacer-xxl * 1.25 0 $spacer-xxl;
+  }
+}
+
+.hero-container {
+  @extend .container;
+
+  animation: 1s ease-out fadeIn;
+}
+
+.hero-heading {
+  font-size: 1.8rem;
+  color: $white;
+  margin-bottom: $spacer;
+  line-height: 2.5rem;
+
+  @include media-breakpoint-up(md) {
+    font-size: 3rem;
+    margin-bottom: $spacer-md;
+    line-height: 4rem;
+  }
+
+  @include media-breakpoint-up(lg) {
+    font-size: 4rem;
+    line-height: 5.5rem;
+  }
+
+  @include media-breakpoint-up(xl) {
+    font-size: 4.5rem;
+    line-height: 6.5rem;
+  }
+}
+
+.hero-heading-greeting {
+  display: block;
+}
+
+.hero-text {
+  color: $white;
+  line-height: 2;
+  word-spacing: 2px;
+  margin-bottom: 0;
+  
+  @include media-breakpoint-up(md) {
+    font-size: 1.2rem;
+  }
+
+  @include media-breakpoint-up(lg) {
+    font-size: 1.3rem;
+  }
+}
+
+.hero-text-link {
+  color: $white;
+  border-bottom: solid 2px $primary;
+  padding-bottom: $spacer-xs;
+  transition: color 200ms ease-out;
+
+  &:hover {
+    color: $primary;
+    text-decoration: none;
+  }
+}
