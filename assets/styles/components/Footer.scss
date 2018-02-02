@@ -1,5 +1,69 @@
-.main-footer {
-  background-color: $secondary;
+.main-footer-top {
+  background-color: $white;
+  text-align: center;
+  padding: $spacer-lg 0;
+}
+
+.main-footer-top-text {
+  color: $gray;
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin: 0;
+
+  @include media-breakpoint-up(lg) {
+    font-size: 1.1rem;
+  }
+}
+
+.main-footer-top-text-link {
+  display: block;
+  color: $primary;
+  font-weight: normal;
+
+  &:hover {
+    color: $primary;
+    text-decoration: underline;
+  }
+
+  @include media-breakpoint-up(lg) {
+    display: inline;
+  }
+}
+
+.main-footer-nav {
+  display: none;
+
+  @include media-breakpoint-up(lg) {
+    display: block;
+  }
+}
+
+.main-footer-nav-items {
+  @extend .list-unstyled;
+
+  margin: 0;
+  padding: 0;
+}
+
+.main-footer-nav-item {
+  display: inline-block;
+  
+  &:not(:last-child) {
+    margin-right: $spacer-lg;
+  }
+}
+
+.main-footer-nav-link {
+  display: block;
+  font-family: $headings-ff;
+  font-weight: 700;
+  color: $gray;
+  transition: color 200ms ease-out;
+
+  &:hover {
+    color: $primary;
+    text-decoration: none;
+  }
 }
 
 .main-footer-container {
@@ -11,6 +75,10 @@
     align-items: center;
     padding: 0 $spacer;
   }
+}
+
+.main-footer-bot {
+  background-color: $primary;
 }
 
 .main-footer-socials {
@@ -40,7 +108,7 @@
   transition: color 200ms ease-out;
 
   &:hover {
-    color: $primary;
+    color: $secondary;
   }
 }
 
