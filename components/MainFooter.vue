@@ -44,6 +44,11 @@
               <i class="fa fa-fw fa-linkedin"></i>
             </a>
           </li>
+          <li class="main-footer-social">
+            <a href="https://github.com/PerfectNull/andresflores.ca/" class="main-footer-social-link" title="Github">
+              <i class="fa fa-fw fa-github"></i>
+            </a>
+          </li>
         </ul>
         <p class="main-footer-text">
           &copy; 2016 &mdash; {{ currentYear }}, Andrés Flores, Montréal (Quebec), Canada.

@@ -41,6 +41,11 @@
             <i class="fa fa-fw fa-linkedin"></i>
           </a>
         </li>
+        <li class="about-portrait-social">
+          <a href="https://github.com/PerfectNull/andresflores.ca/" class="about-portrait-social-link" title="Github">
+            <i class="fa fa-fw fa-github"></i>
+          </a>
+        </li>
       </ul>
     </div>
   </section>
