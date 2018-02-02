@@ -1,5 +1,5 @@
 <template>
-  <header class="hero">
+  <header id="home" class="hero">
     <div class="hero-container">
       <h1 class="hero-heading">
         <span class="hero-heading-greeting">Hello!</span> I'm Andrés Flores, a web developer based in Montréal, Canada.

@@ -5,6 +5,11 @@
       <nav class="main-nav">
         <ul class="main-nav-items">
           <li class="main-nav-item">
+            <a href="#home" v-scroll-to="'#home'" class="main-nav-link">
+              Home
+            </a>
+          </li>
+          <li class="main-nav-item">
             <a href="#about" v-scroll-to="'#about'" class="main-nav-link">
               About
             </a>
@@ -12,11 +17,6 @@
           <li class="main-nav-item">
             <a href="#work" v-scroll-to="'#work'" class="main-nav-link">
               Work
-            </a>
-          </li>
-          <li class="main-nav-item">
-            <a href="#contact" v-scroll-to="'#contact'" class="main-nav-link">
-              Contact
             </a>
           </li>
         </ul>
