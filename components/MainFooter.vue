@@ -22,6 +22,11 @@
                 Work
               </a>
             </li>
+            <li class="main-footer-nav-item">
+              <a href="#skills" v-scroll-to="'#skills'" class="main-footer-nav-link">
+                Skills
+              </a>
+            </li>
           </ul>
         </nav>
       </div>
