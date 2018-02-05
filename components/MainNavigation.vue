@@ -1,7 +1,7 @@
 <template>
   <div class="main-nav-wrap">
     <div class="main-nav-container">
-      <img src="~assets/images/andres-flores-logo.png" alt="Andres Flores, Front-end Web Developer" class="main-nav-logo" title="Andres Flores, Front-end Web Developer">
+      <img src="~assets/images/andres-flores-logo.svg" alt="Andres Flores, Front-end Web Developer" class="main-nav-logo" title="Andres Flores, Front-end Web Developer">
       <nav class="main-nav">
         <ul class="main-nav-items">
           <li class="main-nav-item">
