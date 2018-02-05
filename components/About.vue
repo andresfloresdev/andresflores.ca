@@ -14,8 +14,8 @@
           </a>
         </li>
         <li class="about-action">
-          <a href="#contact" v-scroll-to="'#contact'" class="about-action-link">
-            Contact Me
+          <a href="#skills" v-scroll-to="'#skills'" class="about-action-link">
+            My Skills
           </a>
         </li>
       </ul>
