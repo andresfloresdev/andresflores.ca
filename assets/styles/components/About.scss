@@ -129,7 +129,13 @@
   text-align: center;
   margin-top: $spacer-md;
 
+  @include media-breakpoint-up(lg) {
+    margin: $spacer-md auto 0;
+    max-width: 160px;
+  }
+
   @include media-breakpoint-up(xl) {
+    max-width: auto;
     position: absolute;
     top: $spacer-lg;
     right: 530px;
@@ -141,6 +147,10 @@
   margin: 0 $spacer-xs;
   width: 46px;
   height: 46px;
+
+  @include media-breakpoint-up(lg) {
+    margin: 0 $spacer-xs $spacer-sm;
+  }
 
   @include media-breakpoint-up(xl) {
     margin: 0 0 $spacer;
