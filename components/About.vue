@@ -28,22 +28,22 @@
       <ul class="about-portrait-socials">
         <li class="about-portrait-social">
           <a href="https://twitter.com/andresfloresdev" class="about-portrait-social-link" title="Twitter">
-            <i class="fa fa-fw fa-twitter"></i>
+            <i class="fab fa-fw fa-twitter"></i>
           </a>
         </li>
         <li class="about-portrait-social">
           <a href="https://www.instagram.com/andresflores.dev/" class="about-portrait-social-link" title="Instagram">
-            <i class="fa fa-fw fa-instagram"></i>
+            <i class="fab fa-fw fa-instagram"></i>
           </a>
         </li>
         <li class="about-portrait-social">
           <a href="https://www.linkedin.com/in/andr%C3%A9s-flores-64538ba2/" class="about-portrait-social-link" title="LinkedIn">
-            <i class="fa fa-fw fa-linkedin"></i>
+            <i class="fab fa-fw fa-linkedin-in"></i>
           </a>
         </li>
         <li class="about-portrait-social">
           <a href="https://github.com/PerfectNull/andresflores.ca/" class="about-portrait-social-link" title="Github">
-            <i class="fa fa-fw fa-github"></i>
+            <i class="fab fa-fw fa-github"></i>
           </a>
         </li>
       </ul>
