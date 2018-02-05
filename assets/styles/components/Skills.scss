@@ -2,7 +2,7 @@
   padding: $spacer-lg 0;
 
   @include media-breakpoint-up(lg) {
-    padding: $spacer-xl 0;
+    padding: $spacer-xl 0 ($spacer-xl - $spacer-md);
   }
 }
 
@@ -33,7 +33,10 @@
 .skills-item {
   position: relative;
   padding-left: ($spacer-md + $spacer-sm);
-  margin-bottom: $spacer-md;
+
+  &:not(:last-child) {
+    margin-bottom: $spacer-md;
+  }
 
   @include media-breakpoint-up(md) {
     padding-left: ($spacer-lg - $spacer-sm);
