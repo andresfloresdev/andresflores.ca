@@ -51,7 +51,7 @@
           </li>
         </ul>
         <p class="main-footer-text">
-          &copy; 2016 &mdash; {{ currentYear }}, Andrés Flores, Montréal (Quebec), Canada.
+          &copy; 2016 &mdash; {{ currentYear }}, Andrés Flores, Montréal (Québec), Canada.
         </p>
       </div>
     </div>
