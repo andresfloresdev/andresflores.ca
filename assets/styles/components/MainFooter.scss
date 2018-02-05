@@ -1,11 +1,11 @@
 .main-footer-top {
-  background-color: $white;
+  background-color: $secondary;
   text-align: center;
   padding: $spacer-lg 0;
 }
 
 .main-footer-top-text {
-  color: $gray;
+  color: $white;
   font-size: 1.2rem;
   font-weight: bold;
   margin: 0;
@@ -18,7 +18,6 @@
 .main-footer-top-text-link {
   display: block;
   color: $primary;
-  font-weight: normal;
 
   &:hover {
     color: $primary;
@@ -57,7 +56,7 @@
   display: block;
   font-family: $headings-ff;
   font-weight: 700;
-  color: $gray;
+  color: $white;
   transition: color 200ms ease-out;
 
   &:hover {
