@@ -140,7 +140,7 @@
   font-family: $headings-ff;
   font-weight: 700;
   letter-spacing: 3px;
-  text-align: center;
+  text-align: left;
   line-height: 1.45rem;
   font-size: 0.9rem;
 
@@ -177,8 +177,12 @@
 
 .work-action-prev {
   position: absolute;
-  left: $spacer;
+  right: ($spacer-lg + $spacer);
   bottom: 0;
+
+  @include media-breakpoint-up(lg) {
+    right: $spacer-lg;
+  }
 }
 
 .work-action-next {
@@ -194,7 +198,7 @@
 
 .work-action-prev-button {
   width: auto;
-  height: 0;
+  height: auto;
   padding: 0;
   background: none;
   border: none;
