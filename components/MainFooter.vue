@@ -61,9 +61,7 @@
 <script>
 export default {
   computed: {
-    currentYear: function () {
-      return new Date().getFullYear()
-    }
+    currentYear: () => new Date().getFullYear()
   }
 }
 </script>
