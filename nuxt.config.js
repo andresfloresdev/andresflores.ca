@@ -34,6 +34,10 @@ module.exports = {
         href: 'https://use.fontawesome.com/releases/v5.0.6/css/all.css'
       },
       {
+        rel: 'stylesheet',
+        href: 'https://fonts.googleapis.com/css?family=Montserrat:400,700|Roboto:400,700'
+      },
+      {
         rel: 'icon',
         type: 'image/png',
         sizes: '16x16',
