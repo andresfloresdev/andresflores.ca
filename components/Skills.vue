@@ -50,9 +50,9 @@ export default {
           icon: 'fab fa-wordpress'
         },
         {
-          title: 'Playing Guitar',
+          title: 'Git and Git Flow',
           text: '',
-          icon: 'fas fa-music'
+          icon: 'fas fa-code-branch'
         }
       ]
     }
