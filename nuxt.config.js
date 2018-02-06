@@ -28,10 +28,11 @@ module.exports = {
       { name: 'google-site-verification', content: 'xwhKOFzo4bWJqw11wkUWRQp1mQoXVMSFXGUHX8y72rc'},
       { name: 'theme-color', content: '#427fed' }
     ],
-    script: [
-      { src: 'https://use.fontawesome.com/releases/v5.0.6/js/all.js' }
-    ],
     link: [
+      {
+        rel: 'stylesheet',
+        href: 'https://use.fontawesome.com/releases/v5.0.6/css/all.css'
+      },
       {
         rel: 'icon',
         type: 'image/png',

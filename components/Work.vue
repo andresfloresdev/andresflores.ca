@@ -25,12 +25,12 @@
       <ul class="work-actions">
         <li class="work-action-prev">
           <button class="work-action-prev-button" :class="isMin" @click="showPrevious()" title="Previous">
-            <span class="work-action-icon fa fa-arrow-left"></span>
+            <span class="work-action-icon fas fa-arrow-left"></span>
           </button>
         </li>
         <li class="work-action-next">
           <button class="work-action-next-button" :class="isMax" @click="showNext()" title="Next">
-            <span class="work-action-icon fa fa-arrow-right"></span>
+            <span class="work-action-icon fas fa-arrow-right"></span>
           </button>
         </li>
       </ul>
