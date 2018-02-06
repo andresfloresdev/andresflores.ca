@@ -2,9 +2,12 @@
   <footer class="main-footer">
     <div class="main-footer-top">
       <div class="main-footer-container">
-        <p class="main-footer-top-text">
-          Have any questions? <a href="mailto:info@andresflores.ca" class="main-footer-top-text-link">Send me a message!</a>
-        </p>
+        <div class="main-footer-top-contact">
+          <img src="~/assets/images/andres-flores-logo.svg" alt="" class="main-footer-logo">
+          <p class="main-footer-top-text">
+            Have any questions? <a href="mailto:info@andresflores.ca" class="main-footer-top-text-link">Send me a message!</a>
+          </p>
+        </div>
         <nav class="main-footer-nav">
           <ul class="main-footer-nav-items">
             <li class="main-footer-nav-item">
