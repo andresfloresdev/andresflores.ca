@@ -14,7 +14,6 @@ module.exports = {
     ]
   },
   modules: [
-    '@nuxtjs/font-awesome',
     ['@nuxtjs/google-analytics', { ua: 'UA-68693066-1' }]
   ],
   plugins: [
