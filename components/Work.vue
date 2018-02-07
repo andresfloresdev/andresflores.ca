@@ -1,5 +1,5 @@
 <template>
-  <section class="work" id="work">
+  <section id="work" class="work">
     <div class="work-container">
       <h2 class="work-heading">
         My Work
@@ -15,8 +15,8 @@
         </div>
         <figure class="work-single-figure">
           <img
-            :srcset="'projects/' + single.imageURL + '@2x.jpg 2x'" 
-            :src="'projects/' + single.imageURL + '.jpg'" :alt="single.title" class="work-single-image">
+            :srcset="`projects/${single.imageURL}@2x.jpg 2x`" 
+            :src="`projects/${single.imageURL}.jpg`" :alt="single.title" class="work-single-image">
         </figure>
       </article>
       <div class="work-count">
@@ -77,7 +77,7 @@ export default {
         {
           title: '2 Associés',
           link: 'https://2associes.com/',
-          text: 'I\'ve worked with the web agency <a href="https://2associes.com">2 Associés</a> since 2016. During that time, I had the pleasure to work on their new website using the latest technologies and methodologies.',
+          text: 'I\'ve worked with the web agency <a href="https://2associes.com">2 Associés</a> since 2016. During that time, I\'ve had the pleasure to work on their new website using the latest technologies and methodologies.',
           imageURL: '2associes'
         }
       ]
