@@ -8,11 +8,7 @@
             Have any questions? <a href="mailto:info@andresflores.ca" class="main-footer-top-text-link">Send me a message!</a>
           </p>
         </div>
-        <navigation
-          nav-class="main-footer-nav"
-          list-class="main-footer-nav-items"
-          item-class="main-footer-nav-item"
-          link-class="main-footer-nav-link"></navigation>
+        <navigation class-prefix="main-footer-nav"></navigation>
       </div>
     </div>
     <div class="main-footer-bot">

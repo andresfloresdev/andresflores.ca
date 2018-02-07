@@ -10,16 +10,16 @@
   @extend .container;
 }
 
-.main-nav {
-  position: relative;
-}
-
 .main-nav-logo {
   display: block;
   width: 50px;
 }
 
-.main-nav-items {
+.main-navigation-wrap {
+  position: relative;
+}
+
+.main-navigation-items {
   @extend .list-unstyled;
 
   display: none;
@@ -33,13 +33,13 @@
   }
 }
 
-.main-nav-item {
+.main-navigation-item {
   &:not(:last-child) {
     margin-right: $spacer-lg;
   }
 }
 
-.main-nav-link {
+.main-navigation-link {
   display: block;
   color: $white;
   font-family: $headings-ff;

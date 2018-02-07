@@ -1,8 +1,8 @@
 <template>
-  <nav :class="navClass">
-    <ul :class="listClass">
-      <li :class="itemClass" v-for="(item, index) in items" :key="index">
-        <a :href="'#' + convertToURL(item)" @click.prevent="vueScrollTo(item)" :class="linkClass">
+  <nav :class="classPrefix + '-wrap'">
+    <ul :class="classPrefix + '-items'">
+      <li :class="classPrefix + '-item'" v-for="(item, index) in items" :key="index">
+        <a :href="'#' + convertToURL(item)" :class="classPrefix + '-link'" @click.prevent="vueScrollTo(item)">
           {{ item }}
         </a>
       </li>
@@ -13,22 +13,10 @@
 <script>
 export default {
   props: {
-    navClass: {
+    classPrefix: {
       type: String,
-      default: 'nav-wrap'
-    },
-    listClass: {
-      type: String,
-      default: 'nav-list'
-    },
-    itemClass: {
-      type: String,
-      default: 'nav-item'
-    },
-    linkClass: {
-      type: String,
-      default: 'nav-link'
-    },
+      default: 'nav'
+    }
   },
   data() {
     return {
