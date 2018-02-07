@@ -2,10 +2,7 @@
   <svg width="100%" height="100%" viewBox="0 0 808 591" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:1.41421;">
       <g transform="matrix(1,0,0,1,-420.918,-1750.4)">
           <g id="Artboard1" transform="matrix(1.08657,0,0,0.886163,-237.425,199.261)">
-              <rect x="605.892" y="1750.4" width="743.257" height="665.905" style="fill:none;"/>
-              <clipPath id="_clip1">
-                  <rect x="605.892" y="1750.4" width="743.257" height="665.905"/>
-              </clipPath>
+
               <g clip-path="url(#_clip1)">
                   <g transform="matrix(1.92686,0,0,2.36261,-3782.89,534.346)">
                       <g transform="matrix(1,0,0,1,1577.23,-395.304)">
