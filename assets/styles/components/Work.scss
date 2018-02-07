@@ -110,10 +110,6 @@
       text-decoration: underline;
     }
   }
-
-  @include media-breakpoint-up(lg) {
-    margin-bottom: $spacer-lg;
-  }
 }
 
 .work-single-figure {
@@ -151,7 +147,7 @@
   @include media-breakpoint-up(xxl) {
     width: calc(40% - #{$spacer-xl});
     position: relative;
-    top: -$spacer-md;
+    top: -($spacer-sm * 2);
   }
 }
 
@@ -171,7 +167,7 @@
 
   @include media-breakpoint-up(xxl)  {
     width: calc(40% - #{$spacer-xl});
-    bottom: $spacer-md;
+    bottom: ($spacer-sm * 2);
   }
 }
 
