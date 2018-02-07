@@ -8,39 +8,20 @@
             Have any questions? <a href="mailto:info@andresflores.ca" class="main-footer-top-text-link">Send me a message!</a>
           </p>
         </div>
-        <nav class="main-footer-nav">
-          <ul class="main-footer-nav-items">
-            <li class="main-footer-nav-item">
-              <a href="#home" v-scroll-to="'#home'" class="main-footer-nav-link">
-                Home
-              </a>
-            </li>
-            <li class="main-footer-nav-item">
-              <a href="#about" v-scroll-to="'#about'" class="main-footer-nav-link">
-                About
-              </a>
-            </li>
-            <li class="main-footer-nav-item">
-              <a href="#work" v-scroll-to="'#work'" class="main-footer-nav-link">
-                Work
-              </a>
-            </li>
-            <li class="main-footer-nav-item">
-              <a href="#skills" v-scroll-to="'#skills'" class="main-footer-nav-link">
-                Skills
-              </a>
-            </li>
-          </ul>
-        </nav>
+        <navigation
+          nav-class="main-footer-nav"
+          list-class="main-footer-nav-items"
+          item-class="main-footer-nav-item"
+          link-class="main-footer-nav-link"></navigation>
       </div>
     </div>
     <div class="main-footer-bot">
       <div class="main-footer-container">
         <socials
-        list-class="main-footer-socials"
-        item-class="main-footer-social"
-        link-class="main-footer-social-link"
-        icon-class="main-footer-social-link-icon"></socials>
+          list-class="main-footer-socials"
+          item-class="main-footer-social"
+          link-class="main-footer-social-link"
+          icon-class="main-footer-social-link-icon"></socials>
         <p class="main-footer-text">
           &copy; 2016 &mdash; {{ currentYear }}, Andrés Flores, Montréal (Québec), Canada.
         </p>
@@ -51,11 +32,13 @@
 
 <script>
 import Brand from '@/components/Brand'
+import Navigation from '@/components/Navigation'
 import Socials from '@/components/Socials'
 
 export default {
   components: {
     Brand,
+    Navigation,
     Socials
   },
   computed: {
