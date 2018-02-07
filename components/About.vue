@@ -25,28 +25,21 @@
         <source media="(min-width: 1200px)" srcset="~assets/images/andres-portrait-500x750.jpg">
         <img src="~assets/images/andres-profile.jpg" alt="Andres Flores, Front-end developer" class="about-portrait-image">
       </picture>
-      <ul class="about-portrait-socials">
-        <li class="about-portrait-social">
-          <a href="https://twitter.com/andresfloresdev" class="about-portrait-social-link" title="Twitter">
-            <i class="fab fa-fw fa-twitter"></i>
-          </a>
-        </li>
-        <li class="about-portrait-social">
-          <a href="https://www.instagram.com/andresflores.dev/" class="about-portrait-social-link" title="Instagram">
-            <i class="fab fa-fw fa-instagram"></i>
-          </a>
-        </li>
-        <li class="about-portrait-social">
-          <a href="https://www.linkedin.com/in/andr%C3%A9s-flores-64538ba2/" class="about-portrait-social-link" title="LinkedIn">
-            <i class="fab fa-fw fa-linkedin-in"></i>
-          </a>
-        </li>
-        <li class="about-portrait-social">
-          <a href="https://github.com/PerfectNull/andresflores.ca/" class="about-portrait-social-link" title="Github">
-            <i class="fab fa-fw fa-github"></i>
-          </a>
-        </li>
-      </ul>
+      <socials
+        list-class="about-portrait-socials"
+        item-class="about-portrait-social"
+        link-class="about-portrait-social-link"
+        icon-class="about-portrait-social-link-icon"></socials>
     </div>
   </section>
 </template>
+
+<script>
+import Socials from '@/components/Socials'
+
+export default {
+  components: {
+    Socials
+  }
+}
+</script>

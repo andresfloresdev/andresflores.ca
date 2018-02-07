@@ -36,28 +36,11 @@
     </div>
     <div class="main-footer-bot">
       <div class="main-footer-container">
-        <ul class="main-footer-socials">
-          <li class="main-footer-social">
-            <a href="https://twitter.com/andresfloresdev" class="main-footer-social-link" title="Twitter">
-              <i class="fab fa-fw fa-twitter"></i>
-            </a>
-          </li>
-          <li class="main-footer-social">
-            <a href="https://www.instagram.com/andresflores.dev/" class="main-footer-social-link" title="Instagram">
-              <i class="fab fa-fw fa-instagram"></i>
-            </a>
-          </li>
-          <li class="main-footer-social">
-            <a href="https://www.linkedin.com/in/andr%C3%A9s-flores-64538ba2/" class="main-footer-social-link" title="LinkedIn">
-              <i class="fab fa-fw fa-linkedin-in"></i>
-            </a>
-          </li>
-          <li class="main-footer-social">
-            <a href="https://github.com/PerfectNull/andresflores.ca/" class="main-footer-social-link" title="Github">
-              <i class="fab fa-fw fa-github"></i>
-            </a>
-          </li>
-        </ul>
+        <socials
+        list-class="main-footer-socials"
+        item-class="main-footer-social"
+        link-class="main-footer-social-link"
+        icon-class="main-footer-social-link-icon"></socials>
         <p class="main-footer-text">
           &copy; 2016 &mdash; {{ currentYear }}, Andrés Flores, Montréal (Québec), Canada.
         </p>
@@ -68,10 +51,12 @@
 
 <script>
 import Brand from '@/components/Brand'
+import Socials from '@/components/Socials'
 
 export default {
   components: {
-    Brand
+    Brand,
+    Socials
   },
   computed: {
     currentYear: () => new Date().getFullYear()
