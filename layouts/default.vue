@@ -1,6 +1,6 @@
 <template>
   <div class="default-layout">
-    <main-navigation></main-navigation>
+    <main-header></main-header>
     <main class="default-layout-main">
       <nuxt/>
     </main>
@@ -9,12 +9,12 @@
 </template>
 
 <script>
-import MainNavigation from '@/components/MainNavigation'
+import MainHeader from '@/components/MainHeader'
 import MainFooter from '@/components/MainFooter'
 
 export default {
   components: {
-    MainNavigation,
+    MainHeader,
     MainFooter
   }
 }

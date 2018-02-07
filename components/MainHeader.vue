@@ -1,8 +1,8 @@
 <template>
-  <div class="main-nav-wrap">
-    <div class="main-nav-container">
-      <brand class="main-nav-logo"></brand>
-      <navigation class-prefix="main"></navigation>
+  <div class="main-header-wrap">
+    <div class="main-header-container">
+      <brand class="main-header-logo"></brand>
+      <navigation class-prefix="main-header"></navigation>
     </div>
   </div>
 </template>
