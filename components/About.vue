@@ -9,12 +9,12 @@
       </p>
       <ul class="about-actions">
         <li class="about-action">
-          <a href="#work" class="about-action-link" @click.prevent="vueScrollTo('work')">
+          <a href="#work" class="about-action-link" @click.prevent="navigateTo('work')">
             My Work
           </a>
         </li>
         <li class="about-action">
-          <a href="#skills" class="about-action-link" @click.prevent="vueScrollTo('skills')">
+          <a href="#skills" class="about-action-link" @click.prevent="navigateTo('skills')">
             My Skills
           </a>
         </li>
@@ -32,16 +32,12 @@
 
 <script>
 import Socials from '@/components/Socials'
+import { InternalLinks } from '@/mixins/internal-links'
 
 export default {
   components: {
     Socials
   },
-  methods: {
-    vueScrollTo: function (id) {
-      this.$scrollTo(`#${id}`)
-      window.location.hash = id
-    }
-  }
+  mixins: [InternalLinks]
 }
 </script>

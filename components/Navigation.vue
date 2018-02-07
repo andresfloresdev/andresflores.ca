@@ -2,7 +2,7 @@
   <nav :class="`${classPrefix}-navigation-wrap`">
     <ul :class="`${classPrefix}-navigation-items`">
       <li :class="`${classPrefix}-navigation-item`" v-for="(item, index) in items" :key="index">
-        <a :href="'#' + convertToURL(item)" :class="`${classPrefix}-navigation-link`" @click.prevent="vueScrollTo(item)">
+        <a :href="`#${formatToURL(item)}`" :class="`${classPrefix}-navigation-link`" @click.prevent="navigateTo(item)">
           {{ item }}
         </a>
       </li>
@@ -11,6 +11,8 @@
 </template>
 
 <script>
+import { InternalLinks } from '@/mixins/internal-links'
+
 export default {
   props: {
     classPrefix: {
@@ -18,6 +20,7 @@ export default {
       default: 'base'
     }
   },
+  mixins: [InternalLinks],
   data() {
     return {
       items: [
@@ -28,12 +31,5 @@ export default {
       ]
     }
   },
-  methods: {
-    convertToURL: (item) => item.toLowerCase(),
-    vueScrollTo: function (item) {
-      this.$scrollTo(`#${this.convertToURL(item)}`)
-      window.location.hash = this.convertToURL(item)
-    }
-  }
 }
 </script>
