@@ -3,7 +3,7 @@
     <div class="main-footer-top">
       <div class="main-footer-container">
         <div class="main-footer-top-contact">
-          <img src="~/assets/images/andres-flores-logo.svg" alt="" class="main-footer-logo">
+          <brand class="main-footer-logo"></brand>
           <p class="main-footer-top-text">
             Have any questions? <a href="mailto:info@andresflores.ca" class="main-footer-top-text-link">Send me a message!</a>
           </p>
@@ -67,7 +67,12 @@
 </template>
 
 <script>
+import Brand from '@/components/Brand'
+
 export default {
+  components: {
+    Brand
+  },
   computed: {
     currentYear: () => new Date().getFullYear()
   }

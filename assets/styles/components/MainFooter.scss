@@ -4,6 +4,14 @@
   padding: $spacer-lg 0;
 }
 
+.main-footer-top-contact {
+
+  @include media-breakpoint-up(lg) {
+    display: flex;
+    align-items: center;
+  }
+}
+
 .main-footer-logo {
   display: block;
   width: 100px;
