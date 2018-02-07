@@ -9,12 +9,12 @@
       </p>
       <ul class="about-actions">
         <li class="about-action">
-          <a href="#work" v-scroll-to="'#work'" class="about-action-link">
+          <a href="#work" class="about-action-link" @click.prevent="vueScrollTo('work')">
             My Work
           </a>
         </li>
         <li class="about-action">
-          <a href="#skills" v-scroll-to="'#skills'" class="about-action-link">
+          <a href="#skills" class="about-action-link" @click.prevent="vueScrollTo('skills')">
             My Skills
           </a>
         </li>
@@ -36,6 +36,12 @@ import Socials from '@/components/Socials'
 export default {
   components: {
     Socials
+  },
+  methods: {
+    vueScrollTo: function (id) {
+      this.$scrollTo(`#${id}`)
+      window.location.hash = id
+    }
   }
 }
 </script>
