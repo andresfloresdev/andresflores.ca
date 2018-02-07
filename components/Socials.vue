@@ -36,7 +36,7 @@ export default {
         },
         {
           name: 'Github',
-          link: 'https://github.com/PerfectNull/andresflores.ca/',
+          link: 'https://github.com/andresfloresdev/andresflores.ca/',
           icon: 'fa-github'
         }
       ]
