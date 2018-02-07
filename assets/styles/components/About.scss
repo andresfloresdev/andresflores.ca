@@ -59,6 +59,15 @@
   }
 }
 
+.about-text-link {
+  color: $primary;
+
+  &:hover {
+    color: $primary;
+    text-decoration: underline;
+  }
+}
+
 .about-actions {
   @extend .list-unstyled;
 

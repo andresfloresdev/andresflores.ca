@@ -7,18 +7,9 @@
       <p class="about-text">
         My name is Andrés and I’m very passionate about Web development. I’ve been working on projects using various technologies and frameworks for a few years. Ever since I grasped the basics of HTML, CSS and Javascript, I realized how much I love designing and building websites. From then on I've been learning alot about web application development while constantly improving my workflow using task runners, pre-processors and other tools.
       </p>
-      <ul class="about-actions">
-        <li class="about-action">
-          <a href="#work" class="about-action-link" @click.prevent="navigateTo('work')">
-            My Work
-          </a>
-        </li>
-        <li class="about-action">
-          <a href="#skills" class="about-action-link" @click.prevent="navigateTo('skills')">
-            My Skills
-          </a>
-        </li>
-      </ul>
+      <p class="about-text">
+        Make sure to take a look at some of <a href="#work" class="about-text-link" @click.prevent="navigateTo('work')">my work</a> and <a href="#skills" class="about-text-link" @click.prevent="navigateTo('skills')">my skillset</a> down below!
+      </p>
     </div>
     <div class="about-portrait">
       <picture class="about-portrait-picture">
