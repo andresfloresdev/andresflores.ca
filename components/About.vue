@@ -25,11 +25,7 @@
         <source media="(min-width: 1200px)" srcset="~assets/images/andres-portrait-500x750.jpg">
         <img src="~assets/images/andres-profile.jpg" alt="Andres Flores, Front-end developer" class="about-portrait-image">
       </picture>
-      <socials
-        list-class="about-portrait-socials"
-        item-class="about-portrait-social"
-        link-class="about-portrait-social-link"
-        icon-class="about-portrait-social-link-icon"></socials>
+      <socials class-prefix="about-portrait"></socials>
     </div>
   </section>
 </template>

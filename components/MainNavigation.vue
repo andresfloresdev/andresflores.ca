@@ -2,7 +2,7 @@
   <div class="main-nav-wrap">
     <div class="main-nav-container">
       <brand class="main-nav-logo"></brand>
-      <navigation class-prefix="main-navigation"></navigation>
+      <navigation class-prefix="main"></navigation>
     </div>
   </div>
 </template>

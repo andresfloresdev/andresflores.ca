@@ -8,16 +8,12 @@
             Have any questions? <a href="mailto:info@andresflores.ca" class="main-footer-top-text-link">Send me a message!</a>
           </p>
         </div>
-        <navigation class-prefix="main-footer-nav"></navigation>
+        <navigation class-prefix="main-footer"></navigation>
       </div>
     </div>
     <div class="main-footer-bot">
       <div class="main-footer-container">
-        <socials
-          list-class="main-footer-socials"
-          item-class="main-footer-social"
-          link-class="main-footer-social-link"
-          icon-class="main-footer-social-link-icon"></socials>
+        <socials class-prefix="main-footer"></socials>
         <p class="main-footer-text">
           &copy; 2016 &mdash; {{ currentYear }}, Andrés Flores, Montréal (Québec), Canada.
         </p>

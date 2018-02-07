@@ -1,8 +1,8 @@
 <template>
-  <ul :class="listClass">
-    <li :class="itemClass" v-for="(social, index) in socials" :key="index">
-      <a :href="social.link" :class="linkClass" :title="social.name">
-        <i class="fab fa-fw" :class="[social.icon, iconClass]"></i>
+  <ul :class="classPrefix + '-socials-list'">
+    <li :class="classPrefix + '-socials-item'" v-for="(social, index) in socials" :key="index">
+      <a :href="social.link" :class="classPrefix + '-socials-link'" :title="social.name">
+        <i class="fab fa-fw" :class="[social.icon, classPrefix + '-socials-icon']"></i>
       </a>
     </li>
   </ul>
@@ -11,21 +11,9 @@
 <script>
 export default {
   props: {
-    listClass: {
+    classPrefix: {
       type: String,
-      default: 'socials-list'
-    },
-    itemClass: {
-      type: String,
-      default: 'socials-item'
-    },
-    linkClass: {
-      type: String,
-      default: 'socials-link'
-    },
-    iconClass: {
-      type: String,
-      default: 'socials-icon'
+      default: 'base'
     }
   },
   data() {

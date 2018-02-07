@@ -1,8 +1,8 @@
 <template>
-  <nav :class="classPrefix + '-wrap'">
-    <ul :class="classPrefix + '-items'">
-      <li :class="classPrefix + '-item'" v-for="(item, index) in items" :key="index">
-        <a :href="'#' + convertToURL(item)" :class="classPrefix + '-link'" @click.prevent="vueScrollTo(item)">
+  <nav :class="classPrefix + '-navigation-wrap'">
+    <ul :class="classPrefix + '-navigation-items'">
+      <li :class="classPrefix + '-navigation-item'" v-for="(item, index) in items" :key="index">
+        <a :href="'#' + convertToURL(item)" :class="classPrefix + '-navigation-link'" @click.prevent="vueScrollTo(item)">
           {{ item }}
         </a>
       </li>
@@ -15,7 +15,7 @@ export default {
   props: {
     classPrefix: {
       type: String,
-      default: 'nav'
+      default: 'base'
     }
   },
   data() {
