@@ -5,7 +5,7 @@
     </h2>
     <ul class="clients-list">
       <li class="clients-item" v-for="(client, index) in clients" :key="index">
-        <a :href="client.link" class="clients-link">
+        <a :href="client.link" class="clients-link" @click="ga('Clients', 'Logo', client.name)">
           <img :src="`clients/${client.imageURL}`" :alt="client.name" class="clients-image" :title="client.name">
         </a>
       </li>
@@ -14,7 +14,9 @@
 </template>
 
 <script>
+import { GoogleAnalytics } from '@/mixins/google-analytics'
 export default {
+  mixins: [GoogleAnalytics],
   data() {
     return {
       clients: [

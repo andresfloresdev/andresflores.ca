@@ -1,7 +1,7 @@
 <template>
   <ul :class="`${classPrefix}-socials-list`">
     <li :class="`${classPrefix}-socials-item`" v-for="(social, index) in socials" :key="index">
-      <a :href="social.link" :class="`${classPrefix}-socials-link`" :title="social.name">
+      <a :href="social.link" :class="`${classPrefix}-socials-link`" :title="social.name" @click="ga(classPrefix, 'Socials', social.name)">
         <i class="fab fa-fw" :class="[social.icon, `${classPrefix}-socials-icon`]"></i>
       </a>
     </li>
@@ -9,6 +9,8 @@
 </template>
 
 <script>
+import { GoogleAnalytics } from '@/mixins/google-analytics'
+
 export default {
   props: {
     classPrefix: {
@@ -16,6 +18,7 @@ export default {
       default: 'base'
     }
   },
+  mixins: [GoogleAnalytics],
   data() {
     return {
       socials: [

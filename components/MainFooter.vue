@@ -5,7 +5,7 @@
         <div class="main-footer-top-contact">
           <brand class="main-footer-logo"></brand>
           <p class="main-footer-top-text">
-            Have any questions? <a href="mailto:info@andresflores.ca" class="main-footer-top-text-link">Send me a message!</a>
+            Have any questions? <a href="mailto:info@andresflores.ca" class="main-footer-top-text-link" @click="ga('Footer', 'Actions', 'Send Message')">Send me a message!</a>
           </p>
         </div>
         <navigation class-prefix="main-footer"></navigation>
@@ -26,6 +26,7 @@
 import Brand from '@/components/Brand'
 import Navigation from '@/components/Navigation'
 import Socials from '@/components/Socials'
+import { GoogleAnalytics } from '@/mixins/google-analytics'
 
 export default {
   components: {
@@ -33,6 +34,7 @@ export default {
     Navigation,
     Socials
   },
+  mixins: [GoogleAnalytics],
   computed: {
     currentYear: () => new Date().getFullYear()
   }
