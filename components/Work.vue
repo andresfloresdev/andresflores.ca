@@ -4,7 +4,7 @@
       <h2 class="work-heading">
         My Work
       </h2>
-      <transition-group name="fade" mode="out-in" tag="div" class="work-content">
+      <transition-group name="fade" tag="div" class="work-content">
         <article class="work-single" v-for="(single, index) in work" :key="index" v-show="index + 1 === current">
           <div class="work-single-content">
             <h3 class="work-single-heading">
