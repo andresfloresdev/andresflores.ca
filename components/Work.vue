@@ -4,21 +4,23 @@
       <h2 class="work-heading">
         My Work
       </h2>
-      <article class="work-single" v-for="(single, index) in work" :key="index" v-show="index + 1 === current">
-        <div class="work-single-content">
-          <h3 class="work-single-heading">
-            <a :href="single.link" class="work-single-heading-link" @click="ga('Work', 'Heading', single.title)">
-              {{ single.title }}
-            </a>
-          </h3>
-          <p class="work-single-text" v-html="single.text"></p>
-        </div>
-        <figure class="work-single-figure">
-          <img
-            :srcset="`projects/${single.imageURL}@2x.jpg 2x`" 
-            :src="`projects/${single.imageURL}.jpg`" :alt="single.title" class="work-single-image">
-        </figure>
-      </article>
+      <transition-group name="fade" mode="out-in" tag="div" class="work-content">
+        <article class="work-single" v-for="(single, index) in work" :key="index" v-show="index + 1 === current">
+          <div class="work-single-content">
+            <h3 class="work-single-heading">
+              <a :href="single.link" class="work-single-heading-link" @click="ga('Work', 'Heading', single.title)">
+                {{ single.title }}
+              </a>
+            </h3>
+            <p class="work-single-text" v-html="single.text"></p>
+          </div>
+          <figure class="work-single-figure">
+            <img
+              :srcset="`projects/${single.imageURL}@2x.jpg 2x`" 
+              :src="`projects/${single.imageURL}.jpg`" :alt="single.title" class="work-single-image">
+          </figure>
+        </article>
+      </transition-group>
       <div class="work-count">
         <span class="work-count-current">0{{ current }}</span>/<span class="work-count-total">0{{ count }}</span>
       </div>

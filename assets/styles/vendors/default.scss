@@ -13,3 +13,47 @@ h6 {
   @include make-container();
   @include make-container-max-widths();
 }
+
+.work-content {
+  position: relative;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  // position: absolute;
+  transition: 
+    transform 200ms ease-out,
+    opacity 200ms ease-out;
+}
+
+.fade-leave-active {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  // visibility: hidden;
+}
+
+.fade-enter,
+.fade-leave-to {
+  // position: relative;
+  opacity: 0;
+
+  .work-single-content {
+    transform: translateX(-$spacer-md);
+    transition: 
+    transform 200ms ease-out;
+  }
+}
+
+.fade-leave,
+.fade-enter-to {
+  // position: relative;
+  opacity: 1;
+  
+  .work-single-content {
+    transform: translateX(0);
+    transition: 
+    transform 200ms ease-out;
+  }
+}
