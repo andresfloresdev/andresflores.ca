@@ -28,6 +28,10 @@
   }
 }
 
+.work-content {
+  position: relative;
+}
+
 .work-single {
   display: flex;
   flex-wrap: wrap;
@@ -58,6 +62,7 @@
 
 .work-single-content {
   order: 1;
+  transition: transform 200ms ease-out;
 
   @include media-breakpoint-up(lg) {
     order: 0;
