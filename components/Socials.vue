@@ -29,7 +29,7 @@ export default {
         },
         {
           name: 'Instagram',
-          link: 'https://www.instagram.com/andresflores.dev/',
+          link: 'https://www.instagram.com/andresfloresdev/',
           icon: 'fa-instagram'
         },
         {
@@ -39,7 +39,7 @@ export default {
         },
         {
           name: 'Github',
-          link: 'https://github.com/andresfloresdev/andresflores.ca/',
+          link: 'https://github.com/andresfloresdev',
           icon: 'fa-github'
         }
       ]
