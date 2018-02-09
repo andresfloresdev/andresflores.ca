@@ -27,6 +27,7 @@ module.exports = {
     ['@nuxtjs/google-analytics', { ua: 'UA-68693066-1' }]
   ],
   plugins: [
+    '~/plugins/filters',
     '~/plugins/vue-scrollto'
   ],
   head: {

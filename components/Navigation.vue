@@ -2,7 +2,7 @@
   <nav :class="`${classPrefix}-navigation-wrap`">
     <ul :class="`${classPrefix}-navigation-items`">
       <li :class="`${classPrefix}-navigation-item`" v-for="(item, index) in items" :key="index">
-        <a :href="`#${formatToURL(item)}`" :class="`${classPrefix}-navigation-link`" @click.prevent="navigateTo(item); ga(classPrefix, 'internal-link', item)">
+        <a :href="item | slugify | formatToID" :class="`${classPrefix}-navigation-link`" @click.prevent="navigateTo(item); ga(classPrefix, 'internal-link', item)">
           {{ item }}
         </a>
       </li>
@@ -11,6 +11,7 @@
 </template>
 
 <script>
+import Vue from 'vue'
 import { InternalLinks } from '@/mixins/internal-links'
 import { GoogleAnalytics } from '@/mixins/google-analytics'
 
@@ -34,6 +35,6 @@ export default {
         'Skills'
       ]
     }
-  },
+  }
 }
 </script>

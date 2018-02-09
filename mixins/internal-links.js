@@ -1,9 +1,10 @@
+import Vue from 'vue'
+
 export const InternalLinks = {
   methods: {
-    formatToURL: (string) => string.toLowerCase(),
     navigateTo: function (id) {
-      const formattedID = this.formatToURL(id)
-      this.$scrollTo(`#${formattedID}`)
+      const formattedID = Vue.filter('slugify')(id)
+      this.$scrollTo(Vue.filter('formatToID')(formattedID))
       window.location.hash = formattedID
     }
   }
