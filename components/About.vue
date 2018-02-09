@@ -8,7 +8,7 @@
         My name is Andrés and I’m very passionate about Web development. I’ve been working on projects using various technologies and frameworks for a few years. Ever since I grasped the basics of HTML, CSS and Javascript, I realized how much I love designing and building websites. From then on I've been learning alot about web application development while constantly improving my workflow using task runners, pre-processors and other tools.
       </p>
       <p class="about-text">
-        Make sure to take a look at some of <a href="#work" class="about-text-link" @click.prevent="navigateTo('work'); ga('About', 'CTA', 'My Work')">my work</a> and <a href="#skills" class="about-text-link" @click.prevent="navigateTo('skills'); ga('About', 'CTA', 'My Skills')">my skillset</a> down below!
+        Make sure to take a look at some of <a href="#work" class="about-text-link" @click.prevent="navigateTo('work'); ga('About', 'internal-link', 'My Work')">my work</a> and <a href="#skills" class="about-text-link" @click.prevent="navigateTo('skills'); ga('About', 'internal-link', 'My Skills')">my skillset</a> down below!
       </p>
     </div>
     <div class="about-portrait">

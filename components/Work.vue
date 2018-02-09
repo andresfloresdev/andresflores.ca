@@ -8,7 +8,7 @@
         <article class="work-single" v-for="(single, index) in work" :key="index" v-show="index + 1 === current">
           <div class="work-single-content">
             <h3 class="work-single-heading">
-              <a :href="single.link" class="work-single-heading-link" @click="ga('Work', 'Heading', single.title)">
+              <a :href="single.link" class="work-single-heading-link" @click="ga('Work', 'link', single.title)">
                 {{ single.title }}
               </a>
             </h3>
@@ -28,12 +28,12 @@
       </div>
       <ul class="work-actions">
         <li class="work-action-prev">
-          <button class="work-action-prev-button" :class="isMin" @click="showPrevious(); ga('Work', 'Actions', 'Previous')" title="Previous">
+          <button class="work-action-prev-button" :class="isMin" @click="showPrevious(); ga('Work', 'toggle', 'Previous')" title="Previous">
             <span class="work-action-icon fas fa-arrow-left"></span>
           </button>
         </li>
         <li class="work-action-next">
-          <button class="work-action-next-button" :class="isMax" @click="showNext(); ga('Work', 'Actions', 'Next')" title="Next">
+          <button class="work-action-next-button" :class="isMax" @click="showNext(); ga('Work', 'toggle', 'Next')" title="Next">
             <span class="work-action-icon fas fa-arrow-right"></span>
           </button>
         </li>

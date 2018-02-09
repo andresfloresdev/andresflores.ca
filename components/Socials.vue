@@ -1,7 +1,7 @@
 <template>
   <ul :class="`${classPrefix}-socials-list`">
     <li :class="`${classPrefix}-socials-item`" v-for="(social, index) in socials" :key="index">
-      <a :href="social.link" :class="`${classPrefix}-socials-link`" :title="social.name" @click="ga(classPrefix, 'Socials', social.name)">
+      <a :href="social.link" :class="`${classPrefix}-socials-link`" :title="social.name" @click="ga(classPrefix, 'link', social.name)">
         <i class="fab fa-fw" :class="[social.icon, `${classPrefix}-socials-icon`]"></i>
       </a>
     </li>

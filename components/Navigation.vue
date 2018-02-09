@@ -2,7 +2,7 @@
   <nav :class="`${classPrefix}-navigation-wrap`">
     <ul :class="`${classPrefix}-navigation-items`">
       <li :class="`${classPrefix}-navigation-item`" v-for="(item, index) in items" :key="index">
-        <a :href="`#${formatToURL(item)}`" :class="`${classPrefix}-navigation-link`" @click.prevent="navigateTo(item); ga(classPrefix, 'Navigation', item)">
+        <a :href="`#${formatToURL(item)}`" :class="`${classPrefix}-navigation-link`" @click.prevent="navigateTo(item); ga(classPrefix, 'internal-link', item)">
           {{ item }}
         </a>
       </li>
