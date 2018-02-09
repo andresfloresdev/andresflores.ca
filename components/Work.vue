@@ -65,7 +65,7 @@ export default {
         },
         {
           title: 'DuProprio',
-          link: 'https://duproprio.com/en',
+          link: 'https://duproprio.com/',
           text: 'As a Junior Web Developer for 2 Associés, I integrated banner ads with Google Web Designer while learning the software. I was able to manually extract assets from Photoshop files, optimize, integrate and animate them according to the client\'s frame guidelines. I had a lot of fun working with the software and finding new ways to improve the workflow.',
           imageURL: 'duproprio'
         },
@@ -77,7 +77,7 @@ export default {
         },
         {
           title: 'YuCentrik',
-          link: 'https://yucentrik.ca/en/',
+          link: 'https://yucentrik.ca/',
           text: 'As a Junior Web Developer for 2 Associés, I refactored a lot of the site\'s components. I also helped optimize the entire site to increase its performance score.',
           imageURL: 'yucentrik'
         },
