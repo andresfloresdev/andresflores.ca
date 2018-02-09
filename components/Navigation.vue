@@ -11,7 +11,6 @@
 </template>
 
 <script>
-import Vue from 'vue'
 import { InternalLinks } from '@/mixins/internal-links'
 import { GoogleAnalytics } from '@/mixins/google-analytics'
 
