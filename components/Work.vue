@@ -64,6 +64,12 @@ export default {
           imageURL: 'parler-sst'
         },
         {
+          title: 'EQ Care',
+          link: 'https://eqcare.com/',
+          text: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quibusdam, nobis voluptates non fuga cum quidem dignissimos consequuntur hic pariatur ea aperiam, repellat recusandae modi sint reprehenderit cumque culpa distinctio animi.',
+          imageURL: '2associes'
+        },
+        {
           title: 'DuProprio',
           link: 'https://duproprio.com/',
           text: 'As a Junior Web Developer for 2 Associés, I integrated banner ads with Google Web Designer while learning the software. I was able to manually extract assets from Photoshop files, optimize, integrate and animate them according to the client\'s frame guidelines. I had a lot of fun working with the software and finding new ways to improve the workflow.',
