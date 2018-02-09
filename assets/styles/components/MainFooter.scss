@@ -59,9 +59,6 @@
 
 .main-footer-navigation-items {
   @extend .list-unstyled;
-
-  margin: 0;
-  padding: 0;
 }
 
 .main-footer-navigation-item {
@@ -104,7 +101,6 @@
   @extend .list-unstyled;
 
   padding: $spacer;
-  margin: 0;
   text-align: center;
 
   @include media-breakpoint-up(lg) {
