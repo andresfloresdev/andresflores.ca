@@ -1,7 +1,7 @@
 <template>
   <nav :class="`${classPrefix}-navigation-wrap`">
     <ul :class="`${classPrefix}-navigation-items`">
-      <li :class="`${classPrefix}-navigation-item`" v-for="(item, index) in items" :key="index">
+      <li :class="`${classPrefix}-navigation-item`" v-for="item in items" :key="item">
         <a :href="item | slugify | formatToID" :class="`${classPrefix}-navigation-link`" @click.prevent="navigateTo(item); ga(classPrefix, 'internal-link', item)">
           {{ item }}
         </a>

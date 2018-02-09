@@ -5,7 +5,7 @@
         My Skills
       </h2>
       <ul class="skills-list">
-        <li class="skills-item" v-for="(skill, index) in skills" :key="index">
+        <li class="skills-item" v-for="skill in skills" :key="skill.title">
           <h3 class="skills-item-heading">
             {{ skill.title }}
           </h3>
