@@ -54,43 +54,43 @@ export default {
         {
           title: 'David\'s Tea',
           link: 'https://www.davidstea.com/',
-          text: 'As a Junior Web Developer for 2 Associés, I integrated the markup and styles of a couple of pages of the client\'s new website. I received multiple Photoshop and Illustrator files and had to translate the mobile, tablet and desktop views into semantic, reusable code. It was an interesting experience to work with Commerce Cloud.',
+          text: 'I integrated the markup and styles of a couple of pages of the client\'s new website. I received multiple Photoshop and Illustrator files and had to translate the mobile, tablet and desktop views into semantic, reusable code. I had fun working with these kinds of assets and it was an interesting experience to work with Commerce Cloud.',
           imageURL: 'davids-tea'
         },
         {
           title: 'Parler SST',
           link: 'https://parlersst.com/',
-          text: 'As a Junior Web Developer for 2 Associés, I integrated the markup, styles and Javascript functionality of this page. Browser compatibility was a top priority, so it allowed me to hone my skills with the basics that I learned in college/university. I usually don\'t go as far back as IE10-compatible code with any of my projects, but it was a fun, learning experience.',
+          text: 'I integrated the markup, styles and Javascript functionality of this page. Browser compatibility was a top priority, so it allowed me to hone my skills with the basics that I learned in college/university. I usually don\'t go as far back as IE10-compatible code with any of my projects, but it was a fun, learning experience.',
           imageURL: 'parler-sst'
         },
         {
           title: 'EQ Care',
           link: 'https://eqcare.com/',
-          text: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quibusdam, nobis voluptates non fuga cum quidem dignissimos consequuntur hic pariatur ea aperiam, repellat recusandae modi sint reprehenderit cumque culpa distinctio animi.',
+          text: 'I had the pleasure to work on the Meteor application they use to manage patients, physicians and other fun stuff. My tasks were mainly based on frontend markup and functionality. While working on this project, I learned a lot about data structure and the implications of managing a progressive web application. It was very interesting.',
           imageURL: '2associes'
         },
         {
           title: 'DuProprio',
           link: 'https://duproprio.com/',
-          text: 'As a Junior Web Developer for 2 Associés, I integrated banner ads with Google Web Designer while learning the software. I was able to manually extract assets from Photoshop files, optimize, integrate and animate them according to the client\'s frame guidelines. I had a lot of fun working with the software and finding new ways to improve the workflow.',
+          text: 'I integrated banner ads with Google Web Designer while learning the software. I was able to manually extract assets from Photoshop files, optimize, integrate and animate them according to the client\'s frame guidelines. I had a lot of fun working with the software and finding new ways to improve the workflow.',
           imageURL: 'duproprio'
         },
         {
           title: 'Laura Canada',
           link: 'https://www.laura.ca/',
-          text: 'As a Junior Web Developer for 2 Associés, I integrated a few landing pages for Laura Canada\'s season clothing collections. The designs I had to integrate were a challenge for me because of how abstract and unique they were. I\'m glad I was able to get the hang of it and learn new CSS techniques really quickly.',
+          text: 'I integrated a few landing pages for Laura Canada\'s season clothing collections. The designs I had to integrate were fun and exciting because of how abstract and unique they were. I\'m glad I was able to flex my coding muscles and learn new CSS techniques really quickly. It was also my first experience working with Commerce Cloud.',
           imageURL: 'laura-canada'
         },
         {
           title: 'YuCentrik',
           link: 'https://yucentrik.ca/',
-          text: 'As a Junior Web Developer for 2 Associés, I refactored a lot of the site\'s components. I also helped optimize the entire site to increase its performance score.',
+          text: 'I refactored a lot of the site\'s components. I also helped optimize the entire site to increase its performance score. It was the first time I was mandated to focus on the performance of the site and refactoring other people\'s code. It was interesting to see the different approaches one can think of to accomplish particular tasks.',
           imageURL: 'yucentrik'
         },
         {
           title: '2 Associés',
           link: 'https://2associes.com/',
-          text: 'I\'ve worked with the web agency 2 Associés since 2016. During that time, I\'ve had the pleasure to work on their new website using the latest technologies and methodologies.',
+          text: 'I\'ve worked with the web agency 2 Associés since 2016. During that time, I\'ve had the pleasure to work on their new website and their client\'s projects using the latest technologies and methodologies. I\'m still learning a lot from them and doing my best to help in any way I can.',
           imageURL: '2associes'
         }
       ]

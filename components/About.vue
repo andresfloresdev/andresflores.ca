@@ -5,7 +5,7 @@
         About Me
       </h2>
       <p class="about-text">
-        My name is Andrés and I’m very passionate about Web development. I’ve been working on projects using various technologies and frameworks for a few years. Ever since I grasped the basics of HTML, CSS and Javascript, I realized how much I love designing and building websites. From then on I've been learning alot about web application development while constantly improving my workflow using task runners, pre-processors and other tools.
+        I've been a web developer for the past three years. I knew I wanted to make a career out of this when I started to feel comfortable coding static pages. I kept learning on my own and took some courses online and at the University of Montreal. I've worked on a wide variety of websites from simple, one-page WordPress sites to progressive web applications using the latest technologies and methodologies. I'm always on the lookout for something new to learn and to use for my next project!
       </p>
       <p class="about-text">
         Make sure to take a look at some of <a href="#work" class="about-text-link" @click.prevent="navigateTo('work'); ga('About', 'internal-link', 'My Work')">my work</a> and <a href="#skills" class="about-text-link" @click.prevent="navigateTo('skills'); ga('About', 'internal-link', 'My Skills')">my skillset</a> down below!
