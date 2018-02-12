@@ -67,7 +67,7 @@ export default {
           title: 'EQ Care',
           link: 'https://eqcare.com/',
           text: 'I had the pleasure to work on the Meteor application they use to manage patients, physicians and other fun stuff. My tasks were mainly based on frontend markup and functionality. While working on this project, I learned a lot about data structure and the implications of managing a progressive web application. It was very interesting.',
-          imageURL: '2associes'
+          imageURL: 'eqcare'
         },
         {
           title: 'DuProprio',
