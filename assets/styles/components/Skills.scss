@@ -65,6 +65,14 @@
   @extend .about-text;
 
   margin-bottom: 0;
+
+  a {
+    color: $primary;
+
+    &:hover {
+      color: $primary;
+    }
+  }
 }
 
 .skills-item-icon {
