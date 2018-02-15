@@ -36,7 +36,7 @@
 
 .about-heading {
   font-size: 1.6rem;
-  color: $black;
+  color: $secondary;
   margin-bottom: $spacer;
 
   @include media-breakpoint-up(md) {
@@ -59,44 +59,12 @@
   }
 }
 
-.about-actions {
-  @extend .list-unstyled;
-
-  padding: 0;
-  margin: 0;
-}
-
-.about-action {
-  display: inline-block;
-  margin-bottom: $spacer;
-  
-  &:not(:last-child) {
-    margin-right: $spacer;
-  }
-}
-
-.about-action-link {
-  display: inline-block;
-  margin: 0 auto;
-  color: $white;
-  background-color: $primary;
-  font-family: 'Open Sans', sans-serif;
-  font-weight: bold;
-  font-size: 0.9rem;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  padding: $spacer $spacer-md;
-  border-radius: 24px;
-  box-shadow: 0 4px 6px rgba(50,50,93,.11), 0 1px 3px rgba(0,0,0,.08);
-  transition:
-    box-shadow 150ms ease-out,
-    transform 150ms ease-out;
+.about-text-link {
+  color: $primary;
 
   &:hover {
-    color: $white;
-    text-decoration: none;
-    transform: translateY(-1px);
-    box-shadow: 0 7px 14px rgba(50,50,93,.1), 0 3px 6px rgba(0,0,0,.08);
+    color: $primary;
+    text-decoration: underline;
   }
 }
 
@@ -123,31 +91,41 @@
   }
 }
 
-.about-portrait-socials {
+.about-portrait-socials-list {
   @extend .list-unstyled;
 
   text-align: center;
   margin-top: $spacer-md;
 
+  @include media-breakpoint-up(lg) {
+    margin: $spacer-md auto 0;
+    max-width: 160px;
+  }
+
   @include media-breakpoint-up(xl) {
+    max-width: auto;
     position: absolute;
     top: $spacer-lg;
     right: 530px;
   }
 }
 
-.about-portrait-social {
+.about-portrait-socials-item {
   display: inline-block;
   margin: 0 $spacer-xs;
   width: 46px;
   height: 46px;
+
+  @include media-breakpoint-up(lg) {
+    margin: 0 $spacer-xs $spacer-sm;
+  }
 
   @include media-breakpoint-up(xl) {
     margin: 0 0 $spacer;
   }
 }
 
-.about-portrait-social-link {
+.about-portrait-socials-link {
   display: flex;
   align-items: center;
   justify-content: center;

@@ -9,18 +9,31 @@ module.exports = {
     color: '#427fed'
   },
   build: {
+    extend (config, { isDev, isClient }) {
+      if (isDev && isClient) {
+        config.module.rules.push({
+          enforce: 'pre',
+          test: /\.(js|vue)$/,
+          loader: 'eslint-loader',
+          exclude: /(node_modules)/
+        })
+      }
+    },
     postcss: [
       require('autoprefixer')(),
     ]
   },
   modules: [
-    '@nuxtjs/font-awesome',
     ['@nuxtjs/google-analytics', { ua: 'UA-68693066-1' }]
   ],
   plugins: [
+    '~/plugins/filters',
     '~/plugins/vue-scrollto'
   ],
   head: {
+    htmlAttrs: {
+      lang: 'en-CA',
+    },
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -29,6 +42,14 @@ module.exports = {
       { name: 'theme-color', content: '#427fed' }
     ],
     link: [
+      {
+        rel: 'stylesheet',
+        href: 'https://use.fontawesome.com/releases/v5.0.6/css/all.css'
+      },
+      {
+        rel: 'stylesheet',
+        href: 'https://fonts.googleapis.com/css?family=Montserrat:400,700|Roboto:400,700'
+      },
       {
         rel: 'icon',
         type: 'image/png',

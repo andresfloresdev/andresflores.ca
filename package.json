@@ -19,10 +19,9 @@
   "author": "Andres Flores <info@andresflores.ca>",
   "license": "ISC",
   "dependencies": {
-    "@nuxtjs/font-awesome": "^1.0.3",
     "@nuxtjs/google-analytics": "^2.0.2",
     "bootstrap": "^4.0.0",
-    "nuxt": "^1.1.1",
+    "nuxt": "^1.3.0",
     "vue-scrollto": "^2.8.0",
     "vue-style-loader": "^3.0.3"
   },
@@ -30,6 +29,11 @@
     "autoprefixer": "^7.2.5",
     "node-sass": "^4.7.2",
     "postcss-loader": "^2.0.10",
-    "sass-loader": "^6.0.6"
+    "sass-loader": "^6.0.6",
+    "babel-eslint": "^8.2.1",
+    "eslint": "^4.15.0",
+    "eslint-friendly-formatter": "^3.0.0",
+    "eslint-loader": "^1.7.1",
+    "eslint-plugin-vue": "^4.0.0"
   }
 }

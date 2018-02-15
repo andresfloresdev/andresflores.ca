@@ -13,3 +13,9 @@ h6 {
   @include make-container();
   @include make-container-max-widths();
 }
+
+.list-unstyled {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}

@@ -1,24 +1,43 @@
 .main-footer-top {
-  background-color: $white;
+  background-color: $secondary;
   text-align: center;
   padding: $spacer-lg 0;
 }
 
+.main-footer-top-contact {
+
+  @include media-breakpoint-up(lg) {
+    display: flex;
+    align-items: center;
+  }
+}
+
+.main-footer-logo {
+  display: block;
+  width: 100px;
+  margin: 0 auto $spacer-md;
+
+  @include media-breakpoint-up(lg) {
+    display: inline-block;
+    margin: 0 $spacer-md 0 0;
+  }
+}
+
 .main-footer-top-text {
-  color: $gray;
+  color: $white;
   font-size: 1.2rem;
   font-weight: bold;
   margin: 0;
 
   @include media-breakpoint-up(lg) {
     font-size: 1.1rem;
+    display: inline-block;
   }
 }
 
 .main-footer-top-text-link {
   display: block;
   color: $primary;
-  font-weight: normal;
 
   &:hover {
     color: $primary;
@@ -30,7 +49,7 @@
   }
 }
 
-.main-footer-nav {
+.main-footer-navigation-wrap {
   display: none;
 
   @include media-breakpoint-up(lg) {
@@ -38,14 +57,11 @@
   }
 }
 
-.main-footer-nav-items {
+.main-footer-navigation-items {
   @extend .list-unstyled;
-
-  margin: 0;
-  padding: 0;
 }
 
-.main-footer-nav-item {
+.main-footer-navigation-item {
   display: inline-block;
   
   &:not(:last-child) {
@@ -53,11 +69,11 @@
   }
 }
 
-.main-footer-nav-link {
+.main-footer-navigation-link {
   display: block;
   font-family: $headings-ff;
   font-weight: 700;
-  color: $gray;
+  color: $white;
   transition: color 200ms ease-out;
 
   &:hover {
@@ -81,11 +97,10 @@
   background-color: $primary;
 }
 
-.main-footer-socials {
+.main-footer-socials-list {
   @extend .list-unstyled;
 
   padding: $spacer;
-  margin: 0;
   text-align: center;
 
   @include media-breakpoint-up(lg) {
@@ -93,7 +108,7 @@
   }
 }
 
-.main-footer-social {
+.main-footer-socials-item {
   display: inline-block;
   margin: 0 $spacer;
 
@@ -102,7 +117,7 @@
   }
 }
 
-.main-footer-social-link {
+.main-footer-socials-link {
   color: $white;
   font-size: 1.2rem;
   transition: color 200ms ease-out;
