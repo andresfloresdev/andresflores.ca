@@ -18,8 +18,8 @@
           </div>
           <figure class="work-single-figure">
             <img
-              :srcset="`projects/${single.imageURL}@2x.jpg 2x`" 
-              :src="`projects/${single.imageURL}.jpg`" :alt="single.title" class="work-single-image">
+              :srcset="`https://s3.us-east-2.amazonaws.com/andresflores/assets/projects/${single.imageURL}@2x.jpg 2x`" 
+              :src="`https://s3.us-east-2.amazonaws.com/andresflores/assets/projects/${single.imageURL}.jpg`" :alt="single.title" class="work-single-image">
           </figure>
         </article>
       </transition-group>

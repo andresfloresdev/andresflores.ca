@@ -13,8 +13,8 @@
     </div>
     <div class="about-portrait">
       <picture class="about-portrait-picture">
-        <source media="(min-width: 1200px)" srcset="~assets/images/andres-portrait-500x750.jpg">
-        <img src="~assets/images/andres-profile.jpg" alt="Andres Flores, Front-end developer" class="about-portrait-image">
+        <source media="(min-width: 1200px)" srcset="https://s3.us-east-2.amazonaws.com/andresflores/assets/images/andres-portrait-500x750.jpg">
+        <img src="https://s3.us-east-2.amazonaws.com/andresflores/assets/images/andres-profile.jpg" alt="Andres Flores, Front-end developer" class="about-portrait-image">
       </picture>
       <socials class-prefix="about-portrait"></socials>
     </div>
