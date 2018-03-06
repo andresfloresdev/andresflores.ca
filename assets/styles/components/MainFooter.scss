@@ -127,6 +127,10 @@
   }
 }
 
+.main-footer-socials-text {
+  @extend .sr-only;
+}
+
 .main-footer-text {
   color: $white;
   text-align: center;
