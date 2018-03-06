@@ -147,3 +147,7 @@
     text-decoration: none;
   }
 }
+
+.about-portrait-socials-text {
+  @extend .sr-only;
+}
