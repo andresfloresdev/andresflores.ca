@@ -156,6 +156,17 @@
   }
 }
 
+.work-count-current {
+  width: 30px;
+  display: inline-block;
+}
+
+.work-count-total {
+  @extend .work-count-current;
+
+  text-align: right;
+}
+
 .work-actions {
   @extend .list-unstyled;
 
