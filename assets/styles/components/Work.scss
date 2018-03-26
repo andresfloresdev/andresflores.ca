@@ -227,3 +227,7 @@
 .work-action-next-button {
   @extend .work-action-prev-button;
 }
+
+.work-action-text {
+  @extend .sr-only;
+}

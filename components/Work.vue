@@ -30,11 +30,13 @@
         <li class="work-action-prev">
           <button class="work-action-prev-button" :class="isMin" @click="showPrevious(); ga('Work', 'toggle', 'Previous')" title="Previous">
             <span class="work-action-icon fas fa-arrow-left"></span>
+            <span class="work-action-text">Previous</span>
           </button>
         </li>
         <li class="work-action-next">
           <button class="work-action-next-button" :class="isMax" @click="showNext(); ga('Work', 'toggle', 'Next')" title="Next">
             <span class="work-action-icon fas fa-arrow-right"></span>
+            <span class="work-action-text">Next</span>
           </button>
         </li>
       </ul>
