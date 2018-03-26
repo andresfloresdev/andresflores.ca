@@ -49,7 +49,7 @@ export default {
         },
         {
           title: 'Git and GitFlow',
-          text: 'I use GitFlow for all of my projects. I follow a Trello board and associating a feature branch to a task card. It\'s a workflow shown to me by <a href="https://2associes.com/">2 Associés</a>',
+          text: 'I use GitFlow for all of my projects. I follow a Trello board and associating a feature branch to a task card. It\'s a workflow shown to me by <a href="https://2associes.com/">2 Associés</a>.',
           icon: 'fas fa-code-branch'
         }
       ]
