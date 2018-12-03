@@ -1,20 +1,27 @@
 <template>
   <footer class="main-footer">
-    <div class="main-footer-top">
-      <div class="main-footer-container">
-        <div class="main-footer-top-contact">
-          <brand class="main-footer-logo"></brand>
-          <p class="main-footer-top-text">
-            Have any questions? <a href="mailto:info@andresflores.ca" class="main-footer-top-text-link" @click="ga('Footer', 'link', 'Email')">Send me a message!</a>
-          </p>
-        </div>
-        <navigation class-prefix="main-footer"></navigation>
-      </div>
+    <div class="main-footer-container">
+      <h1 class="main-footer-heading">
+        Send me a message!
+      </h1>
+      <p class="main-footer-text">
+        I'd be happy to grab some coffee and chat.<br>
+        Shoot me an email and let's work something out.
+      </p>
+      <ul class="main-footer-actions">
+        <li class="main-footer-action">
+          <call-to-action link="mailto:info@andresflores.ca" class="main-footer-action-cta">
+            Get in touch
+          </call-to-action>
+        </li>
+      </ul>
+      <p class="main-footer-message">
+        {{ footerMessage }}
+      </p>
     </div>
-    <div class="main-footer-bot">
-      <div class="main-footer-container">
-        <socials class-prefix="main-footer"></socials>
-        <p class="main-footer-text">
+    <div class="main-footer-copyright">
+      <div class="main-footer-copyright-container">
+        <p class="main-footer-copyright-text">
           &copy; 2016 &mdash; {{ currentYear }}, Andrés Flores, Montréal (Québec), Canada.
         </p>
       </div>
@@ -23,20 +30,22 @@
 </template>
 
 <script>
-import Brand from '@/components/Brand'
-import Navigation from '@/components/Navigation'
-import Socials from '@/components/Socials'
-import { GoogleAnalytics } from '@/mixins/google-analytics'
+import CallToAction from '@/components/CallToAction'
 
 export default {
   components: {
-    Brand,
-    Navigation,
-    Socials
+    CallToAction
   },
-  mixins: [GoogleAnalytics],
   computed: {
-    currentYear: () => new Date().getFullYear()
+    currentYear: () => new Date().getFullYear(),
+    footerMessage: () => {
+      const hours = new Date().getHours()
+
+      if (hours >= 0 && hours <= 4) return 'Greetings fellow night owl!'
+      if (hours >= 5 && hours <= 10) return 'Good morning, have a great day!'
+      if (hours >= 11 && hours <= 16) return 'I hope your day\'s going great!'
+      if (hours >= 17 && hours <= 23) return 'I hope you had a great day!'
+    }
   }
 }
 </script>
