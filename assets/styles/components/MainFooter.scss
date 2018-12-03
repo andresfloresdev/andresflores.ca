@@ -10,17 +10,26 @@
   @extend h2;
 
   color: $gray;
+  margin: 0;
 }
 
 .main-footer-actions {
   @extend .list-unstyled;
 
-  margin: $spacer-md 0 $spacer;
+  margin-top: $spacer-md;
+
+  @include media-breakpoint-up(xxl) {
+    margin-top: $spacer-lg;
+  }
 }
 
 .main-footer-copyright {
   margin-top: $spacer-lg;
   background: $secondary;
+
+  @include media-breakpoint-up(xxl) {
+    margin-top: $spacer-xl;
+  }
 }
 
 .main-footer-copyright-container {
