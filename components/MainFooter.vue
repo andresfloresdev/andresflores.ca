@@ -37,12 +37,12 @@ export default {
   computed: {
     currentYear: () => new Date().getFullYear(),
     footerMessage: () => {
-      const hours = new Date().getHours()
+      const hour = new Date().getHours()
 
-      if (hours >= 0 && hours <= 4) return 'Greetings fellow night owl!'
-      if (hours >= 5 && hours <= 10) return 'Good morning, have a great day!'
-      if (hours >= 11 && hours <= 16) return 'I hope your day\'s going great!'
-      if (hours >= 17 && hours <= 23) return 'I hope you had a great day!'
+      if (hour >= 0 && hour <= 4) return 'Greetings fellow night owl!'
+      if (hour >= 5 && hour <= 10) return 'Good morning, have a great day!'
+      if (hour >= 11 && hour <= 16) return 'I hope your day\'s going great!'
+      if (hour >= 17 && hour <= 23) return 'I hope you had a great day today!'
     }
   }
 }
