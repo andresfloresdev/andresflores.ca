@@ -20,7 +20,7 @@
       <div class="main-footer-copyright-container">
         <p class="main-footer-copyright-text">
           <span class="main-footer-copyright-message">{{ footerMessage }}</span>
-          &copy; 2016 &mdash; {{ currentYear }}, Andrés Flores, Montréal (Québec), Canada.
+          &copy;&nbsp;2016&nbsp;&mdash;&nbsp;{{ currentYear }}, Andrés Flores, Montréal (Québec), Canada.
         </p>
       </div>
     </div>
