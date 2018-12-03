@@ -11,23 +11,24 @@
 
     &:before {
       opacity: 1;
-      transform: translateX(100%);
+      transform: translateX(0);
     }
 
     &::after {
       opacity: 0;
-      transform: translateX(100%);
+      transform: translateX(300%);
     }
   }
 
   &::before {
     content: '';
     opacity: 0;
+    transform: translateX(-300%);
     position: absolute;
     width: 30px;
     height: 2px;
     background: $primary;
-    right: 30px;
+    right: 0;
     top: calc(50% - 2px);
     transition: 
       opacity ease-out .15s,
@@ -45,5 +46,9 @@
     transition: 
       opacity ease-out .15s,
       transform ease-out .15s;
+  }
+
+  @include media-breakpoint-up(xxl) {
+    font-size: 1.625rem;
   }
 }
