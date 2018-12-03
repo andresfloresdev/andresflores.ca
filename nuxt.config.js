@@ -32,7 +32,7 @@ module.exports = {
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { hid: 'description', name: 'description', content: 'I am a Front-end Web Developer based in Montreal, Canada.' },
       { name: 'google-site-verification', content: 'xwhKOFzo4bWJqw11wkUWRQp1mQoXVMSFXGUHX8y72rc'},
-      { name: 'theme-color', content: '#427fed' }
+      { name: 'theme-color', content: '#252840' }
     ],
     link: [
       {
