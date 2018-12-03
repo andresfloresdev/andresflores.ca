@@ -23,13 +23,6 @@ module.exports = {
       require('autoprefixer')(),
     ]
   },
-  modules: [
-    ['@nuxtjs/google-analytics', { ua: 'UA-68693066-1' }]
-  ],
-  plugins: [
-    '~/plugins/filters',
-    '~/plugins/vue-scrollto'
-  ],
   head: {
     htmlAttrs: {
       lang: 'en-CA',
