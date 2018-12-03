@@ -13,6 +13,11 @@ h6 {
   font-weight: 700;
 }
 
+h2 {
+  font-size: 2rem;
+  line-height: 1.5;
+}
+
 // Add the xxl max-width
 .container {
   @include make-container();
