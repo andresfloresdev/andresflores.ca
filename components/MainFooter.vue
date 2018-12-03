@@ -1,9 +1,9 @@
 <template>
   <footer class="main-footer">
     <div class="main-footer-container">
-      <h1 class="main-footer-heading">
+      <h2 class="main-footer-heading">
         Send me a message!
-      </h1>
+      </h2>
       <p class="main-footer-text">
         I'd be happy to grab some coffee and chat.<br>
         Shoot me an email and let's work something out.
