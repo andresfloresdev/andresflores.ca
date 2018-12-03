@@ -41,7 +41,7 @@ module.exports = {
       },
       {
         rel: 'stylesheet',
-        href: 'https://fonts.googleapis.com/css?family=Montserrat:400,700|Roboto:400,700'
+        href: 'https://fonts.googleapis.com/css?family=Roboto:400,700'
       },
       {
         rel: 'icon',
