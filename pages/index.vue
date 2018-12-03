@@ -1,10 +1,10 @@
 <template>
   <div class="home-layout">
-    <hero></hero>
+    <!-- <hero></hero> -->
     <about></about>
-    <clients></clients>
-    <work></work>
-    <skills></skills>
+    <!-- <clients></clients> -->
+    <!-- <work></work> -->
+    <!-- <skills></skills> -->
   </div>
 </template>
 
