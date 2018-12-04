@@ -12,6 +12,7 @@ h6 {
   font-family: $headings-ff;
   font-weight: 700;
   line-height: 1.5;
+  color: $secondary;
 }
 
 h1 {
@@ -32,12 +33,24 @@ h2 {
 
 p {
   line-height: 1.5;
+
+  @include media-breakpoint-up(xxl) {
+    font-size: 1.375rem;
+  }
 }
 
 // Add the xxl max-width
 .container {
   @include make-container();
   @include make-container-max-widths();
+
+  padding-left: $spacer-md;
+  padding-right: $spacer-md;
+
+  @include media-breakpoint-up(sm) {
+    padding-left: $spacer;
+    padding-right: $spacer;
+  }
 }
 
 .list-unstyled {
