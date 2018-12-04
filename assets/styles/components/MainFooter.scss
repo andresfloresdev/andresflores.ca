@@ -24,29 +24,28 @@
 }
 
 .main-footer-copyright {
-  margin-top: $spacer-lg;
-  background: $secondary;
+  color: $gray;
+  text-align: center;
+  padding: 0 $spacer $spacer;
+  margin: $spacer-lg 0 0;
+  font-size: 0.825rem;
 
   @include media-breakpoint-up(xxl) {
     margin-top: $spacer-xl;
   }
 }
 
-.main-footer-copyright-container {
-  @extend .container;
-}
+.main-footer-message {
+  @extend h3;
 
-.main-footer-copyright-text {
-  color: $white;
-  text-align: center;
-  padding: $spacer;
-  margin: 0;
-  font-size: 0.825rem;
-}
-
-.main-footer-copyright-message {
+  color: $gray;
+  background-color: $white;
+  padding: $spacer-md;
   display: block;
-  font-size: 1rem;
-  margin-bottom: $spacer;
-  opacity: 0.3;
+  text-align: center;
+  margin-bottom: 0;
+
+  @include media-breakpoint-up(xxl) {
+    padding: $spacer-lg;
+  }
 }
