@@ -1,153 +1,42 @@
-.about {
-  @extend .container;
-
-  position: relative;
-  padding: $spacer-lg $spacer;
-  display: flex;
-  flex-direction: column;
-
-  @include media-breakpoint-up(lg) {
-    padding: $spacer-xl $spacer;
-    flex-direction: row;
-  }
+.about-text-wrap {
+  min-width: 320px;
+  width: calc(100% - #{$spacer-lg});
+  background: $secondary;
+  padding: $spacer-md;
 
   @include media-breakpoint-up(xxl) {
-    padding: $spacer-xxl $spacer;
-  }
-}
-
-.about-info {
-  order: 1;
-
-  @include media-breakpoint-up(lg) {
-    margin-left: $spacer-lg;
-  }
-
-  @include media-breakpoint-up(xl) {
-    order: 0;
-    margin-left: 0;
-    width: 420px;
-  }
-
-  @include media-breakpoint-up(xxl) {
-    width: 600px;
-  }
-}
-
-.about-heading {
-  font-size: 1.6rem;
-  color: $secondary;
-  margin-bottom: $spacer;
-
-  @include media-breakpoint-up(md) {
-    font-size: 2rem;
-    margin-bottom: $spacer-md;
-  }
-
-  @include media-breakpoint-up(lg) {
-    font-size: 3rem;
+    width: 50%;
+    padding: $spacer-lg $spacer-lg $spacer-lg calc((100% - 1410px) / 2);
   }
 }
 
 .about-text {
-  color: $gray;
-  line-height: 2;
-  margin-bottom: $spacer-md;
+  color: $white;
+  margin: 0;
 
-  @include media-breakpoint-up(lg) {
-    font-size: 1.1rem;
+  @include media-breakpoint-up(xxl) {
+    max-width: 660px;
   }
 }
 
-.about-text-link {
-  color: $primary;
-
-  &:hover {
-    color: $primary;
-    text-decoration: underline;
-  }
-}
-
-.about-portrait {
-  margin-bottom: $spacer;
-
-  @include media-breakpoint-up(xl) {
-    position: absolute;
-    top: -$spacer-lg;
-    right: $spacer;
-    margin-bottom: 0;
-  }
-}
-
-.about-portrait-image {
-  border-radius: 50%;
-  display: block;
-  margin: 0 auto;
-  -webkit-box-shadow: 0 2px 4px rgba(0,0,0,.2);
-  box-shadow: 0 2px 4px rgba(0,0,0,.2);
-
-  @include media-breakpoint-up(xl) {
-    border-radius: 0;
-  }
-}
-
-.about-portrait-socials-list {
-  @extend .list-unstyled;
-
-  text-align: center;
-  margin-top: $spacer-md;
-
-  @include media-breakpoint-up(lg) {
-    margin: $spacer-md auto 0;
-    max-width: 160px;
-  }
-
-  @include media-breakpoint-up(xl) {
-    max-width: auto;
-    position: absolute;
-    top: $spacer-lg;
-    right: 530px;
-  }
-}
-
-.about-portrait-socials-item {
+.about-socials {
+  background: $primary;
   display: inline-block;
-  margin: 0 $spacer-xs;
-  width: 46px;
-  height: 46px;
+  padding: $spacer $spacer-md;
 
-  @include media-breakpoint-up(lg) {
-    margin: 0 $spacer-xs $spacer-sm;
+  .socials-item {
+    display: inline-block;
+
+    &:not(:last-of-type) {
+      margin-right: $spacer-md;
+    }
   }
 
-  @include media-breakpoint-up(xl) {
-    margin: 0 0 $spacer;
+  .socials-link {
+    color: $white;
+
+    @include media-breakpoint-up(xxl) {
+      font-size: 1.875rem;
+    }
   }
-}
-
-.about-portrait-socials-link {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: 100%;
-  color: $primary;
-  font-size: 24px;
-  line-height: 24px;
-  border: solid 2px $primary;
-  border-radius: 50%;
-  padding: $spacer-xs;
-  transition:
-    border-color 200ms ease-out,
-    color 200ms ease-out;
-
-  &:hover {
-    color: $secondary;
-    border-color: $secondary;
-    text-decoration: none;
-  }
-}
-
-.about-portrait-socials-text {
-  @extend .sr-only;
 }
