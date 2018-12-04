@@ -1,0 +1,40 @@
+.projects {
+  @extend .container;
+
+  margin: $spacer-lg auto;
+
+  @include media-breakpoint-up(xxl) {
+    margin: $spacer-xxl auto;
+  }
+}
+
+.projects-heading {
+  margin-bottom: $spacer-md;
+
+  @include media-breakpoint-up(xxl) {
+    margin-bottom: $spacer-lg;
+  }
+}
+
+.projects-list {
+  @extend .list-unstyled;
+
+  @include media-breakpoint-up(xxl) {
+    display: grid;
+    grid-gap: $spacer;
+    grid-template-columns: repeat(3, auto);
+  }
+}
+
+.projects-single {
+  margin-bottom: $spacer;
+
+  @include media-breakpoint-up(xxl) {
+    margin-bottom: 0;
+    
+    &:first-of-type,
+    &:last-of-type, {
+      grid-column: span 2;
+    }
+  }
+}
