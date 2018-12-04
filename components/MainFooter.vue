@@ -16,14 +16,12 @@
         </li>
       </ul>
     </div>
-    <div class="main-footer-copyright">
-      <div class="main-footer-copyright-container">
-        <p class="main-footer-copyright-text">
-          <span class="main-footer-copyright-message">{{ footerMessage }}</span>
-          &copy;&nbsp;2016&nbsp;&mdash;&nbsp;{{ currentYear }}, Andrés Flores, Montréal (Québec), Canada.
-        </p>
-      </div>
-    </div>
+    <p class="main-footer-copyright">
+      &copy;&nbsp;2016&nbsp;&mdash;&nbsp;{{ currentYear }}, Andrés Flores, Montréal (Québec), Canada.
+    </p>
+    <!-- <p class="main-footer-message">
+      {{ footerMessage }}
+    </p> -->
   </footer>
 </template>
 
