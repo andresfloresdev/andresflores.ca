@@ -6,7 +6,7 @@
       </p>
     </div>
     <div class="about-socials-wrap">
-      <socials class-prefix="about-portrait"></socials>
+      <socials class="about-socials"></socials>
     </div>
   </section>
 </template>
