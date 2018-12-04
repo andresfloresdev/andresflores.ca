@@ -2,8 +2,9 @@ $primary: #427fed;
 $secondary: #252840;
 $black: #000;
 $gray: rgba($secondary, 0.6);
+$gray-lighter: rgba($secondary, 0.3);
 $white: #fff;
-$light: #d6dfdf;
+$light: rgba($white, 0.6);
 
 $headings-ff: 'Roboto', Helvetica, Arial, sans-serif;
 $body-ff: 'Roboto', Arial, sans-serif;
