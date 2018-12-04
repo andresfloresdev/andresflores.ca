@@ -10,8 +10,6 @@
 </template>
 
 <script>
-import { GoogleAnalytics } from '@/mixins/google-analytics'
-
 export default {
   data() {
     return {
