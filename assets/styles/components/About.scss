@@ -7,6 +7,10 @@
   }
 }
 
+.about-heading {
+  @extend .sr-only;
+}
+
 .about-text-wrap {
   min-width: 320px;
   width: calc(100% - #{$spacer-lg});
@@ -43,9 +47,10 @@
 }
 
 .about-socials-wrap {
-  background: $primary;
+  background-color: $primary;
   padding: $spacer $spacer-md;
   display: inline-block;
+  transition: background-color .15s ease-out;
 
   @include media-breakpoint-up(xxl) {
     width: 45%;
@@ -90,9 +95,15 @@
 
   .socials-link {
     color: $white;
+    transition: color .15s ease-out;
 
     @include media-breakpoint-up(xxl) {
       font-size: 1.875rem;
+      color: rgba($white, 0.8);
+
+      &:hover {
+        color: $white;
+      }
     }
   }
 }
