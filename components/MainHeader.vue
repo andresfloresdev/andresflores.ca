@@ -3,7 +3,7 @@
     <div class="main-header-container">
       <brand class="main-header-brand"></brand>
       <h1 class="main-header-heading">
-        Andres Flores&nbsp;
+        Andrés Flores&nbsp;
         <span class="main-header-subheading">Web consultant &amp; developer</span>
       </h1>
       <p class="main-header-text">
