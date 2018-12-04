@@ -31,6 +31,14 @@ h2 {
   }
 }
 
+h3 {
+  font-size: 1.875rem;
+
+  @include media-breakpoint-up(xxl) {
+    font-size: 3rem;
+  }
+}
+
 p {
   line-height: 1.5;
 
