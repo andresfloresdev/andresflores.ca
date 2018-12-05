@@ -5,7 +5,7 @@
     </h2>
     <div class="about-text-wrap">
       <p class="about-text">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        <strong class="about-text-strong">I am a web consultant and a front-end web developer based in Montréal, Canada.</strong> I aim to help businesses conceive their projects and achieve their business goals through intelligent implementation of design and technology.
       </p>
     </div>
     <div class="about-socials-wrap" :style="{ backgroundColor: socialColor }">
