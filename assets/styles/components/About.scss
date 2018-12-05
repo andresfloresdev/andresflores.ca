@@ -18,10 +18,12 @@
   padding: $spacer-md;
 
   @include media-breakpoint-up(sm) {
+    width: calc(100% - ((100% - 510px) / 2));
     padding-left: calc((100% - 510px) / 2);
   }
 
   @include media-breakpoint-up(md) {
+    width: calc(100% - ((100% - 690px) / 2));
     padding-left: calc((100% - 690px) / 2);
   }
 
