@@ -47,8 +47,7 @@
 
   @include media-breakpoint-up(xxl) {
     
-    &:first-of-type,
-    &:last-of-type, {
+    &.is-wide {
       grid-column: span 2;
     }
   }
