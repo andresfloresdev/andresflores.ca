@@ -5,12 +5,15 @@
     padding: $spacer-lg 0 $spacer-xl;
   }
 
-  @include media-breakpoint-up(xxl) {
-    padding: $spacer-lg 0 $spacer-xxl;
-    background-image: url('~assets/images/andres-portrait.jpg'); // TODO: Integrate the right image with correct resolution and dimensions
+  @include media-breakpoint-up(xl) {
+    background-image: url('~assets/images/andres-portrait.jpg');
     background-repeat: no-repeat;
     background-position: bottom right;
-    background-size: contain;
+    background-size: auto 101%;
+  }
+
+  @include media-breakpoint-up(xxl) {
+    padding: $spacer-lg 0 $spacer-xxl;
   }
 }
 
