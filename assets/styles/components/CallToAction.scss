@@ -48,6 +48,10 @@
       transform ease-out .15s;
   }
 
+  @include media-breakpoint-up(lg) {
+    font-size: 1.375rem;
+  }
+
   @include media-breakpoint-up(xxl) {
     font-size: 1.625rem;
   }

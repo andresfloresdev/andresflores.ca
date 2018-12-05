@@ -1,6 +1,10 @@
 .main-header {
   padding: $spacer-md 0 $spacer-lg;
 
+  @include media-breakpoint-up(lg) {
+    padding: $spacer-lg 0 $spacer-xl;
+  }
+
   @include media-breakpoint-up(xxl) {
     padding: $spacer-lg 0 $spacer-xxl;
     background-image: url('~assets/images/andres-portrait.jpg');
@@ -26,6 +30,10 @@
 .main-header-heading {
   margin: $spacer-lg 0 $spacer;
 
+  @include media-breakpoint-up(lg) {
+    margin: $spacer-xl 0 $spacer;
+  }
+
   @include media-breakpoint-up(xxl) {
     margin: $spacer-xxl 0 $spacer;
   }
@@ -36,6 +44,10 @@
   display: block;
   color: $primary;
 
+  @include media-breakpoint-up(lg) {
+    font-size: 1.6rem;
+  }
+
   @include media-breakpoint-up(xxl) {
     font-size: 2rem;
   }
@@ -43,10 +55,14 @@
 
 .main-header-text {
   color: $gray;
+  max-width: 550px;
+
+  @include media-breakpoint-up(lg) {
+    font-size: 1.25rem;
+  }
 
   @include media-breakpoint-up(xxl) {
     font-size: 1.5rem;
-    max-width: 550px;
   }
 }
 
