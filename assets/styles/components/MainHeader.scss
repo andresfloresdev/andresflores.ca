@@ -56,14 +56,6 @@
 .main-header-text {
   color: $gray;
   max-width: 550px;
-
-  @include media-breakpoint-up(lg) {
-    font-size: 1.25rem;
-  }
-
-  @include media-breakpoint-up(xxl) {
-    font-size: 1.5rem;
-  }
 }
 
 .main-header-actions {
