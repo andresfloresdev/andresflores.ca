@@ -61,12 +61,17 @@
 }
 
 .about-text {
-  color: $white;
+  color: $light;
   margin: 0;
 
   @include media-breakpoint-up(lg) {
     max-width: 660px;
   }
+}
+
+.about-text-strong {
+  color: $white;
+  font-weight: 500;
 }
 
 .about-socials-wrap {
