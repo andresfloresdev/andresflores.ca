@@ -4,9 +4,7 @@
       Featured Projects
     </h2>
     <ul class="projects-list">
-      <li class="projects-single" v-for="(project, index) in projects" :key="index">
-        <project :project="project"></project>
-      </li>
+      <project class="projects-single" v-for="(project, index) in projects" :key="index" :class="project.wide ? 'is-wide' : ''" :project="project" tag="li"></project>
     </ul>
   </section>
 </template>
@@ -26,7 +24,8 @@ export default {
           image: 'davidstea.jpg',
           tags: [
             'Development & integration'
-          ]
+          ],
+          wide: true
         },
         {
           name: 'CNESST',
@@ -49,7 +48,8 @@ export default {
           image: 'laura.jpg',
           tags: [
             'Development & integration'
-          ]
+          ],
+          wide: true
         }
       ]
     }
