@@ -12,6 +12,7 @@
 </template>
 
 <script>
+// TODO: Try lazy-loading background after component has mounted. Show blurred image on page load
 export default {
   props: {
     project: {
