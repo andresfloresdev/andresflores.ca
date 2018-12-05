@@ -31,8 +31,8 @@
     right: 0;
     top: calc(50% - 2px);
     transition: 
-      opacity ease-out .15s,
-      transform ease-out .15s;
+      opacity ease-out .3s,
+      transform ease-out .3s;
   }
 
   &::after {
@@ -44,8 +44,8 @@
     right: 0;
     top: calc(50% - 2px);
     transition: 
-      opacity ease-out .15s,
-      transform ease-out .15s;
+      opacity ease-out .3s,
+      transform ease-out .3s;
   }
 
   @include media-breakpoint-up(lg) {
