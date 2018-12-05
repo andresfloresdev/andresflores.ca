@@ -7,7 +7,7 @@
   position: relative;
   transition: filter .15s ease-out;
 
-  @include media-breakpoint-up(xxl) {
+  @include media-breakpoint-up(xl) {
     filter: grayscale(100%);
 
     &:hover {
@@ -29,7 +29,7 @@
   left: $spacer;
   transition: opacity .15s ease-out;
 
-  @include media-breakpoint-up(xxl) {
+  @include media-breakpoint-up(xl) {
     opacity: 0;
   }
 }
