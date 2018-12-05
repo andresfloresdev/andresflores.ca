@@ -18,6 +18,7 @@ export default {
   },
   data() {
     return {
+      // TODO: Find a better name for the 'wide' property
       projects: [
         {
           name: 'DavidsTea',

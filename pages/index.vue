@@ -15,6 +15,7 @@ export default {
     Projects
   },
   mounted: () => {
+    // TODO: Find a more elegant way to use this feature
     const hour = new Date().getHours()
 
     switch (true) {
