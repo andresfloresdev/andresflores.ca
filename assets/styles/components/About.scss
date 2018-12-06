@@ -39,7 +39,7 @@
     padding-right: $spacer-md + 100px;
     position: relative;
 
-    &::after {
+    &::after { // TODO: Adjust pseudo element angles to match brand angles
       content: '';
       display: block;
       height: 0;
