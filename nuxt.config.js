@@ -11,6 +11,9 @@ module.exports = {
   plugins: [
     { src: '~/plugins/vue-scroll-reveal', ssr: false }
   ],
+  modules: [
+    [ '@nuxtjs/google-analytics', { id: 'UA-68693066-1' } ]
+  ],
   build: {
     extend (config, { isDev, isClient }) {
       if (isDev && isClient) {
