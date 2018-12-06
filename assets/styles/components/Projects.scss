@@ -47,7 +47,7 @@
 
   @include media-breakpoint-up(xxl) {
     
-    &.is-wide {
+    &.is-emphasized {
       grid-column: span 2;
     }
   }

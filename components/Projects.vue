@@ -4,7 +4,7 @@
       Featured Projects
     </h2>
     <ul class="projects-list">
-      <project class="projects-single" v-for="project in projects" :key="project.name" :class="project.wide ? 'is-wide' : ''" :project="project" tag="li"></project>
+      <project class="projects-single" v-for="project in projects" :key="project.name" :class="project.emphasis ? 'is-emphasized' : ''" :project="project" tag="li"></project>
     </ul>
   </section>
 </template>
@@ -18,7 +18,6 @@ export default {
   },
   data() {
     return {
-      // TODO: Find a better name for the 'wide' property
       projects: [
         {
           name: 'DavidsTea',
@@ -26,7 +25,7 @@ export default {
           tags: [
             'Development & integration'
           ],
-          wide: true
+          emphasis: true
         },
         {
           name: 'CNESST',
@@ -50,7 +49,7 @@ export default {
           tags: [
             'Development & integration'
           ],
-          wide: true
+          emphasis: true
         }
       ]
     }
