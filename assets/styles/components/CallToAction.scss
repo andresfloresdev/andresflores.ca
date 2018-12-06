@@ -10,29 +10,23 @@
     color: $secondary;
 
     &:before {
-      opacity: 1;
-      transform: translateX(0);
+      width: calc(100% - (#{$spacer} * 3));
     }
 
     &::after {
-      opacity: 0;
-      transform: translateX(300%);
+      width: 0;
     }
   }
 
-  &::before { // TODO: Find a better hover animation
+  &::before {
     content: '';
-    opacity: 0;
-    transform: translateX(-300%);
     position: absolute;
-    width: 30px;
+    width: 0;
     height: 2px;
     background: $primary;
-    right: 0;
-    top: calc(50% - 2px);
-    transition: 
-      opacity ease-out .3s,
-      transform ease-out .3s;
+    left: 0;
+    bottom: -$spacer-xs;
+    transition: width ease-out .3s;
   }
 
   &::after {
@@ -41,11 +35,9 @@
     width: 30px;
     height: 2px;
     background: $primary;
-    right: 0;
+    left: calc(100% - #{$spacer-md});
     top: calc(50% - 2px);
-    transition: 
-      opacity ease-out .3s,
-      transform ease-out .3s;
+    transition: width ease-out .3s;
   }
 
   @include media-breakpoint-up(lg) {
