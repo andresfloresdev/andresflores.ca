@@ -11,7 +11,7 @@
       </p>
       <ul class="main-header-actions" v-scroll-reveal="{ delay: scrollRevealDelay(4) }">
         <li class="main-header-action">
-          <call-to-action link="mailto:info@andresflores.ca" class="main-header-cta">
+          <call-to-action link="mailto:info@andresflores.ca" class="main-header-cta" @click.native="$ga.event('CTA', 'click', 'header', 'Get in touch')">
             Get in touch
           </call-to-action>
         </li>
