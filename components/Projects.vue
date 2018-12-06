@@ -4,7 +4,7 @@
       Featured Projects
     </h2>
     <ul class="projects-list">
-      <project class="projects-single" v-for="(project, index) in projects" :key="index" :class="project.wide ? 'is-wide' : ''" :project="project" tag="li"></project>
+      <project class="projects-single" v-for="project in projects" :key="project.name" :class="project.wide ? 'is-wide' : ''" :project="project" tag="li"></project>
     </ul>
   </section>
 </template>
