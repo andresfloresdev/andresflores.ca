@@ -14,26 +14,6 @@ export default {
     About,
     Projects
   },
-  mounted: () => {
-    // TODO: Find a more elegant way to use this feature
-    const hour = new Date().getHours()
-
-    switch (true) {
-      case (hour >= 0 && hour <= 4):
-        console.log('Greetings fellow night owl!')
-        break
-      case (hour >= 5 && hour <= 10):
-        console.log('Good morning, have a great day!')
-        break
-      case (hour >= 11 && hour <= 16):
-        console.log('I hope your day\'s going great!')
-        break
-      case (hour >= 17 && hour <= 23):
-        console.log('I hope you had a great day today!')
-        break
-      default: break
-    }
-  },
   head() {
     return {
       title: 'Andrés Flores, Web Consultant & Developer',
