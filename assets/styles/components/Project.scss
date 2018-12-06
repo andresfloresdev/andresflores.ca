@@ -5,7 +5,9 @@
   padding: $spacer;
   height: 470px;
   position: relative;
-  transition: filter .15s ease-out;
+  transition: 
+    filter .15s ease-out,
+    background-image .15s ease-out;
 
   @include media-breakpoint-up(xl) {
     filter: grayscale(100%);
