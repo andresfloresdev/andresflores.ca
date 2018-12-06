@@ -20,7 +20,7 @@ export default {
   mixins: [scrollRevealDelay],
   data() {
     return {
-      projects: [
+      projects: [ // TODO: Add two more projects
         {
           name: 'DavidsTea',
           image: 'davidstea.jpg',
