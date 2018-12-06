@@ -1,14 +1,14 @@
 <template>
   <footer class="main-footer">
     <div class="main-footer-container">
-      <h2 class="main-footer-heading">
+      <h2 class="main-footer-heading" v-scroll-reveal>
         Send me a message!
       </h2>
-      <p class="main-footer-text">
+      <p class="main-footer-text" v-scroll-reveal="{ delay: scrollRevealDelay(1) }">
         I'd be happy to grab some coffee and chat.<br>
         Shoot me an email and let's work something out.
       </p>
-      <ul class="main-footer-actions">
+      <ul class="main-footer-actions" v-scroll-reveal="{ delay: scrollRevealDelay(2) }">
         <li class="main-footer-action">
           <call-to-action link="mailto:info@andresflores.ca" class="main-footer-action-cta">
             Get in touch
@@ -16,7 +16,7 @@
         </li>
       </ul>
     </div>
-    <p class="main-footer-copyright">
+    <p class="main-footer-copyright" v-scroll-reveal="{ delay: scrollRevealDelay(3) }">
       &copy;&nbsp;2016&nbsp;&mdash;&nbsp;{{ currentYear }}, Andrés Flores, Montréal (Québec), Canada.
     </p>
     <!-- <p class="main-footer-message">
@@ -27,11 +27,13 @@
 
 <script>
 import CallToAction from '@/components/CallToAction'
+import { scrollRevealDelay } from '@/mixins/scroll-reveal-delay'
 
 export default {
   components: {
     CallToAction
   },
+  mixins: [scrollRevealDelay],
   computed: {
     currentYear: () => new Date().getFullYear(),
     footerMessage: () => {

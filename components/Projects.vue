@@ -1,9 +1,9 @@
 <template>
   <section class="projects">
-    <h2 class="projects-heading">
+    <h2 class="projects-heading" v-scroll-reveal>
       Featured Projects
     </h2>
-    <ul class="projects-list">
+    <ul class="projects-list" v-scroll-reveal>
       <project class="projects-single" v-for="project in projects" :key="project.name" :class="project.emphasis ? 'is-emphasized' : ''" :project="project" tag="li"></project>
     </ul>
   </section>
@@ -11,11 +11,13 @@
 
 <script>
 import Project from '@/components/Project'
+import { scrollRevealDelay } from '@/mixins/scroll-reveal-delay'
 
 export default {
   components: {
     Project
   },
+  mixins: [scrollRevealDelay],
   data() {
     return {
       projects: [

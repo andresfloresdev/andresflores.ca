@@ -8,6 +8,9 @@ module.exports = {
   loading: {
     color: '#427fed'
   },
+  plugins: [
+    { src: '~/plugins/vue-scroll-reveal', ssr: false }
+  ],
   build: {
     extend (config, { isDev, isClient }) {
       if (isDev && isClient) {
