@@ -36,10 +36,10 @@
     width: 60%;
     float: left;
     padding-left: calc((100% - 1110px) / 2);
-    padding-right: $spacer-md + 100px;
+    padding-right: 100px;
     position: relative;
 
-    &::after { // TODO: Adjust pseudo element angles to match brand angles
+    &::after {
       content: '';
       display: block;
       height: 0;
@@ -48,16 +48,18 @@
       top: 0;
       right: 0;
       border-top: solid 240px $white;
-      border-left: solid 100px transparent;
+      border-left: solid 103px transparent;
     }
   }
 
   @include media-breakpoint-up(xxl) {
     width: 55%;
     padding-left: calc((100% - 1410px) / 2);
+    padding-right: $spacer-md + 100px;
 
     &::after {
       border-top: solid 260px $white;
+      border-left: solid 111px transparent;
     }
   }
 }
@@ -112,7 +114,7 @@
       top: 0;
       left: 0;
       border-bottom: 120px solid $white;
-      border-right: 52px solid transparent;
+      border-right: 51px solid transparent;
     }
   }
 
@@ -123,6 +125,7 @@
 
     &::before {
       border-bottom: 130px solid $white;
+      border-right: 55px solid transparent;
     }
   }
 }
