@@ -20,7 +20,7 @@
     }
   }
 
-  &::before {
+  &::before { // TODO: Find a better hover animation
     content: '';
     opacity: 0;
     transform: translateX(-300%);
