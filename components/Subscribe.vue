@@ -15,9 +15,7 @@
 </template>
 
 <script>
-import jsonp from 'jsonp'
 import axios from 'axios'
-import jsonpAdapter from 'axios-jsonp'
 
 export default {
   props: {
@@ -44,46 +42,15 @@ export default {
     subscribe: function (event) {
       const elements = Array.from(event.target.elements)
       let params = {}
-      // console.log(event.target.elements.length)
-      // for (let i = 0; i < elements.length; i++) {
-      //   if (elements[i].value) {
-      //     inputs[elements[i].name] = elements[i].value
-      //   }
-      // }
 
       elements.forEach(input => {
         if (input.value) {
           params[input.name] = input.value
         }
-      });
-      // Array.from(event.target.elements).find(input => {
-      //   if (input.value) {
-      //     inputs[input.name] = input.value
-      //   }
-      // })
-      // console.log(params)
-      // const params = $(event.currentTarget).serialize()
-      // const callback = (res) => {
-      //   if (res.result === 'success') {
-      //     this.successMessage = res.msg
-      //   } else {
-      //     this.errorMessage = res.msg
-      //   }
-      // }
+      })
 
-      // $.ajax({
-      //   type: 'GET',
-      //   url: this.mutatedUrl,
-      //   data: params,
-      //   datatype: 'json',
-      //   // jsonpCallback: 'callback',
-      //   success: callback
-      // })
-
-      // Apparently works
       axios.get(this.mutatedUrl, { params })
       .then((res) => {
-        console.log(res.data)
         if (res.data.result === 'success') {
           this.successMessage = res.data.msg
         } else if (res.data.result === 'error' && res.data.msg.includes('already subscribed')) {
@@ -95,16 +62,6 @@ export default {
       .catch((error) => {
         this.errorMessage = 'Something went wrong. Sorry, please try again later!'
       })
-
-      // jsonp(`${this.mutatedUrl}&EMAIL=${event.target[0].value}`, function (err, data) {
-      //   if (err) {
-      //     console.error('Error')
-      //     console.log(err)
-      //   } else {
-      //     console.log('Success')
-      //     console.log(data)
-      //   }
-      // })
     }
   }
 }
