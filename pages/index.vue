@@ -2,17 +2,22 @@
   <div class="home-layout">
     <about></about>
     <projects></projects>
+    <!-- TODO: Integrate i18n -->
+    <!-- TODO: Get mailchimp subscribe form to work -->
+    <subscribe url="https://andresflores.us19.list-manage.com/subscribe/post?u=ea080f01339525dc0f57cfdac&amp;id=7f4e27f502"></subscribe>
   </div>
 </template>
 
 <script>
 import About from '@/components/About'
 import Projects from '@/components/Projects'
+import Subscribe from '@/components/Subscribe'
 
 export default {
   components: {
     About,
-    Projects
+    Projects,
+    Subscribe
   },
   head() {
     return {
