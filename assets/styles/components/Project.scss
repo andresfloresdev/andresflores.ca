@@ -16,6 +16,7 @@
       filter: grayscale(0);
 
       .project-content {
+        transform: translate(0, 0);
         opacity: 1;
       }
     }
@@ -29,9 +30,12 @@
   position: absolute;
   bottom: $spacer;
   left: $spacer;
-  transition: opacity .15s ease-out;
+  transition: 
+    transform .15s ease-out,
+    opacity .15s ease-out;
 
   @include media-breakpoint-up(xl) {
+    transform: translate(-$spacer-sm, -$spacer);
     opacity: 0;
   }
 }
