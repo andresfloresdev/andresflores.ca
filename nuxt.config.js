@@ -1,4 +1,5 @@
 module.exports = {
+  mode: 'universal',
   css: [
     {
       src: '~assets/main.scss',
@@ -15,8 +16,8 @@ module.exports = {
     [ '@nuxtjs/google-analytics', { id: 'UA-68693066-1' } ]
   ],
   build: {
-    extend (config, { isDev, isClient }) {
-      if (isDev && isClient) {
+    extend(config, ctx) {
+      if (ctx.isDev && ctx.isClient) {
         config.module.rules.push({
           enforce: 'pre',
           test: /\.(js|vue)$/,
