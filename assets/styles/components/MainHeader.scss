@@ -9,10 +9,11 @@
     background-image: url('~assets/images/andres-portrait.jpg');
     background-repeat: no-repeat;
     background-position: bottom right;
-    background-size: auto 101%;
+    background-size: auto 102%;
   }
 
   @include media-breakpoint-up(xxl) {
+    background-size: auto 100%;
     padding: $spacer-lg 0 $spacer-xxl;
   }
 }
