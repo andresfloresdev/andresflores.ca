@@ -2,16 +2,13 @@
   <footer class="main-footer">
     <div class="main-footer-container">
       <h2 class="main-footer-heading" v-scroll-reveal>
-        Send me a message!
+        {{ $t('heading') }}
       </h2>
-      <p class="main-footer-text" v-scroll-reveal="{ delay: scrollRevealDelay(1) }">
-        I'd be happy to grab some coffee and chat.<br>
-        Shoot me an email and let's work something out.
-      </p>
+      <p class="main-footer-text" v-scroll-reveal="{ delay: scrollRevealDelay(1) }" v-html="$t('text')"></p>
       <ul class="main-footer-actions" v-scroll-reveal="{ delay: scrollRevealDelay(2) }">
         <li class="main-footer-action">
           <call-to-action link="mailto:info@andresflores.ca" class="main-footer-action-cta" @click.native="$ga.event('CTA', 'click', 'footer', 'Get in touch')">
-            Get in touch
+            {{ $t('cta') }}
           </call-to-action>
         </li>
       </ul>
@@ -19,9 +16,6 @@
     <p class="main-footer-copyright" v-scroll-reveal="{ delay: scrollRevealDelay(3) }">
       &copy;&nbsp;2016&nbsp;&mdash;&nbsp;{{ currentYear }}, Andrés Flores, Montréal (Québec), Canada.
     </p>
-    <!-- <p class="main-footer-message">
-      {{ footerMessage }}
-    </p> -->
   </footer>
 </template>
 
@@ -34,16 +28,22 @@ export default {
     CallToAction
   },
   mixins: [scrollRevealDelay],
-  computed: {
-    currentYear: () => new Date().getFullYear(),
-    footerMessage: () => {
-      const hour = new Date().getHours()
-
-      if (hour >= 0 && hour <= 4) return 'Greetings fellow night owl!'
-      if (hour >= 5 && hour <= 10) return 'Good morning, have a great day!'
-      if (hour >= 11 && hour <= 16) return 'I hope your day\'s going great!'
-      if (hour >= 17 && hour <= 23) return 'I hope you had a great day today!'
+  i18n: {
+    messages: {
+      en: {
+        heading: 'Send me a message!',
+        text: 'I\'d be happy to grab some coffee and chat.<br>Shoot me an email and let\'s work something out.',
+        cta: 'Get in touch'
+      },
+      fr: {
+        heading: 'Écrivez-moi!',
+        text: 'Il me fera plaisir de communiquer avec vous.<br>Envoyez-moi un courriel et discutons de votre projet.',
+        cta: 'Contactez-moi'
+      }
     }
+  },
+  computed: {
+    currentYear: () => new Date().getFullYear()
   }
 }
 </script>
