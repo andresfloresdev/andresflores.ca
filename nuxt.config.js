@@ -34,6 +34,9 @@ module.exports = {
       require('autoprefixer')(),
     ]
   },
+  generate: {
+    routes: ['/', '/fr']
+  },
   head: {
     htmlAttrs: {
       lang: 'en-CA',
