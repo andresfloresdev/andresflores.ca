@@ -1,11 +1,12 @@
 <template>
   <section class="about">
     <h2 class="about-heading">
-      About me
+      {{ $t('heading') }}
     </h2>
     <div class="about-text-wrap">
       <p class="about-text" v-scroll-reveal="{ origin: 'left' }">
-        <strong class="about-text-strong">I am a web consultant and a front-end web developer based in Montréal, Canada.</strong> I aim to help businesses conceive their projects and achieve their business goals through creative implementation of design and technology. {{ greeting }}
+        <strong class="about-text-strong">{{ $t('strong') }}</strong>
+        {{ $t('text') }} {{ greeting }}
       </p>
     </div>
     <div class="about-socials-wrap" :style="{ backgroundColor: socialColor }">
@@ -23,6 +24,20 @@ export default {
     Socials
   },
   mixins: [scrollRevealDelay],
+  i18n: {
+    messages: {
+      en: {
+        heading: 'About me',
+        strong: 'I am a web consultant and a front-end web developer based in Montréal, Canada.',
+        text: 'I aim to help businesses conceive their projects and achieve their business goals through creative implementation of design and technology.'
+      },
+      fr: {
+        heading: 'À propos de moi',
+        strong: 'Je suis un consultant et développeur Web front-end basé à Montréal, au Canada.',
+        text: 'Je souhaite aider les entreprises à concevoir leurs projets et à atteindre leurs objectifs grâce à une mise en œuvre créative du design et de la technologie.'
+      }
+    }
+  },
   data() {
     return {
       socialColor: '#427fed'
