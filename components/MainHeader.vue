@@ -4,9 +4,7 @@
       <brand class="main-header-brand"></brand>
       <ul class="main-header-langs">
         <li class="main-header-lang">
-          <a href="#" class="main-header-lang-link">
-            EN
-          </a>
+          <lang-switcher class="main-header-lang-link"></lang-switcher>
         </li>
       </ul>
       <h1 class="main-header-heading" v-scroll-reveal="{ delay: scrollRevealDelay(1) }">
@@ -29,12 +27,14 @@
 
 <script>
 import Brand from '@/components/Brand'
+import LangSwitcher from '@/components/LangSwitcher'
 import CallToAction from '@/components/CallToAction'
 import { scrollRevealDelay } from '@/mixins/scroll-reveal-delay'
 
 export default {
   components: {
     Brand,
+    LangSwitcher,
     CallToAction
   },
   mixins: [scrollRevealDelay],
