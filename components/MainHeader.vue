@@ -2,6 +2,13 @@
   <header class="main-header" v-scroll-reveal>
     <div class="main-header-container">
       <brand class="main-header-brand"></brand>
+      <ul class="main-header-langs">
+        <li class="main-header-lang">
+          <a href="#" class="main-header-lang-link">
+            EN
+          </a>
+        </li>
+      </ul>
       <h1 class="main-header-heading" v-scroll-reveal="{ delay: scrollRevealDelay(1) }">
         Andrés Flores&nbsp;
         <span class="main-header-subheading" v-scroll-reveal="{ delay: scrollRevealDelay(2) }">{{ $t('subheading') }}</span>

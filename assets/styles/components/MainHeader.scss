@@ -20,6 +20,12 @@
 
 .main-header-container {
   @extend .container;
+
+  position: relative;
+
+  @include media-breakpoint-up(xxl) {
+    position: static;
+  }
 }
 
 .main-header-brand {
@@ -28,6 +34,57 @@
 
   @include media-breakpoint-up(xxl) {
     width: 80px;
+  }
+}
+
+.main-header-langs {
+  @extend .list-unstyled;
+
+  position: absolute;
+  top: 1px;
+  right: $spacer-md;
+
+  @include media-breakpoint-up(sm) {
+    right: $spacer;
+  }
+
+  @include media-breakpoint-up(xxl) {
+    top: $spacer-lg;
+    right: $spacer-lg;
+  }
+}
+
+.main-header-lang-link {
+  font-size: 0.6875rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 35px;
+  width: 35px;
+  border-radius: 50%;
+  padding: $spacer;
+  opacity: 0.6;
+  border: solid 1px $gray-lighter;
+  background-color: $light;
+  color: $gray-lighter;
+  transition:
+    opacity .15s ease-out,
+    border-color .15s ease-out,
+    background-color .15s ease-out,
+    color .15s ease-out;
+
+  &:hover {
+    opacity: 1;
+    border-color: $primary;
+    background-color: $secondary;
+    color: $white;
+    text-decoration: none;
+  }
+
+  @include media-breakpoint-up(xxl) {
+    font-size: 0.8125rem;
+    height: 60px;
+    width: 60px;
   }
 }
 
