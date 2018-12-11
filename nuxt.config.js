@@ -9,8 +9,12 @@ module.exports = {
   loading: {
     color: '#427fed'
   },
+  router: {
+    middleware: 'i18n'
+  },
   plugins: [
-    { src: '~/plugins/vue-scroll-reveal', ssr: false }
+    { src: '~/plugins/vue-scroll-reveal', ssr: false },
+    { src: '~/plugins/i18n' }
   ],
   modules: [
     [ '@nuxtjs/google-analytics', { id: 'UA-68693066-1' } ]
