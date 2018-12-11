@@ -1,7 +1,7 @@
 <template>
   <section class="projects">
     <h2 class="projects-heading" v-scroll-reveal>
-      Featured Projects
+      {{ $t('heading') }}
     </h2>
     <ul class="projects-list" v-scroll-reveal>
       <project class="projects-single" v-for="project in projects" :key="project.name" :class="project.emphasis ? 'is-emphasized' : ''" :project="project" tag="li"></project>
@@ -21,6 +21,7 @@ export default {
   i18n: {
     messages: {
       en: {
+        heading: 'Featured Projects',
         tags: {
           development: 'Development & integration',
           uxui: 'UX/UI',
@@ -29,6 +30,7 @@ export default {
         }
       },
       fr: {
+        heading: 'Quelques projets',
         tags: {
           development: 'Développement & intégration',
           uxui: 'UX/UI',
