@@ -6,7 +6,7 @@
     <div class="about-text-wrap">
       <p class="about-text" v-scroll-reveal="{ origin: 'left' }">
         <strong class="about-text-strong">{{ $t('strong') }}</strong>
-        {{ $t('text') }} {{ greeting }}
+        {{ $t('text') }}
       </p>
     </div>
     <div class="about-socials-wrap" :style="{ backgroundColor: socialColor }">
@@ -44,21 +44,21 @@ export default {
     }
   },
   computed: {
-    greeting: () => {
-      const hour = new Date().getHours()
+    // greeting: () => {
+    //   const hour = new Date().getHours()
 
-      switch (true) {
-        case (hour >= 0 && hour <= 4):
-          return 'Thanks for being here so late!'
-        case (hour >= 5 && hour <= 10):
-          return 'I hope you have a great day!'
-        case (hour >= 11 && hour <= 16):
-          return 'I hope your day\'s going great!'
-        case (hour >= 17 && hour <= 23):
-          return 'I hope you had a great day today!'
-        default: return
-      }
-    }
+    //   switch (true) {
+    //     case (hour >= 0 && hour <= 4):
+    //       return 'Thanks for being here so late!'
+    //     case (hour >= 5 && hour <= 10):
+    //       return 'I hope you have a great day!'
+    //     case (hour >= 11 && hour <= 16):
+    //       return 'I hope your day\'s going great!'
+    //     case (hour >= 17 && hour <= 23):
+    //       return 'I hope you had a great day today!'
+    //     default: return
+    //   }
+    // }
   },
   methods: {
     changeColor(color) {
