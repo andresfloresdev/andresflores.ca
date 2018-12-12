@@ -2,7 +2,6 @@
   <div class="home-layout">
     <about></about>
     <projects></projects>
-    <!-- TODO: Integrate i18n -->
     <!-- TODO: Get mailchimp subscribe form to work -->
     <!-- <mailchimp-subscribe url="https://andresflores.us19.list-manage.com/subscribe/post?u=ea080f01339525dc0f57cfdac&amp;id=7f4e27f502"></mailchimp-subscribe> -->
   </div>
