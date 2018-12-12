@@ -2,7 +2,9 @@
   <component :is="tag" class="project" :style="{ backgroundImage: `url(${imagePath})`}">
     <div class="project-content">
       <h3 class="project-heading">
-        {{ project.name }}
+        <a :href="project.link" class="project-link">
+          {{ project.name }}
+        </a>
       </h3>
       <ul class="project-tags">
         <li class="project-tag" v-for="(tag, index) in project.tags" :key="index + 1">{{ tag }}</li>

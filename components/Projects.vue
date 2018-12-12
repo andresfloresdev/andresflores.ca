@@ -21,7 +21,7 @@ export default {
   i18n: {
     messages: {
       en: {
-        heading: 'Featured Projects',
+        heading: 'Selected Work',
         tags: {
           development: 'Development & integration',
           uxui: 'UX/UI',
@@ -42,13 +42,14 @@ export default {
   },
   data() {
     return {
-      projects: [ // TODO: Add two more projects
+      projects: [
         {
           name: 'DavidsTea',
           image: 'davidstea.jpg',
           tags: [
             this.$i18n.t('tags.development')
           ],
+          link: 'https://www.davidstea.com/',
           emphasis: true
         },
         {
@@ -57,7 +58,8 @@ export default {
           tags: [
             this.$i18n.t('tags.development'),
             this.$i18n.t('tags.uxui')
-          ]
+          ],
+          link: 'https://www.parlersst.com/'
         },
         {
           name: 'DuProprio',
@@ -65,7 +67,8 @@ export default {
           tags: [
             this.$i18n.t('tags.design'),
             this.$i18n.t('tags.motionGraphics')
-          ]
+          ],
+          link: 'https://duproprio.com/'
         },
         {
           name: 'Laura Canada',
@@ -73,7 +76,28 @@ export default {
           tags: [
             this.$i18n.t('tags.development')
           ],
+          link: 'https://www.laura.ca/',
           emphasis: true
+        },
+        {
+          name: 'Fizik',
+          image: 'fizik.jpg',
+          tags: [
+            this.$i18n.t('tags.development'),
+            this.$i18n.t('tags.uxui'),
+            this.$i18n.t('tags.design')
+          ],
+          link: 'http://fizik.ca/',
+          emphasis: true
+        },
+        {
+          name: 'Yu Centrik',
+          image: 'yucentrik.jpg',
+          tags: [
+            this.$i18n.t('tags.development'),
+            this.$i18n.t('tags.uxui')
+          ],
+          link: 'https://yucentrik.ca/'
         }
       ]
     }

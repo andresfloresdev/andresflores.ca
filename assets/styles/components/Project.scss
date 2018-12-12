@@ -45,6 +45,16 @@
   line-height: 1;
 }
 
+.project-link {
+  color: $secondary;
+  transition: color .15s ease-out;
+
+  &:hover {
+    color: $primary;
+    text-decoration: none;
+  }
+}
+
 .project-tags {
   @extend .list-unstyled;
 }
