@@ -15,6 +15,7 @@
     </div>
     <p class="main-footer-copyright" v-scroll-reveal="{ delay: scrollRevealDelay(3) }">
       &copy;&nbsp;2016&nbsp;&mdash;&nbsp;{{ currentYear }}, Andrés Flores, Montréal (Québec), Canada.
+      {{ $t('credit') }} <a href="https://unsplash.com/collections/3663654/andresfloresca/dffc625539d6d6ef421402bef392fcf3" class="main-footer-copyright-credit">Unsplash</a>.
     </p>
   </footer>
 </template>
@@ -33,12 +34,14 @@ export default {
       en: {
         heading: 'Send me a message!',
         text: 'I\'d be happy to grab some coffee and chat.<br>Shoot me an email and let\'s work something out.',
-        cta: 'Get in touch'
+        cta: 'Get in touch',
+        credit: 'Project photos taken from'
       },
       fr: {
         heading: 'Écrivez-moi!',
         text: 'Il me fera plaisir de communiquer avec vous.<br>Envoyez-moi un courriel et discutons de votre projet.',
-        cta: 'Contactez-moi'
+        cta: 'Contactez-moi',
+        credit: 'Photos des projets tirées de'
       }
     }
   },
