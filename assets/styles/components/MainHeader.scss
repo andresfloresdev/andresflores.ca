@@ -89,7 +89,12 @@
 }
 
 .main-header-heading {
+  line-height: 1;
   margin: $spacer-lg 0 $spacer;
+
+  @include media-breakpoint-up(sm) {
+    line-height: 1.5;
+  }
 
   @include media-breakpoint-up(lg) {
     margin: $spacer-xl 0 $spacer;
@@ -101,10 +106,15 @@
 }
 
 .main-header-subheading {
+  margin-top: $spacer;
   font-size: 1.2rem;
   font-weight: 500;
   display: block;
   color: $primary;
+
+  @include media-breakpoint-up(sm) {
+    margin-top: 0;
+  }
 
   @include media-breakpoint-up(lg) {
     font-size: 1.6rem;
