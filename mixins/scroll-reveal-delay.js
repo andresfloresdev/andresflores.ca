@@ -7,8 +7,8 @@ export const scrollRevealDelay = {
     }
   },
   methods: {
-    scrollRevealDelay: function (n) {
-      return n * this.scrollRevealDelayInterval
+    scrollRevealDelay: function (n, interval = this.scrollRevealDelayInterval) {
+      return n * interval
     }
   }
 }
