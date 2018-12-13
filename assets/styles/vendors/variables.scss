@@ -1,10 +1,13 @@
 $primary: #427fed;
+$primary-darker: darken($primary, 10%);
 $secondary: #252840;
 $black: #000;
 $gray: rgba($secondary, 0.6);
 $gray-lighter: rgba($secondary, 0.3);
 $white: #fff;
 $light: rgba($white, 0.6);
+$lightest: rgba($white, 0.1);
+$red: #ed427f;
 
 $headings-ff: 'Roboto', Helvetica, Arial, sans-serif;
 $body-ff: 'Roboto', Arial, sans-serif;
