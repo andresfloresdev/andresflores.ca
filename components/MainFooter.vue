@@ -4,6 +4,7 @@
       <h2 class="main-footer-heading" v-scroll-reveal>
         {{ $t('heading') }}
       </h2>
+      <!-- TODO: Adjust font-size on mobile views -->
       <p class="main-footer-text" v-scroll-reveal="{ delay: scrollRevealDelay(1) }" v-html="$t('text')"></p>
       <ul class="main-footer-actions" v-scroll-reveal="{ delay: scrollRevealDelay(2) }">
         <li class="main-footer-action">
