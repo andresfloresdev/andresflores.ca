@@ -7,6 +7,7 @@
           <lang-switcher class="main-header-lang-link"></lang-switcher>
         </li>
       </ul>
+      <!-- TODO: Fix background image for xxl+ viewports -->
       <h1 class="main-header-heading" v-scroll-reveal="{ delay: scrollRevealDelay(1) }">
         Andrés Flores&nbsp;
         <span class="main-header-subheading" v-scroll-reveal="{ delay: scrollRevealDelay(2) }">{{ $t('subheading') }}</span>
