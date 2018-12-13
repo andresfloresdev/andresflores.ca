@@ -41,12 +41,12 @@ export default {
   i18n: {
     messages: {
       en: {
-        subheading: 'Web consultant & developer',
+        subheading: 'Consultant, web developer & designer',
         text: 'I strive to propel the harmony between design and technology forward with creative solutions.',
         cta: 'Get in touch'
       },
       fr: {
-        subheading: 'Consultant et développeur Web',
+        subheading: 'Consultant, développeur et designer Web',
         text: 'Je trouve des solutions créatives afin de faire progresser l\'harmonie entre le design et la technologie.',
         cta: 'Contactez-moi'
       }
