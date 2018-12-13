@@ -111,6 +111,7 @@
   font-weight: 500;
   display: block;
   color: $primary;
+  line-height: 1.5;
 
   @include media-breakpoint-up(sm) {
     margin-top: 0;
