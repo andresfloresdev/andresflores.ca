@@ -62,11 +62,16 @@
 .project-tag {
   display: inline;
   color: $gray;
+  font-size: 0.875rem;
 
   &:not(:last-of-type) {
 
     &::after {
       content: ', ';
     }
+  }
+
+  @include media-breakpoint-up(sm) {
+    font-size: 1rem;
   }
 }
