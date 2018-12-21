@@ -42,14 +42,14 @@ export default {
         text: 'I\'d be happy to grab some coffee and chat.<br>Shoot me an email and let\'s work something out.',
         cta: 'Get in touch',
         madeWith: 'Made with',
-        credit: 'Project photos taken from'
+        credit: 'Project photos from'
       },
       fr: {
         heading: 'Écrivez-moi!',
         text: 'Il me fera plaisir de communiquer avec vous.<br>Envoyez-moi un courriel et discutons de votre projet.',
         cta: 'Contactez-moi',
         madeWith: 'Fait avec',
-        credit: 'Photos des projets tirées de'
+        credit: 'Photos des projets de'
       }
     }
   },
