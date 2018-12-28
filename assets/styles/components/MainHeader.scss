@@ -11,20 +11,13 @@
 
   position: relative;
   padding-bottom: $spacer-lg;
+  overflow: hidden;
 
   @include media-breakpoint-up(lg) {
     padding-bottom: $spacer-xl;
   }
 
-  @include media-breakpoint-up(xl) {
-    background-image: url('~assets/images/andres-portrait.jpg');
-    background-repeat: no-repeat;
-    background-position: 108% 100%;
-    background-size: auto 100%;
-  }
-
   @include media-breakpoint-up(xxl) {
-    background-position: 110% 100%;
     padding-bottom: $spacer-xxl;
   }
 }
@@ -44,6 +37,7 @@
   position: absolute;
   top: 1px;
   right: $spacer-md;
+  z-index: 1;
 
   @include media-breakpoint-up(sm) {
     right: $spacer;
@@ -138,5 +132,32 @@
 
   @include media-breakpoint-up(xxl) {
     margin-top: $spacer-lg;
+  }
+}
+
+.main-header-figure {
+  margin: 0;
+  padding: 0;
+  display: none;
+  z-index: 0;
+
+  @include media-breakpoint-up(xl) {
+    display: block;
+    position: absolute;
+    bottom: 0;
+    right: -45px;
+  }
+
+  @include media-breakpoint-up(xxl) {
+    right: -65px;
+  }
+}
+
+.main-header-figure-image {
+  display: block;
+  width: 520px;
+
+  @include media-breakpoint-up(xxl) {
+    width: 735px;
   }
 }

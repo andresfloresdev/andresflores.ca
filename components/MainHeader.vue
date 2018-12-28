@@ -21,6 +21,9 @@
           </call-to-action>
         </li>
       </ul>
+      <figure class="main-header-figure">
+        <img src="~assets/images/andres-portrait.jpg" alt="Andrés Flores — consultant, developer & designer" class="main-header-figure-image">
+      </figure>
     </div>
   </header>
 </template>
