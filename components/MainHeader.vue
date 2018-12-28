@@ -21,7 +21,10 @@
         </li>
       </ul>
       <figure class="main-header-figure" v-scroll-reveal="{ delay: scrollRevealDelay(4) }">
-        <img src="~assets/images/andres-portrait.jpg" alt="Andrés Flores — consultant, developer & designer" class="main-header-figure-image">
+        <img src="~assets/images/andres-portrait.jpg"
+             srcset="~assets/images/andres-portrait.jpg 1x,
+                     ~assets/images/andres-portrait@2x.jpg 2x"
+             :alt="$t('imageAlt')" class="main-header-figure-image">
       </figure>
     </div>
   </header>
@@ -45,12 +48,14 @@ export default {
       en: {
         subheading: 'consultant, developer & designer',
         text: 'I strive to propel the harmony between design and technology forward with creative solutions.',
-        cta: 'Get in touch'
+        cta: 'Get in touch',
+        imageAlt: 'Andrés Flores, consultant, developer & designer'
       },
       fr: {
         subheading: 'consultant, développeur et designer',
         text: 'Je trouve des solutions créatives afin de faire progresser l\'harmonie entre le design et la technologie.',
-        cta: 'Contactez-moi'
+        cta: 'Contactez-moi',
+        imageAlt: 'Andrés Flores, consultant, développeur et designer'
       }
     }
   }
