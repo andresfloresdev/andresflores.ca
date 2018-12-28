@@ -17,12 +17,12 @@ export default {
   i18n: {
     messages: {
       en: {
-        title: 'Andrés Flores, Web Consultant & Developer',
-        description: 'I am a web consultant & developer based in Montréal, Canada.'
+        title: 'Andrés Flores, consultant, developer & designer',
+        description: 'I am a web consultant, developer & designer based in Montréal, Canada.'
       },
       fr: {
-        title: 'Andrés Flores, consultant et développeur Web',
-        description: 'Je suis un consultant et développeur Web basé à Montréal, au Canada.'
+        title: 'Andrés Flores, consultant, développeur et designer',
+        description: 'Je suis un consultant, développeur et designer Web basé à Montréal, au Canada.'
       }
     }
   },

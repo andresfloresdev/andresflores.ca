@@ -107,6 +107,10 @@
   color: $primary;
   line-height: 1.5;
 
+  &::first-letter {
+    text-transform: uppercase;
+  }
+
   @include media-breakpoint-up(sm) {
     margin-top: 0;
   }

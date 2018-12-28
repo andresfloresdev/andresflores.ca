@@ -8,8 +8,7 @@
         </li>
       </ul>
       <h1 class="main-header-heading" v-scroll-reveal="{ delay: scrollRevealDelay(1) }">
-        Andrés Flores&nbsp;
-        <span class="main-header-subheading" v-scroll-reveal="{ delay: scrollRevealDelay(2) }">{{ $t('subheading') }}</span>
+        Andrés Flores<span class="sr-only">&comma;&nbsp;</span><span class="main-header-subheading" v-scroll-reveal="{ delay: scrollRevealDelay(2) }">{{ $t('subheading') }}</span>
       </h1>
       <p class="main-header-text" v-scroll-reveal="{ delay: scrollRevealDelay(3) }">
         {{ $t('text') }}
@@ -44,12 +43,12 @@ export default {
   i18n: {
     messages: {
       en: {
-        subheading: 'Consultant, web developer & designer',
+        subheading: 'consultant, developer & designer',
         text: 'I strive to propel the harmony between design and technology forward with creative solutions.',
         cta: 'Get in touch'
       },
       fr: {
-        subheading: 'Consultant, développeur et designer Web',
+        subheading: 'consultant, développeur et designer',
         text: 'Je trouve des solutions créatives afin de faire progresser l\'harmonie entre le design et la technologie.',
         cta: 'Contactez-moi'
       }
