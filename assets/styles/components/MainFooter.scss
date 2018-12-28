@@ -4,10 +4,14 @@
 
 .main-footer-heading {
   margin: 0;
+
+  @include media-breakpoint-down(sm) {
+    font-size: 1.6rem;
+  }
 }
 
 .main-footer-text {
-  @extend h2;
+  @extend h2, .main-footer-heading;
 
   color: $gray;
   margin: 0;
@@ -40,20 +44,5 @@
 
   @include media-breakpoint-up(xxl) {
     margin-top: $spacer-xl;
-  }
-}
-
-.main-footer-message {
-  @extend h3;
-
-  color: $gray;
-  background-color: $white;
-  padding: $spacer-md;
-  display: block;
-  text-align: center;
-  margin-bottom: 0;
-
-  @include media-breakpoint-up(xxl) {
-    padding: $spacer-lg;
   }
 }
