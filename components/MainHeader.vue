@@ -1,8 +1,8 @@
 <template>
-  <header class="main-header" v-scroll-reveal>
+  <header class="main-header">
     <div class="main-header-container">
       <brand class="main-header-brand"></brand>
-      <ul class="main-header-langs">
+      <ul class="main-header-langs" v-scroll-reveal>
         <li class="main-header-lang">
           <lang-switcher class="main-header-lang-link"></lang-switcher>
         </li>
@@ -13,14 +13,14 @@
       <p class="main-header-text" v-scroll-reveal="{ delay: scrollRevealDelay(3) }">
         {{ $t('text') }}
       </p>
-      <ul class="main-header-actions" v-scroll-reveal="{ delay: scrollRevealDelay(4) }">
+      <ul class="main-header-actions" v-scroll-reveal="{ delay: scrollRevealDelay(5) }">
         <li class="main-header-action">
           <call-to-action link="mailto:info@andresflores.ca" class="main-header-cta" @click.native="$ga.event('CTA', 'click', 'header', 'Get in touch')">
             {{ $t('cta') }}
           </call-to-action>
         </li>
       </ul>
-      <figure class="main-header-figure">
+      <figure class="main-header-figure" v-scroll-reveal="{ delay: scrollRevealDelay(4) }">
         <img src="~assets/images/andres-portrait.jpg" alt="Andrés Flores — consultant, developer & designer" class="main-header-figure-image">
       </figure>
     </div>
