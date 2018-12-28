@@ -14,8 +14,6 @@
         </li>
       </ul>
     </div>
-    <!-- TODO: Integrate mailchimp form style-->
-    <!-- <mailchimp-subscribe url="https://andresflores.us19.list-manage.com/subscribe/post?u=ea080f01339525dc0f57cfdac&amp;id=7f4e27f502"></mailchimp-subscribe> -->
     <p class="main-footer-copyright" v-scroll-reveal="{ delay: scrollRevealDelay(3) }">
       &copy;&nbsp;2016&nbsp;&mdash;&nbsp;{{ currentYear }}, Andrés Flores, Montréal (Québec), Canada.
       {{ $t('madeWith') }} <a href="https://nuxtjs.org/" class="main-footer-copyright-made-with" @click="$ga.event('Link', 'click', 'copyright', 'Nuxt')">Nuxt</a>.
@@ -26,13 +24,11 @@
 
 <script>
 import CallToAction from '@/components/CallToAction'
-import MailchimpSubscribe from '@/components/MailchimpSubscribe'
 import { scrollRevealDelay } from '@/mixins/scroll-reveal-delay'
 
 export default {
   components: {
-    CallToAction,
-    MailchimpSubscribe
+    CallToAction
   },
   mixins: [scrollRevealDelay],
   i18n: {
