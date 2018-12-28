@@ -1,5 +1,5 @@
 <template>
-  <nuxt-link :to="route" class="lang-switcher" v-html="locale"></nuxt-link>
+  <nuxt-link :to="route" class="lang-switcher" v-html="locale" @click.native="$ga.event('Language Switcher', 'click', 'header', locale)"></nuxt-link>
 </template>
 
 <script>
