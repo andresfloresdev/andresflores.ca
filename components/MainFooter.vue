@@ -8,7 +8,7 @@
       <p class="main-footer-text" v-scroll-reveal="{ delay: scrollRevealDelay(1) }" v-html="$t('text')"></p>
       <ul class="main-footer-actions" v-scroll-reveal="{ delay: scrollRevealDelay(2) }">
         <li class="main-footer-action">
-          <call-to-action link="mailto:info@andresflores.ca" class="main-footer-action-cta" @click.native="$ga.event('CTA', 'click', 'footer', 'Get in touch')">
+          <call-to-action link="mailto:info@andresflores.ca" class="main-footer-action-cta" @click.native="$ga.event('CTA', 'click', 'footer', $t('cta'))">
             {{ $t('cta') }}
           </call-to-action>
         </li>
