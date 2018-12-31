@@ -22,6 +22,10 @@
   }
 }
 
+.main-header-nav-list {
+  @extend .list-unstyled;
+}
+
 .main-header-brand {
   display: block;
   width: 50px;

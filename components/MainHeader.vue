@@ -1,12 +1,22 @@
 <template>
   <header class="main-header">
     <div class="main-header-container">
-      <brand class="main-header-brand"></brand>
-      <ul class="main-header-langs" v-scroll-reveal>
-        <li class="main-header-lang">
-          <lang-switcher class="main-header-lang-link"></lang-switcher>
-        </li>
-      </ul>
+      <nav class="main-header-nav">
+        <ul class="main-header-nav-list">
+          <li class="main-header-nav-item">
+            <nuxt-link to="/" class="main-header-brand-link">
+              <brand class="main-header-brand"></brand>
+            </nuxt-link>
+          </li>
+          <li class="main-header-nav-item">
+            <ul class="main-header-langs" v-scroll-reveal>
+              <li class="main-header-lang">
+                <lang-switcher class="main-header-lang-link"></lang-switcher>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
       <h1 class="main-header-heading" v-scroll-reveal="{ delay: scrollRevealDelay(1) }">
         Andrés Flores<span class="sr-only">&comma;&nbsp;</span><span class="main-header-subheading" v-scroll-reveal="{ delay: scrollRevealDelay(2) }">{{ $t('subheading') }}</span>
       </h1>
