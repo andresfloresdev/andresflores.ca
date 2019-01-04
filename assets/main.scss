@@ -4,6 +4,8 @@
 @import 'styles/vendors/variables', 
         'styles/vendors/default';
 
+@import 'styles/layouts/error';
+
 @import 'styles/components/MainHeader',
         'styles/components/LangSwitcher',
         'styles/components/CallToAction',
@@ -12,4 +14,5 @@
         'styles/components/Projects',
         'styles/components/Socials',
         'styles/components/MailchimpSubscribe',
+        'styles/components/Copyright',
         'styles/components/MainFooter';

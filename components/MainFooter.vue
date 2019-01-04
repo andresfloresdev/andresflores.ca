@@ -1,34 +1,30 @@
 <template>
   <footer class="main-footer">
-    <div class="main-footer-container">
-      <h2 class="main-footer-heading" v-scroll-reveal>
-        {{ $t('heading') }}
-      </h2>
-      <!-- TODO: Adjust font-size on mobile views -->
-      <p class="main-footer-text" v-scroll-reveal="{ delay: scrollRevealDelay(1) }" v-html="$t('text')"></p>
-      <ul class="main-footer-actions" v-scroll-reveal="{ delay: scrollRevealDelay(2) }">
-        <li class="main-footer-action">
-          <call-to-action link="mailto:info@andresflores.ca" class="main-footer-action-cta" @click.native="$ga.event('CTA', 'click', 'footer', $t('cta'))">
-            {{ $t('cta') }}
-          </call-to-action>
-        </li>
-      </ul>
-    </div>
-    <p class="main-footer-copyright" v-scroll-reveal="{ delay: scrollRevealDelay(3) }">
-      &copy;&nbsp;2016&nbsp;&mdash;&nbsp;{{ currentYear }}, Andrés Flores, Montréal (Québec), Canada.
-      {{ $t('madeWith') }} <a href="https://nuxtjs.org/" class="main-footer-copyright-made-with" @click="$ga.event('Link', 'click', 'copyright', 'Nuxt')">Nuxt</a>.
-      {{ $t('credit') }} <a href="https://unsplash.com/collections/3663654/andresfloresca/dffc625539d6d6ef421402bef392fcf3" class="main-footer-copyright-credit" @click="$ga.event('Link', 'click', 'copyright', 'Unsplash')">Unsplash</a>.
-    </p>
+    <h2 class="main-footer-heading" v-scroll-reveal>
+      {{ $t('heading') }}
+    </h2>
+    <!-- TODO: Adjust font-size on mobile views -->
+    <p class="main-footer-text" v-scroll-reveal="{ delay: scrollRevealDelay(1) }" v-html="$t('text')"></p>
+    <ul class="main-footer-actions" v-scroll-reveal="{ delay: scrollRevealDelay(2) }">
+      <li class="main-footer-action">
+        <call-to-action link="mailto:info@andresflores.ca" class="main-footer-action-cta" @click.native="$ga.event('CTA', 'click', 'footer', $t('cta'))">
+          {{ $t('cta') }}
+        </call-to-action>
+      </li>
+    </ul>
+    <copyright class="main-footer-copyright"></copyright>
   </footer>
 </template>
 
 <script>
 import CallToAction from '@/components/CallToAction'
+import Copyright from '@/components/Copyright'
 import { scrollRevealDelay } from '@/mixins/scroll-reveal-delay'
 
 export default {
   components: {
-    CallToAction
+    CallToAction,
+    Copyright
   },
   mixins: [scrollRevealDelay],
   i18n: {

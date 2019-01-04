@@ -1,0 +1,29 @@
+.copyright {
+  color: $gray;
+  text-align: center;
+  padding: 0 $spacer $spacer;
+  margin: $spacer-lg 0 0;
+  font-size: 0.825rem;
+
+  @include media-breakpoint-up(lg) {
+    margin-top: $spacer-lg + $spacer;
+  }
+
+  @include media-breakpoint-up(xxl) {
+    margin-top: $spacer-xl;
+  }
+}
+
+.copyright-made-with {
+  color: $secondary;
+  transition: color .15s ease-out;
+  text-decoration: underline;
+
+  &:hover {
+    color: $primary;
+  }
+}
+
+.copyright-credit {
+  @extend .copyright-made-with;
+}
