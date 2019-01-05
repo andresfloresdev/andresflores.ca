@@ -1,22 +1,7 @@
 <template>
   <header class="main-header">
     <div class="main-header-container">
-      <nav class="main-header-nav">
-        <ul class="main-header-nav-list">
-          <li class="main-header-nav-item">
-            <nuxt-link to="/" class="main-header-brand-link">
-              <brand class="main-header-brand"></brand>
-            </nuxt-link>
-          </li>
-          <li class="main-header-nav-item">
-            <ul class="main-header-langs" v-scroll-reveal>
-              <li class="main-header-lang">
-                <lang-switcher class="main-header-lang-link"></lang-switcher>
-              </li>
-            </ul>
-          </li>
-        </ul>
-      </nav>
+      <navigation class="main-header-navigation"></navigation>
       <h1 class="main-header-heading" v-scroll-reveal="{ delay: scrollRevealDelay(1) }">
         Andrés Flores<span class="sr-only">&comma;&nbsp;</span><span class="main-header-subheading" v-scroll-reveal="{ delay: scrollRevealDelay(2) }">{{ $t('subheading') }}</span>
       </h1>
@@ -41,15 +26,13 @@
 </template>
 
 <script>
-import Brand from '@/components/Brand'
-import LangSwitcher from '@/components/LangSwitcher'
+import Navigation from '@/components/Navigation'
 import CallToAction from '@/components/CallToAction'
 import { scrollRevealDelay } from '@/mixins/scroll-reveal-delay'
 
 export default {
   components: {
-    Brand,
-    LangSwitcher,
+    Navigation,
     CallToAction
   },
   mixins: [scrollRevealDelay],
