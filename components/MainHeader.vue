@@ -26,16 +26,12 @@
 </template>
 
 <script>
-import Brand from '@/components/Brand'
-import LangSwitcher from '@/components/LangSwitcher'
 import Navigation from '@/components/Navigation'
 import CallToAction from '@/components/CallToAction'
 import { scrollRevealDelay } from '@/mixins/scroll-reveal-delay'
 
 export default {
   components: {
-    Brand,
-    LangSwitcher,
     Navigation,
     CallToAction
   },
