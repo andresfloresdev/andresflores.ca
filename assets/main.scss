@@ -2,13 +2,15 @@
 @import '~bootstrap/scss/bootstrap-grid';
 
 @import 'styles/vendors/variables', 
-        'styles/vendors/animations',
         'styles/vendors/default';
 
 @import 'styles/components/MainHeader',
-        'styles/components/Hero',
+        'styles/components/LangSwitcher',
+        'styles/components/CallToAction',
         'styles/components/About',
-        'styles/components/Clients',
-        'styles/components/Work',
-        'styles/components/Skills',
+        'styles/components/Project',
+        'styles/components/Projects',
+        'styles/components/Socials',
+        'styles/components/MailchimpSubscribe',
+        'styles/components/Copyright',
         'styles/components/MainFooter';

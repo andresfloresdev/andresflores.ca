@@ -1,0 +1,86 @@
+.mc-subscribe {
+  background-color: $secondary;
+  padding: $spacer-lg $spacer-md ($spacer-lg + ($spacer-sm * 2));
+  margin-top: $spacer-lg;
+  position: relative;
+  overflow: hidden;
+}
+
+.mc-subscribe-heading {
+  color: $white;
+  text-align: center;
+  margin-bottom: $spacer-md;
+}
+
+.mc-subscribe-input-name {
+  border: none;
+  outline: none;
+  display: block;
+  width: 100%;
+  max-width: 220px;
+  padding: $spacer;
+  margin: 0 auto $spacer-xs;
+  color: $white;
+  background-color: $lightest;
+  font-size: 0.875rem;
+  text-align: center;
+
+  &::placeholder {
+    color: $white;
+  }
+}
+
+.mc-subscribe-input-email {
+  @extend .mc-subscribe-input-name;
+
+  margin-bottom: 0;
+}
+
+.mc-subscribe-submit {
+  border: none;
+  outline: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  background-color: $primary;
+  color: $white;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: $spacer-md auto 0;
+  padding: 0;
+  transition:
+    transform .15s ease-out,
+    background-color .15s ease-out;
+
+  &:hover {
+    background-color: $primary-darker;
+  }
+
+  &[disabled] {
+    transform: translateY(50px);
+  }
+}
+
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .5s;
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
+}
+
+.mc-subscribe-error-msg {
+  color: $red;
+  margin: $spacer 0 0;
+  text-align: center;
+}
+
+.mc-subscribe-success-msg {
+  @extend .mc-subscribe-error-msg;
+
+  color: $primary;
+}

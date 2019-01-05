@@ -1,0 +1,51 @@
+.cta {
+  font-size: 1.125rem;
+  font-weight: bold;
+  color: $secondary;
+  padding-right: $spacer * 3;
+  padding-bottom: $spacer-xs;
+  position: relative;
+
+  &:hover {
+    text-decoration: none;
+    color: $secondary;
+
+    &:before {
+      width: calc(100% - (#{$spacer} * 3));
+    }
+
+    &::after {
+      width: 0;
+    }
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background: $primary;
+    left: 0;
+    bottom: 0;
+    transition: width ease-out .3s;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    width: 30px;
+    height: 2px;
+    background: $primary;
+    left: calc(100% - #{$spacer-md});
+    top: calc(50% - 4px);
+    transition: width ease-out .3s;
+  }
+
+  @include media-breakpoint-up(lg) {
+    font-size: 1.375rem;
+  }
+
+  @include media-breakpoint-up(xxl) {
+    font-size: 1.625rem;
+  }
+}

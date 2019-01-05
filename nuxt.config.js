@@ -1,4 +1,5 @@
 module.exports = {
+  mode: 'universal',
   css: [
     {
       src: '~assets/main.scss',
@@ -8,9 +9,19 @@ module.exports = {
   loading: {
     color: '#427fed'
   },
+  router: {
+    middleware: 'i18n'
+  },
+  plugins: [
+    { src: '~/plugins/vue-scroll-reveal', ssr: false },
+    { src: '~/plugins/i18n' }
+  ],
+  modules: [
+    [ '@nuxtjs/google-analytics', { id: 'UA-68693066-1' } ]
+  ],
   build: {
-    extend (config, { isDev, isClient }) {
-      if (isDev && isClient) {
+    extend(config, ctx) {
+      if (ctx.isDev && ctx.isClient) {
         config.module.rules.push({
           enforce: 'pre',
           test: /\.(js|vue)$/,
@@ -23,13 +34,15 @@ module.exports = {
       require('autoprefixer')(),
     ]
   },
-  modules: [
-    ['@nuxtjs/google-analytics', { ua: 'UA-68693066-1' }]
-  ],
-  plugins: [
-    '~/plugins/filters',
-    '~/plugins/vue-scrollto'
-  ],
+  generate: {
+    routes: ['/', '/fr']
+  },
+  render: {
+    dist: {
+      maxAge: 1000 * 60 * 60 * 24 * 7,
+      index: false
+    }
+  },
   head: {
     htmlAttrs: {
       lang: 'en-CA',
@@ -37,9 +50,10 @@ module.exports = {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: 'I am a Front-end Web Developer based in Montreal, Canada.' },
       { name: 'google-site-verification', content: 'xwhKOFzo4bWJqw11wkUWRQp1mQoXVMSFXGUHX8y72rc'},
-      { name: 'theme-color', content: '#427fed' }
+      { name: 'theme-color', content: '#252840' },
+      { name: 'robots', content: 'index,follow' },
+      { name: 'googlebot', content: 'index,follow' }
     ],
     link: [
       {
@@ -48,7 +62,7 @@ module.exports = {
       },
       {
         rel: 'stylesheet',
-        href: 'https://fonts.googleapis.com/css?family=Montserrat:400,700|Roboto:400,700'
+        href: 'https://fonts.googleapis.com/css?family=Roboto:400,500,700'
       },
       {
         rel: 'icon',

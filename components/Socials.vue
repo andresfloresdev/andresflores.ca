@@ -1,47 +1,42 @@
 <template>
-  <ul :class="`${classPrefix}-socials-list`">
-    <li :class="`${classPrefix}-socials-item`" v-for="social in socials" :key="social.name">
-      <a :href="social.link" :class="`${classPrefix}-socials-link`" :title="social.name" @click="ga(classPrefix, 'link', social.name)">
-        <i class="fab fa-fw" :class="[social.icon, `${classPrefix}-socials-icon`]"></i>
-        <span :class="`${classPrefix}-socials-text`">{{ social.name }}</span>
+  <ul class="socials-list">
+    <li class="socials-item" v-for="social in socials" :key="social.name">
+      <a :href="social.link" class="socials-link" :title="social.name" @mouseover.stop="$emit('social-color', social.color)" @mouseout="$emit('social-color', '#427fed')" @click="$ga.event('Social Link', 'click', social.name)">
+        <i class="fab fa-fw socials-icon" :class="social.icon"></i>
+        <span class="socials-text">{{ social.name }}</span>
       </a>
     </li>
   </ul>
 </template>
 
 <script>
-import { GoogleAnalytics } from '@/mixins/google-analytics'
-
 export default {
-  props: {
-    classPrefix: {
-      type: String,
-      default: 'base'
-    }
-  },
-  mixins: [GoogleAnalytics],
   data() {
     return {
       socials: [
         {
           name: 'Twitter',
           link: 'https://twitter.com/andresfloresdev',
-          icon: 'fa-twitter'
+          icon: 'fa-twitter',
+          color: '#1da1f2'
         },
         {
           name: 'Instagram',
           link: 'https://www.instagram.com/andresfloresdev/',
-          icon: 'fa-instagram'
+          icon: 'fa-instagram',
+          color: '#e1306c'
         },
         {
           name: 'LinkedIn',
           link: 'https://www.linkedin.com/in/andr%C3%A9s-flores-64538ba2/',
-          icon: 'fa-linkedin-in'
+          icon: 'fa-linkedin-in',
+          color: '#283e4a'
         },
         {
           name: 'Github',
           link: 'https://github.com/andresfloresdev',
-          icon: 'fa-github'
+          icon: 'fa-github',
+          color: '#24292e'
         }
       ]
     }

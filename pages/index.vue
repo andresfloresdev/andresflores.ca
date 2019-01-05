@@ -1,46 +1,55 @@
 <template>
   <div class="home-layout">
-    <hero></hero>
     <about></about>
-    <clients></clients>
-    <work></work>
-    <skills></skills>
+    <projects></projects>
   </div>
 </template>
 
 <script>
-import Hero from '@/components/Hero'
 import About from '@/components/About'
-import Clients from '@/components/Clients'
-import Work from '@/components/Work'
-import Skills from '@/components/Skills'
+import Projects from '@/components/Projects'
 
 export default {
   components: {
-    Hero,
     About,
-    Clients,
-    Work,
-    Skills
+    Projects
   },
-  head () {
+  i18n: {
+    messages: {
+      en: {
+        title: 'Andrés Flores, consultant, developer & designer',
+        description: 'I am a web consultant, developer & designer based in Montréal, Canada.'
+      },
+      fr: {
+        title: 'Andrés Flores, consultant, développeur et designer',
+        description: 'Je suis un consultant, développeur et designer Web basé à Montréal, au Canada.'
+      }
+    }
+  },
+  head() {
     return {
-      title: 'Andrés Flores, Freelance Web Developer',
+      htmlAttrs: {
+        lang: `${this.$i18n.locale}-CA`,
+      },
+      title: this.$i18n.t('title'),
       meta: [
+        { hid: 'description', name: 'description', content: this.$i18n.t('description') },
         // Twitter Card
-        { name:'twitter:card', content:'summary'},
-        { name:'twitter:creator', content:'@andresfloresdev'},
-        { name:'twitter:url', content:'https://andresflores.ca/'},
-        { name:'twitter:title', content:'Andrés Flores, Freelance Web Developer'},
-        { name:'twitter:description', content:'Freelance Web Developer based in Montréal, Canada.'},
-        { name:'twitter:image', content:'https://andresflores.ca/images/dark-bg-1200x.png'},
+        { name: 'twitter:card', content: 'summary' },
+        { name: 'twitter:creator', content: '@andresfloresdev' },
+        { name: 'twitter:url', content: 'https://andresflores.ca/' },
+        { name: 'twitter:title', content: this.$i18n.t('title') },
+        { name: 'twitter:description', content: this.$i18n.t('description') },
+        { name: 'twitter:image', content: 'https://andresflores.ca/images/dark-bg-1200x.png' },
         // Facebook Open Graph
-        { property: 'og:url', content: 'https://andresflores.ca/'},
-        { property: 'og:type', content: 'website'},
-        { property: 'og:title', content: 'Andrés Flores, Freelance Web Developer'},
-        { property: 'og:image', content: 'https://andresflores.ca/images/dark-bg-1200x.png'},
-        { property: 'og:description', content: 'Freelance Web Developer based in Montréal, Canada.'},
-        { property: 'og:locale', content: 'en-CA'}
+        { property: 'og:url', content: 'https://andresflores.ca/' },
+        { property: 'og:type', content: 'website' },
+        { property: 'og:title', content: this.$i18n.t('title') },
+        { property: 'og:image', content: 'https://andresflores.ca/images/dark-bg-1200x.png' },
+        { property: 'og:description', content: this.$i18n.t('description') },
+        { property: 'og:site_name', content: this.$i18n.t('title') },
+        { property: 'og:locale', content: `${this.$i18n.locale}-CA` },
+        { property: 'article:author', content: 'Andrés Flores' }
       ]
     }
   }
