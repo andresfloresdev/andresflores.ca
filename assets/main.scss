@@ -4,6 +4,8 @@
 @import 'styles/vendors/variables', 
         'styles/vendors/default';
 
+@import 'styles/layouts/error';
+
 @import 'styles/components/Navigation',
         'styles/components/LangSwitcher',
         'styles/components/CallToAction',
