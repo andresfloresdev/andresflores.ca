@@ -35,7 +35,9 @@ module.exports = {
     ]
   },
   generate: {
-    routes: ['/', '/fr']
+    routes: ['/', '/fr'],
+    subfolders: false,
+    fallback: '404.html'
   },
   render: {
     dist: {
