@@ -1,0 +1,13 @@
+.error-layout-main {
+  @extend .container;
+
+  text-align: center;
+}
+
+.error-layout-heading {
+  margin: 2em 0;
+}
+
+.error-layout-text {
+  color: $gray;
+}
