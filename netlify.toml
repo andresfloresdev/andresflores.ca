@@ -1,3 +1,5 @@
 [[redirects]]
   from = "https://andresflores.netlify.com/*"
   to = "https://andresflores.ca/:splat"
+  status = 301
+  force = true
