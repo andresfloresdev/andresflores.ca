@@ -46,7 +46,7 @@
         <h2 class="single-project-next-heading">
           Fizik
         </h2>
-        <call-to-action link="#" class="main-header-cta">
+        <call-to-action link="#" class="single-project-next-cta">
           Explore the next project
         </call-to-action>
       </div>
