@@ -26,11 +26,8 @@
   padding: 0;
 
   .navigation-langs {
-    top: 1px;
-
-    @include media-breakpoint-up(xxl) {
-      top: 0;
-    }
+    position: relative;
+    z-index: 1;
   }
 }
 
