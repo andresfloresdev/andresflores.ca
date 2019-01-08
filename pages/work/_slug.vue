@@ -7,7 +7,7 @@
         <img src="https://placehold.it/576x350" alt="DavidsTea case study" class="single-project-hero-image">
       </picture>
     </figure>
-    <header class="single-project-header">
+    <header class="single-project-header" v-scroll-reveal>
       <h1 class="single-project-heading">
         <a href="#" class="single-project-heading-link">
           DavidsTea
@@ -17,7 +17,7 @@
         Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vero ex ea facilis ullam explicabo aspernatur minus consectetur libero pariatur adipisci. Cupiditate modi sequi doloribus placeat numquam delectus rem eius eligendi!
       </p>
     </header>
-    <section class="single-project-sections">
+    <section class="single-project-sections" v-scroll-reveal>
       <section class="single-project-section">
         <h2 class="single-project-section-heading">
           Development & integration
@@ -55,7 +55,7 @@
         </li>
       </ul>
     </section>
-    <footer class="single-project-next">
+    <footer class="single-project-next" v-scroll-reveal>
       <div class="single-project-next-container">
         <h2 class="single-project-next-heading">
           Fizik
