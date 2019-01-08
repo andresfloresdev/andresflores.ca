@@ -13,32 +13,103 @@
 
   margin-top: $spacer-lg;
   margin-bottom: $spacer-lg;
+
+  @include media-breakpoint-up(lg) {
+    margin-top: $spacer-xl;
+    margin-bottom: $spacer-xl;
+  }
 }
 
 .single-project-heading {
   @extend .col-md-6;
 
   padding: 0;
+
+  @include media-breakpoint-up(md) {
+    padding-right: $spacer;
+  }
+}
+
+.single-project-heading-link {
+  color: $secondary;
+  transition: color .15s ease-out;
+
+  &:hover {
+    color: $primary;
+    text-decoration: none;
+  }
 }
 
 .single-project-lead {
   @extend .col-md-6;
 
   padding: 0;
+  margin-bottom: 0;
   font-weight: bold;
   line-height: 1.8;
   color: $gray;
+
+  @include media-breakpoint-up(md) {
+    padding-left: $spacer;
+    margin-top: $spacer-md + $spacer-xs;
+  }
+
+  @include media-breakpoint-up(lg) {
+    margin-top: $spacer-lg - $spacer-xs;
+  }
+
+  @include media-breakpoint-up(xxl) {
+    margin-top: $spacer-xl / 1.5;
+  }
 }
 
 .single-project-sections {
   @extend .container, .row;
+
+  @include media-breakpoint-up(md) {
+    padding-top: $spacer-md + $spacer-xs;
+  }
+
+  @include media-breakpoint-up(lg) {
+    padding-top: $spacer-lg - $spacer-xs;
+  }
+
+  @include media-breakpoint-up(xxl) {
+    padding-top: $spacer-xl / 1.5;
+  }
 }
 
 .single-project-section {
+  @extend .col-lg-6;
+
   padding: 0;
 
   &:not(:last-of-type) {
     margin-bottom: $spacer-md;
+
+    @include media-breakpoint-up(lg) {
+      margin-bottom: 0;
+    }
+  }
+
+  @include media-breakpoint-up(lg) {
+
+    &:nth-of-type(odd) {
+      padding-right: $spacer;
+    }
+
+    &:nth-of-type(even) {
+      padding-left: $spacer;
+    }
+
+    &:last-of-type {
+      padding-right: 0;
+      padding-left: $spacer;
+    }
+
+    &[class*="offset"] {
+      margin-top: $spacer-lg;
+    }
   }
 }
 
@@ -46,17 +117,30 @@
   font-size: 1rem;
   line-height: 1;
   margin-bottom: $spacer-md - $spacer-sm;
+
+  @include media-breakpoint-up(lg) {
+    font-size: 1.1875rem;
+  }
+
+  @include media-breakpoint-up(xxl) {
+    font-size: 1.375rem;
+  }
 }
 
 .single-project-section-text {
   color: $gray;
   line-height: 1.8;
+  margin-bottom: 0;
 }
 
 .single-project-figures {
   @extend .list-unstyled, .row;
 
-  margin-top: $spacer-md;
+  margin-top: $spacer-lg;
+
+  @include media-breakpoint-up(lg) {
+    margin-top: $spacer-xl;
+  }
 }
 
 .single-project-figure-wrap {
@@ -79,18 +163,40 @@
   background: $secondary;
 }
 
+.single-project-next {
+  margin-top: $spacer-lg;
+  margin-bottom: $spacer-lg;
+
+  @include media-breakpoint-up(lg) {
+    margin-top: $spacer-xl;
+    margin-bottom: $spacer-xl;
+  }
+}
+
 .single-project-next-container {
   @extend .container;
 
   padding-top: $spacer-md * 3;
   padding-bottom: $spacer-md * 3;
-  margin-top: $spacer-lg;
-  margin-bottom: $spacer-lg;
+
+  @include media-breakpoint-up(lg) {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 0;
+    padding-bottom: 0;
+    height: 300px;
+  }
 }
 
 .single-project-next-heading {
   color: $white;
+
+  @include media-breakpoint-up(lg) {
+    margin: 0;
+  }
 }
+
 .single-project-next-cta {
   text-align: right;
   color: $white;

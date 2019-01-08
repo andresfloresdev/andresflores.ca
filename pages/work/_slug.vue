@@ -9,14 +9,16 @@
     </figure>
     <header class="single-project-header">
       <h1 class="single-project-heading">
-        DavidsTea
+        <a href="#" class="single-project-heading-link">
+          DavidsTea
+        </a>
       </h1>
       <p class="single-project-lead">
         Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vero ex ea facilis ullam explicabo aspernatur minus consectetur libero pariatur adipisci. Cupiditate modi sequi doloribus placeat numquam delectus rem eius eligendi!
       </p>
     </header>
     <section class="single-project-sections">
-      <section class="single-project-section col-md-6">
+      <section class="single-project-section">
         <h2 class="single-project-section-heading">
           Development & integration
         </h2>
@@ -24,7 +26,7 @@
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim minima dolore non repellat quidem fuga aperiam provident quasi eos. Ullam incidunt iste tempore tempora fuga totam placeat itaque voluptates assumenda.
         </p>
       </section>
-      <section class="single-project-section col-md-6">
+      <section class="single-project-section">
         <h2 class="single-project-section-heading">
           Development & integration
         </h2>
@@ -32,6 +34,14 @@
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim minima dolore non repellat quidem fuga aperiam provident quasi eos. Ullam incidunt iste tempore tempora fuga totam placeat itaque voluptates assumenda.
         </p>
       </section>
+      <!-- <section class="single-project-section offset-lg-6">
+        <h2 class="single-project-section-heading">
+          Development & integration
+        </h2>
+        <p class="single-project-section-text">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim minima dolore non repellat quidem fuga aperiam provident quasi eos. Ullam incidunt iste tempore tempora fuga totam placeat itaque voluptates assumenda.
+        </p>
+      </section> -->
       <ul class="single-project-figures">
         <li class="single-project-figure-wrap">
           <figure class="single-project-figure">
@@ -67,6 +77,8 @@ export default {
     CallToAction
   },
   validate ({ params }) {
+    console.log(params.slug)
+    // params = { slug: undefined }
     return true
   }
 }
