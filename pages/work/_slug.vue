@@ -1,6 +1,7 @@
 <template>
   <article class="single-project-wrap">
     <figure class="single-project-hero">
+      <!-- TODO: Replace img with picture element -->
       <img src="https://placehold.it/1920x550" alt="DavidsTea case study" class="single-project-hero-image">
     </figure>
     <header class="single-project-header">
