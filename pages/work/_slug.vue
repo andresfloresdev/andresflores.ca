@@ -1,8 +1,11 @@
 <template>
   <article class="single-project-wrap">
     <figure class="single-project-hero">
-      <!-- TODO: Replace img with picture element -->
-      <img src="https://placehold.it/1920x550" alt="DavidsTea case study" class="single-project-hero-image">
+      <picture class="single-project-hero-picture">
+        <source media="(min-width: 768px)" srcset="https://placehold.it/1920x550">
+        <source media="(min-width: 576px)" srcset="https://placehold.it/768x400">
+        <img src="https://placehold.it/576x350" alt="DavidsTea case study" class="single-project-hero-image">
+      </picture>
     </figure>
     <header class="single-project-header">
       <h1 class="single-project-heading">
