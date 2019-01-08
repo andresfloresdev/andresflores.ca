@@ -77,7 +77,6 @@ export default {
     CallToAction
   },
   validate ({ params }) {
-    console.log(params.slug)
     // params = { slug: undefined }
     return true
   }
