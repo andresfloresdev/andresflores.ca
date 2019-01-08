@@ -10,26 +10,59 @@
 
 .single-project-header {
   @extend .container, .row;
+
+  margin-top: $spacer-lg;
+  margin-bottom: $spacer-lg;
 }
 
 .single-project-heading {
   @extend .col-md-6;
+
+  padding: 0;
 }
 
 .single-project-lead {
   @extend .col-md-6;
+
+  padding: 0;
+  font-weight: bold;
+  line-height: 1.8;
+  color: $gray;
 }
 
 .single-project-sections {
   @extend .container, .row;
 }
 
+.single-project-section {
+  padding: 0;
+
+  &:not(:last-of-type) {
+    margin-bottom: $spacer-md;
+  }
+}
+
+.single-project-section-heading {
+  font-size: 1rem;
+  line-height: 1;
+  margin-bottom: $spacer-md - $spacer-sm;
+}
+
+.single-project-section-text {
+  color: $gray;
+  line-height: 1.8;
+}
+
 .single-project-figures {
   @extend .list-unstyled, .row;
+
+  margin-top: $spacer-md;
 }
 
 .single-project-figure-wrap {
   @extend .col-md-6;
+
+  padding: 0;
 }
 
 .single-project-figure {
@@ -48,14 +81,21 @@
 
 .single-project-next-container {
   @extend .container;
+
+  padding-top: $spacer-md * 3;
+  padding-bottom: $spacer-md * 3;
+  margin-top: $spacer-lg;
+  margin-bottom: $spacer-lg;
 }
 
 .single-project-next-heading {
-
   color: $white;
 }
 .single-project-next-cta {
-
   text-align: right;
   color: $white;
+
+  &:hover {
+    color: $white;
+  }
 }
