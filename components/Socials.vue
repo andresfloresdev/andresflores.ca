@@ -16,13 +16,13 @@ export default {
       socials: [
         {
           name: 'Twitter',
-          link: 'https://twitter.com/theandresflores',
+          link: 'https://twitter.com/andresfloresdev',
           icon: 'fa-twitter',
           color: '#1da1f2'
         },
         {
           name: 'Instagram',
-          link: 'https://www.instagram.com/andresfloresdev/',
+          link: 'https://www.instagram.com/theandresflores/',
           icon: 'fa-instagram',
           color: '#e1306c'
         },
