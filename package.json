@@ -30,7 +30,7 @@
   },
   "devDependencies": {
     "autoprefixer": "^7.2.6",
-    "node-sass": "^4.11.0",
+    "sass": "^1.62.1",
     "postcss-loader": "^2.1.6",
     "sass-loader": "^6.0.7",
     "babel-eslint": "^8.2.1",
