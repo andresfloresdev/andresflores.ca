@@ -16,7 +16,7 @@ export default {
       socials: [
         {
           name: 'Twitter',
-          link: 'https://twitter.com/andresfloresdev',
+          link: 'https://twitter.com/theandresflores',
           icon: 'fa-twitter',
           color: '#1da1f2'
         },
@@ -28,7 +28,7 @@ export default {
         },
         {
           name: 'LinkedIn',
-          link: 'https://www.linkedin.com/in/andr%C3%A9s-flores-64538ba2/',
+          link: 'https://www.linkedin.com/in/andres-flores-64538ba2/',
           icon: 'fa-linkedin-in',
           color: '#283e4a'
         },
