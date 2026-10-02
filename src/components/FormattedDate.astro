@@ -1,0 +1,27 @@
+---
+import { DEFAULT_LOCALE, LOCALES, type Locale } from '../i18n/config';
+
+interface Props {
+	date: Date;
+	locale?: Locale;
+}
+
+const { date, locale = DEFAULT_LOCALE } = Astro.props;
+---
+
+<time datetime={date.toISOString()}>
+	{
+		date.toLocaleDateString(LOCALES[locale].htmlLang, {
+			year: 'numeric',
+			month: 'short',
+			day: 'numeric',
+			/*
+			  Format in UTC, not the build machine's timezone. A date-only value like
+			  `2026-07-26` is parsed as UTC midnight; rendering that west of Greenwich
+			  shifts it back a day, so the page shows the 25th. Frontmatter dates are
+			  calendar dates, not instants — they should read the same everywhere.
+			*/
+			timeZone: 'UTC',
+		})
+	}
+</time>

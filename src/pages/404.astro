@@ -1,0 +1,48 @@
+---
+import Button from '../components/Button.astro';
+import { DEFAULT_LOCALE, LOCALES, LOCALE_KEYS } from '../i18n/config';
+import { pathTo, useTranslations } from '../i18n/utils';
+import Layout from '../layouts/Layout.astro';
+
+/*
+  A static build emits one 404.html for every unmatched URL, so the page cannot
+  know which language the visitor wanted. It renders in DEFAULT_LOCALE and shows
+  both, each block tagged with its own `lang`.
+
+  view="notFound" keeps it out of hreflang, the active nav and the seo.* overrides.
+*/
+const t = useTranslations(DEFAULT_LOCALE);
+---
+
+<Layout locale={DEFAULT_LOCALE} view="notFound" title={`${t('notFound.title')} · Andrés Flores`} description={t('notFound.description')} noindex>
+	<section class="wrap" data-intro>
+		<div class="grid-12 min-h-[90svh] content-end gap-y-10 pt-[var(--header-h)] pb-16">
+			<p class="text-mega col-span-12 font-semibold tabular-nums" data-anim="lines">404</p>
+			<span class="rule col-span-12" data-anim="rule" data-delay="0.3" aria-hidden="true"></span>
+			{
+				LOCALE_KEYS.map((locale, i) => {
+					const tr = useTranslations(locale);
+					const href = pathTo(locale, 'home');
+					return (
+						<div
+							lang={LOCALES[locale].htmlLang}
+							class:list={['col-span-12 md:col-span-6 lg:col-span-4', i === 0 && 'lg:col-start-5']}
+							data-anim="rise"
+							data-delay={0.5 + i * 0.1}
+						>
+							<h1 class:list={['text-h4', i > 0 && 'text-muted']}>{tr('notFound.title')}</h1>
+							<p class="mt-3 text-muted">{tr('notFound.description')}</p>
+							{href && (
+								<div class="mt-6">
+									<Button href={href} variant={i === 0 ? 'ink' : 'ghost'} size="sm" lang={LOCALES[locale].htmlLang}>
+										{tr('notFound.home')}
+									</Button>
+								</div>
+							)}
+						</div>
+					);
+				})
+			}
+		</div>
+	</section>
+</Layout>

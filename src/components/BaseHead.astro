@@ -1,0 +1,99 @@
+---
+/*
+  Fonts first so their @font-face rules precede the stylesheet that uses them.
+  All self-hosted, no request to Google:
+  - Bricolage Grotesque (opsz + wght axes): every heading and body
+  - Newsreader italic: the quiet half of headlines (.accent)
+  - JetBrains Mono: labels, years, indexes
+*/
+import '@fontsource-variable/bricolage-grotesque/opsz.css';
+import '@fontsource-variable/newsreader/wght-italic.css';
+import '@fontsource-variable/jetbrains-mono/wght.css';
+import '../styles/global.css';
+import bricolageLatin from '@fontsource-variable/bricolage-grotesque/files/bricolage-grotesque-latin-opsz-normal.woff2?url';
+import { INDEXABLE } from '../config/indexing';
+import { PERSON } from '../config/site';
+import type { Alternates } from '../i18n/alternates';
+import { DEFAULT_LOCALE, LOCALES, type Locale } from '../i18n/config';
+
+interface Props {
+	locale: Locale;
+	title: string;
+	description: string;
+	alternates?: Alternates;
+	noindex?: boolean;
+	ogType?: 'website' | 'profile';
+}
+
+const { locale, title, description, alternates = {}, noindex, ogType = 'website' } = Astro.props;
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const alternateEntries = Object.entries(alternates) as [Locale, string][];
+// x-default points at the default language when this page exists there.
+const xDefault = alternates[DEFAULT_LOCALE];
+
+// Preview builds (not served from a canonical host) refuse indexing on every
+// page. See src/config/indexing.ts.
+const blockIndexing = noindex || !INDEXABLE;
+
+const ogImage = new URL(`/og-${locale}.png`, Astro.site);
+const ogLocale = LOCALES[locale].htmlLang.replace('-', '_');
+---
+
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<meta name="theme-color" content="#f2efe9" />
+<link rel="preload" href={bricolageLatin} as="font" type="font/woff2" crossorigin />
+
+<!--
+  Motion gate. Runs before first paint: `motion` hides pending entrances so
+  nothing flashes before it animates in, and `first-visit` shows the loader
+  once per tab. If the app bundle has not booted within 4s, both are removed
+  and the page shows as plain HTML.
+-->
+<script is:inline>
+	(() => {
+		const html = document.documentElement;
+		if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+		html.classList.add('motion');
+		try {
+			if (!sessionStorage.getItem('af.visited')) html.classList.add('first-visit');
+		} catch {
+			/* storage blocked: no loader */
+		}
+		setTimeout(() => {
+			if (!window.__afReady) html.classList.remove('motion', 'first-visit');
+		}, 4000);
+	})();
+</script>
+
+<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+<link rel="icon" href="/favicon-32.png" type="image/png" sizes="32x32" />
+<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+<link rel="alternate" type="text/plain" href="/llms.txt" title="llms.txt" />
+
+<link rel="canonical" href={canonicalURL} />
+{
+	alternateEntries.map(([code, href]) => (
+		<link rel="alternate" hreflang={LOCALES[code].htmlLang} href={new URL(href, Astro.site)} />
+	))
+}
+{xDefault && <link rel="alternate" hreflang="x-default" href={new URL(xDefault, Astro.site)} />}
+
+<title>{title}</title>
+<meta name="description" content={description} />
+<meta name="author" content={PERSON.name} />
+{blockIndexing && <meta name="robots" content="noindex, nofollow" />}
+
+<meta property="og:type" content={ogType} />
+<meta property="og:url" content={canonicalURL} />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:image" content={ogImage} />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:locale" content={ogLocale} />
+<meta property="og:site_name" content={PERSON.name} />
+{ogType === 'profile' && <meta property="profile:first_name" content={PERSON.givenName} />}
+{ogType === 'profile' && <meta property="profile:last_name" content={PERSON.familyName} />}
+<meta name="twitter:card" content="summary_large_image" />

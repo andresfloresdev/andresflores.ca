@@ -1,0 +1,65 @@
+---
+import { getCollection } from 'astro:content';
+import { LOCALE_KEYS, type Locale } from '../../i18n/config';
+import { type BuiltRouteKey, ROUTES, type RouteKey, isBuilt, segmentFor } from '../../i18n/routes';
+import About from '../../views/About.astro';
+import Home from '../../views/Home.astro';
+import Placeholder from '../../views/Placeholder.astro';
+import Privacy from '../../views/Privacy.astro';
+
+/*
+  The one router. Every localized URL is generated here from the manifest in
+  src/i18n/routes.ts, which is what lets one view file serve /fr/a-propos/
+  and /en/about/.
+
+  VIEWS is typed over BuiltRouteKey, so adding a key to BUILT_ROUTES without a
+  view (or the reverse) fails `astro check`. Unbuilt keys render Placeholder.
+
+  Posts (the writing section, AF-14) are not routed yet: the collection is
+  empty and `blog` renders the Placeholder. When the first post lands, port
+  the post branch from projet-carte-blanche/src/pages/[lang]/[...path].astro.
+*/
+const VIEWS: Record<BuiltRouteKey, typeof Home> = {
+	home: Home,
+	about: About,
+	privacy: Privacy,
+};
+
+export async function getStaticPaths() {
+	const posts = await getCollection('blog');
+	if (posts.length > 0) {
+		throw new Error('[router] Posts exist in src/content/blog but post routes are not wired yet (see the comment above VIEWS).');
+	}
+
+	const paths = [];
+	for (const locale of LOCALE_KEYS) {
+		for (const routeKey of Object.keys(ROUTES) as RouteKey[]) {
+			const segment = segmentFor(routeKey, locale);
+			if (segment === undefined) continue;
+			paths.push({
+				params: { lang: locale, path: segment || undefined },
+				props: { locale, view: routeKey },
+			});
+		}
+	}
+	return paths;
+}
+
+type Props = {
+	locale: Locale;
+	view: RouteKey;
+};
+
+const { locale, view } = Astro.props as Props;
+---
+
+{
+	isBuilt(view) ? (
+		(() => {
+			const View = VIEWS[view];
+			return <View locale={locale} />;
+		})()
+	) : (
+		<Placeholder locale={locale} view={view} />
+	)
+}

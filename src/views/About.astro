@@ -1,0 +1,165 @@
+---
+/*
+  About: the page assistants should quote (card AF-06).
+
+    1. hero     the name as the H1, the one line and the AI line right under
+                it (the two sentences approved in AF-02), the portrait
+    2. facts    a definition list: based in, what he does, since, runs,
+                cofounded, AI, languages, profiles, email
+    3. story    the AF-02 timeline in his voice, first person
+    4. faq      plain questions with one-paragraph answers; the same items
+                feed the FAQPage node in JsonLd.astro, so what the page
+                shows and what the data says cannot drift
+
+  Marked up as a ProfilePage whose mainEntity is the Person (JsonLd.astro).
+*/
+import { Image } from 'astro:assets';
+import Arrow from '../components/Arrow.astro';
+import portrait from '../assets/andres-flores.jpg';
+import { AGENCY, MENTOR, PERSON, PROFILES } from '../config/site';
+import { copyFor } from '../i18n/copy';
+import type { Locale } from '../i18n/config';
+import Layout from '../layouts/Layout.astro';
+import { nb, pad, richHtml } from '../lib/rich';
+
+interface Props {
+	locale: Locale;
+}
+
+const { locale } = Astro.props;
+const c = copyFor(locale).about;
+const languages = PERSON.languages.map((l) => l.name[locale]).join(', ');
+---
+
+<Layout locale={locale} view="about" ogType="profile">
+	<!-- 1. Hero -->
+	<section class="wrap pt-[calc(var(--header-h)+clamp(3rem,2rem+5vw,7rem))]" data-intro>
+		<div class="grid-12 gap-y-10">
+			<div class="col-span-12 lg:col-span-8">
+				<p class="label" data-anim="label" data-delay="0.2">{c.hero.label}</p>
+				<h1 class="text-mega mt-6 font-semibold" data-anim="lines" data-delay="0.05">{c.hero.title}</h1>
+				<div class="mt-10 max-w-[44ch] space-y-5">
+					<p class="text-xl" data-anim="rise" data-delay="0.5">{nb(PERSON.oneLine[locale])}</p>
+					<p class="text-lg text-muted" data-anim="rise" data-delay="0.6">{nb(PERSON.aiLine[locale])}</p>
+				</div>
+			</div>
+			<div class="col-span-12 md:col-span-6 md:col-start-4 lg:col-span-4 lg:col-start-9 lg:self-end">
+				<div class="frame aspect-[4/5]" data-anim="frame" data-delay="0.3" data-parallax="5">
+					<Image
+						src={portrait}
+						alt={c.hero.portraitAlt}
+						widths={[400, 600, 800]}
+						sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
+						loading="eager"
+					/>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- 2. Facts -->
+	<section class="section wrap">
+		<div class="grid-12 gap-y-8">
+			<p class="label col-span-12 lg:col-span-3" data-anim="label">{c.facts.label}</p>
+			<dl class="facts col-span-12 lg:col-span-9" data-anim="stagger">
+				<div class="facts__row">
+					<dt>{c.facts.based}</dt>
+					<dd>{c.facts.basedValue}</dd>
+				</div>
+				<div class="facts__row">
+					<dt>{c.facts.does}</dt>
+					<dd>{PERSON.jobTitle[locale]}</dd>
+				</div>
+				<div class="facts__row">
+					<dt>{c.facts.since}</dt>
+					<dd>{PERSON.since}</dd>
+				</div>
+				<div class="facts__row">
+					<dt>{c.facts.runs}</dt>
+					<dd>
+						<a href={AGENCY.url} class="link" target="_blank" rel="noopener">{c.facts.runsValue}</a>
+					</dd>
+				</div>
+				<div class="facts__row">
+					<dt>{c.facts.cofounded}</dt>
+					<dd>{c.facts.cofoundedValue}</dd>
+				</div>
+				<div class="facts__row">
+					<dt>{c.facts.ai}</dt>
+					<dd>{c.facts.aiValue}</dd>
+				</div>
+				<div class="facts__row">
+					<dt>{c.facts.languages}</dt>
+					<dd>{languages}</dd>
+				</div>
+				<div class="facts__row">
+					<dt>{c.facts.elsewhere}</dt>
+					<dd class="flex flex-wrap gap-x-5 gap-y-1">
+						{
+							PROFILES.map((p) => (
+								<a href={p.url} class="link" target="_blank" rel="me noopener">
+									{p.label}
+								</a>
+							))
+						}
+					</dd>
+				</div>
+				<div class="facts__row">
+					<dt>{c.facts.email}</dt>
+					<dd><a href={`mailto:${PERSON.email}`} class="link">{PERSON.email.split('@')[0]}@<wbr />{PERSON.email.split('@')[1]}</a></dd>
+				</div>
+			</dl>
+		</div>
+	</section>
+
+	<!-- 3. Story -->
+	<section class="ground-sand section">
+		<div class="wrap grid-12 gap-y-10">
+			<div class="col-span-12 lg:col-span-4">
+				<div class="lg:sticky lg:top-[calc(var(--header-h)+2rem)]">
+					<p class="label" data-anim="label">{c.story.label}</p>
+					<h2 class="text-h2 mt-6 max-w-[12ch]" data-anim="lines" set:html={richHtml(c.story.title)} />
+				</div>
+			</div>
+			<div class="story col-span-12 lg:col-span-7 lg:col-start-6">
+				{c.story.paragraphs.map((p) => <p data-anim="rise">{p}</p>)}
+				<p class="!mt-10 !text-base" data-anim="rise">
+					<a href={MENTOR.url} target="_blank" rel="noopener" class="mono inline-flex items-center gap-2">
+						<span class="link">{c.story.mentorLink}</span>
+						<span class="inline-block size-3"><Arrow /></span>
+					</a>
+				</p>
+			</div>
+		</div>
+	</section>
+
+	<!-- 4. FAQ -->
+	<section class="section wrap">
+		<div class="grid-12 mb-12 items-end gap-y-6">
+			<p class="label col-span-12 lg:col-span-3" data-anim="label">{c.faq.label}</p>
+			<h2 class="text-h2 col-span-12 lg:col-span-9" data-anim="lines" set:html={richHtml(c.faq.title)} />
+		</div>
+		<div class="grid-12">
+			<div class="col-span-12 lg:col-span-9 lg:col-start-4" data-acc-group data-anim="stagger">
+				{
+					c.faq.items.map((item, i) => (
+						<details class="acc" open={i === 0 ? true : undefined}>
+							<summary>
+								<span class="flex items-baseline gap-5">
+									<span class="idx">({pad(i + 1)})</span>
+									<span>{item.q}</span>
+								</span>
+								<span class="acc__icon" aria-hidden="true" />
+							</summary>
+							<div class="acc__body">
+								<div class="acc__inner">
+									<p>{item.a}</p>
+								</div>
+							</div>
+						</details>
+					))
+				}
+			</div>
+		</div>
+	</section>
+</Layout>

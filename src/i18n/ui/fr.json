@@ -1,0 +1,39 @@
+{
+	"site.description": "Andrés Flores est un entrepreneur et développeur web montréalais. Il dirige l'Agence Flores, a cofondé Carte Blanche et bâtit sur le web depuis 2015.",
+
+	"seo.home.title": "Andrés Flores · Entrepreneur et développeur web à Montréal",
+	"seo.home.description": "Andrés Flores bâtit sur le web depuis 2015. Il dirige l'Agence Flores, a cofondé Carte Blanche et aide les entreprises à adopter l'IA.",
+	"seo.about.title": "À propos d'Andrés Flores · Agence Flores, Carte Blanche",
+	"seo.about.description": "Qui est Andrés Flores. Son parcours depuis 2015, l'Agence Flores, Carte Blanche et son travail avec l'IA, à Montréal.",
+
+	"nav.skipToContent": "Aller au contenu",
+	"nav.main": "Navigation principale",
+	"nav.home": "Accueil",
+	"nav.homeLink": "Andrés Flores, accueil",
+	"nav.about": "À propos",
+	"nav.work": "Réalisations",
+	"nav.blog": "Écrits",
+	"nav.privacy": "Confidentialité",
+	"nav.contact": "Contact",
+	"nav.language": "Langue",
+	"nav.notAvailable": "pas offert dans cette langue",
+	"nav.legal": "Légal",
+	"nav.backToTop": "Haut de page",
+
+	"footer.time": "Montréal",
+	"footer.elsewhere": "Ailleurs",
+	"footer.rights": "Tous droits réservés.",
+
+	"placeholder.title": "Cette page arrive bientôt.",
+	"placeholder.body": "Je l'écris en ce moment. En attendant, la page À propos raconte qui je suis.",
+	"placeholder.back": "Lire la page À propos",
+
+	"notFound.title": "Cette page n'existe pas.",
+	"notFound.description": "Le lien est peut-être brisé, ou la page a changé d'adresse.",
+	"notFound.home": "Retour à l'accueil",
+
+	"privacy.lastUpdated": "Dernière mise à jour",
+	"privacy.officerHeading": "Responsable",
+
+	"loader.label": "De 2015 à aujourd’hui"
+}

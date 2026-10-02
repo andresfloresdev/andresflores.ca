@@ -1,0 +1,56 @@
+---
+import { getEntry, render } from 'astro:content';
+import FormattedDate from '../components/FormattedDate.astro';
+import { PRIVACY } from '../config/site';
+import type { Locale } from '../i18n/config';
+import { useTranslations } from '../i18n/utils';
+import Layout from '../layouts/Layout.astro';
+
+interface Props {
+	locale: Locale;
+}
+
+const { locale } = Astro.props;
+const t = useTranslations(locale);
+
+const entry = await getEntry('legal', `${locale}/privacy`);
+if (!entry) {
+	throw new Error(`Missing privacy policy: src/content/legal/${locale}/privacy.md. Legal pages must not render blank.`);
+}
+
+const { Content } = await render(entry);
+---
+
+<Layout locale={locale} view="privacy" title={`${entry.data.title} · Andrés Flores`} description={entry.data.description}>
+	<section class="wrap pt-[calc(var(--header-h)+clamp(3rem,2rem+5vw,7rem))]" data-intro>
+		<div class="grid-12 items-end gap-y-6 pb-8">
+			<p class="label col-span-12 lg:col-span-3" data-anim="label" data-delay="0.3">{t('nav.legal')}</p>
+			<h1 class="text-h1 col-span-12 hyphens-auto lg:col-span-9" data-anim="lines" data-delay="0.1">{entry.data.title}</h1>
+		</div>
+		<span class="rule" data-anim="rule" data-delay="0.2" aria-hidden="true"></span>
+	</section>
+
+	<section class="wrap pb-[var(--section-y)]">
+		<div class="grid-12 gap-y-12 pt-10">
+			<aside class="col-span-12 lg:col-span-3">
+				<div class="space-y-8 lg:sticky lg:top-[calc(var(--header-h)+2rem)]" data-anim="rise" data-delay="0.4">
+					<p class="mono text-muted">
+						{t('privacy.lastUpdated')}<br />
+						<FormattedDate date={entry.data.lastUpdated} locale={locale} />
+					</p>
+					<div>
+						<p class="mono text-muted">{t('privacy.officerHeading')}</p>
+						<div class="mt-3 space-y-1">
+							<p class="font-medium">{PRIVACY.officer.name}</p>
+							<p class="text-sm text-muted">{PRIVACY.officer.title[locale]}</p>
+							<p><a href={`mailto:${PRIVACY.officer.email}`} class="link">{PRIVACY.officer.email}</a></p>
+						</div>
+					</div>
+				</div>
+			</aside>
+			<div class="prose prose-legal col-span-12 lg:col-span-8 lg:col-start-5" data-anim="rise" data-delay="0.5">
+				<Content />
+			</div>
+		</div>
+	</section>
+</Layout>

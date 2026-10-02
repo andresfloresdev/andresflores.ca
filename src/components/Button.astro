@@ -1,0 +1,41 @@
+---
+import type { HTMLAttributes } from 'astro/types';
+
+/*
+  The pill button (styles: `.btn` in global.css).
+
+  On hover a flame fill rises from the bottom edge, the label rolls up into
+  a copy of itself (`data-text`) and the arrow turns toward the top right.
+  Styling comes from props only, never from a passed `class`: that is the
+  tela-astro Button contract (docs/03-styling.md).
+
+  Renders an <a> with `href`, otherwise a <button>. `external` opens in a new
+  tab with rel="noopener".
+*/
+type Variant = 'ink' | 'ghost' | 'flame';
+type Size = 'md' | 'sm';
+
+interface Props extends Omit<HTMLAttributes<'a'> & HTMLAttributes<'button'>, 'class'> {
+	href?: string;
+	variant?: Variant;
+	size?: Size;
+	external?: boolean;
+	type?: 'button' | 'submit' | 'reset';
+}
+
+const { href, variant = 'ink', size = 'md', external = false, type = 'button', ...rest } = Astro.props;
+
+const text = (await Astro.slots.render('default')).trim();
+const classes = ['btn', variant !== 'ink' && `btn--${variant}`, size !== 'md' && `btn--${size}`];
+const Tag = href ? 'a' : 'button';
+const linkProps = href && external ? { target: '_blank', rel: 'noopener' } : {};
+---
+
+<Tag class:list={classes} href={href} type={href ? undefined : type} {...linkProps} {...rest}>
+	<span class="btn__roll"><span data-text={text} set:html={text} /></span>
+	<span class="btn__arrow" aria-hidden="true">
+		<svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+			<path d="M2 6h8M6.5 2.5 10 6l-3.5 3.5"></path>
+		</svg>
+	</span>
+</Tag>

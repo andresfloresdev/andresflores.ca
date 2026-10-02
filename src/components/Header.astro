@@ -1,0 +1,81 @@
+---
+/*
+  The header: the name with its flame dot on the left, then the nav, a
+  Contact link to the band at the bottom of every page, and the switch to
+  the other language.
+
+    [● Andrés Flores ·············· À propos   Contact   EN]
+
+  It hides on the way down and comes back on the way up (ui.ts), and frosts
+  once the page leaves the top. swup replaces this <header> on every
+  navigation, which keeps the active item and the language link current.
+
+  Changing language is a document-level change (<html lang>, hreflang), so
+  the language link carries `data-no-swup` and does a full load. A language
+  with no page here renders disabled rather than linking to a 404.
+*/
+import type { Alternates } from '../i18n/alternates';
+import { LOCALES, LOCALE_KEYS, type Locale } from '../i18n/config';
+import { NAV, type RouteKey, type ViewKey } from '../i18n/routes';
+import { contactHref, pathTo, useTranslations } from '../i18n/utils';
+
+interface Props {
+	locale: Locale;
+	view: ViewKey;
+	alternates: Alternates;
+}
+
+const { locale, view, alternates } = Astro.props;
+const t = useTranslations(locale);
+
+const links = NAV.map((routeKey) => ({
+	routeKey,
+	href: pathTo(locale, routeKey),
+	label: t(`nav.${routeKey}` as 'nav.home'),
+})).filter((link): link is { routeKey: RouteKey; href: string; label: string } => !!link.href);
+
+const homeHref = pathTo(locale, 'home') ?? `/${locale}/`;
+const other = LOCALE_KEYS.filter((code) => code !== locale);
+---
+
+<header class="site-header" data-header data-intro>
+	<div class="site-header__row wrap">
+		<a href={homeHref} class="brand" aria-label={t('nav.homeLink')} data-anim="drop" data-delay="0">
+			<span class="brand__dot" aria-hidden="true"></span>
+			<span>Andrés Flores</span>
+		</a>
+
+		<nav aria-label={t('nav.main')} class="site-nav" data-anim="drop" data-delay="0.12">
+			{
+				links.map((link) => (
+					<a href={link.href} class="nav-link" aria-current={link.routeKey === view ? 'page' : undefined}>
+						<span>{link.label}</span>
+					</a>
+				))
+			}
+			<a href={contactHref()} class="nav-link"><span>{t('nav.contact')}</span></a>
+			{
+				other.map((code) => {
+					const href = alternates[code];
+					return href ? (
+						<a
+							href={href}
+							hreflang={LOCALES[code].htmlLang}
+							lang={LOCALES[code].htmlLang}
+							data-no-swup
+							class="nav-link mono"
+							aria-label={LOCALES[code].label}
+						>
+							<span>{LOCALES[code].short}</span>
+						</a>
+					) : (
+						<span class="mono text-muted opacity-50" title={t('nav.notAvailable')}>
+							{LOCALES[code].short}
+							<span class="sr-only">, {t('nav.notAvailable')}</span>
+						</span>
+					);
+				})
+			}
+		</nav>
+	</div>
+</header>

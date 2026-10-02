@@ -1,0 +1,159 @@
+---
+/*
+  Structured data, one @graph per page.
+
+  The same Person node (https://andresflores.ca/#person) appears on every
+  page, so search engines and assistants see one entity, described the same
+  way everywhere. Its facts come from src/config/site.ts only.
+
+    every page   Person, WebSite, Agence Flores, Carte Blanche, the page
+    about        the page is a ProfilePage whose mainEntity is the Person,
+                 plus a FAQPage built from the questions shown on it
+    home         a WebPage about the Person
+
+  Ids use IDENTITY_ORIGIN, never the build host, so a preview build still
+  describes the production entity. Page urls follow the canonical.
+
+  Checked against validator.schema.org (docs/brief/site-brief.md, Checks).
+*/
+import { IDENTITY_ORIGIN } from '../config/indexing';
+import { AGENCY, AGENCY_PROFILE_URL, CARTE_BLANCHE, PERSON, PROFILES } from '../config/site';
+import { copyFor } from '../i18n/copy';
+import { LOCALES, type Locale } from '../i18n/config';
+import type { ViewKey } from '../i18n/routes';
+import { plain, unjoin } from '../lib/rich';
+
+interface Props {
+	locale: Locale;
+	view: ViewKey;
+	title: string;
+	description: string;
+}
+
+const { locale, view, title, description } = Astro.props;
+
+const ID = IDENTITY_ORIGIN;
+const personId = `${ID}/#person`;
+const websiteId = `${ID}/#website`;
+const carteBlancheId = `${ID}/#carte-blanche`;
+const pageUrl = new URL(Astro.url.pathname, Astro.site).toString();
+const inLanguage = LOCALES[locale].htmlLang;
+const clean = (s: string) => plain(unjoin(s));
+
+const person = {
+	'@type': 'Person',
+	'@id': personId,
+	name: PERSON.name,
+	alternateName: PERSON.alternateName,
+	givenName: PERSON.givenName,
+	familyName: PERSON.familyName,
+	url: `${ID}/`,
+	image: {
+		'@type': 'ImageObject',
+		url: `${ID}/andres-flores.jpg`,
+		width: 800,
+		height: 800,
+		caption: PERSON.name,
+	},
+	jobTitle: PERSON.jobTitle[locale],
+	description: PERSON.oneLine[locale],
+	email: `mailto:${PERSON.email}`,
+	address: {
+		'@type': 'PostalAddress',
+		addressLocality: PERSON.city[locale],
+		addressRegion: PERSON.region,
+		addressCountry: PERSON.country,
+	},
+	knowsLanguage: PERSON.languages.map((l) => ({ '@type': 'Language', name: l.name.en, alternateName: l.code })),
+	knowsAbout: [...PERSON.knowsAbout[locale]],
+	worksFor: { '@id': AGENCY.id },
+	sameAs: [...PROFILES.map((p) => p.url), AGENCY_PROFILE_URL],
+};
+
+const agency = {
+	'@type': 'Organization',
+	'@id': AGENCY.id,
+	name: AGENCY.name,
+	alternateName: AGENCY.alternateName,
+	url: AGENCY.url,
+	description: AGENCY.what[locale],
+	foundingDate: String(AGENCY.founded),
+	founder: { '@id': personId },
+	address: {
+		'@type': 'PostalAddress',
+		addressLocality: PERSON.city[locale],
+		addressRegion: PERSON.region,
+		addressCountry: PERSON.country,
+	},
+};
+
+const carteBlanche: Record<string, unknown> = {
+	'@type': 'Organization',
+	'@id': carteBlancheId,
+	name: CARTE_BLANCHE.name,
+	alternateName: 'Carte Blanche Montréal',
+	description: CARTE_BLANCHE.what[locale],
+	foundingDate: String(CARTE_BLANCHE.founded),
+	founder: { '@id': personId },
+	location: {
+		'@type': 'Place',
+		address: { '@type': 'PostalAddress', addressLocality: PERSON.city[locale], addressRegion: PERSON.region, addressCountry: PERSON.country },
+	},
+};
+if (CARTE_BLANCHE.url) carteBlanche.url = CARTE_BLANCHE.url;
+
+const website = {
+	'@type': 'WebSite',
+	'@id': websiteId,
+	url: `${ID}/`,
+	name: PERSON.name,
+	inLanguage: Object.values(LOCALES).map((l) => l.htmlLang),
+	publisher: { '@id': personId },
+	about: { '@id': personId },
+};
+
+const graph: Record<string, unknown>[] = [person, agency, carteBlanche, website];
+
+if (view === 'about') {
+	graph.push({
+		'@type': 'ProfilePage',
+		'@id': `${pageUrl}#page`,
+		url: pageUrl,
+		name: title,
+		description,
+		inLanguage,
+		isPartOf: { '@id': websiteId },
+		mainEntity: { '@id': personId },
+		dateModified: '2026-10-02',
+	});
+	const faq = copyFor(locale).about.faq.items;
+	graph.push({
+		'@type': 'FAQPage',
+		'@id': `${pageUrl}#faq`,
+		url: pageUrl,
+		inLanguage,
+		isPartOf: { '@id': `${pageUrl}#page` },
+		mainEntity: faq.map((item) => ({
+			'@type': 'Question',
+			name: clean(item.q),
+			acceptedAnswer: { '@type': 'Answer', text: clean(item.a) },
+		})),
+	});
+} else if (view !== 'notFound') {
+	graph.push({
+		'@type': 'WebPage',
+		'@id': `${pageUrl}#page`,
+		url: pageUrl,
+		name: title,
+		description,
+		inLanguage,
+		isPartOf: { '@id': websiteId },
+		about: { '@id': personId },
+	});
+}
+
+const jsonLd = { '@context': 'https://schema.org', '@graph': graph };
+---
+
+<!-- is:inline is explicit: this is data, not a script to bundle. -->
+<script is:inline type="application/ld+json" set:html={JSON.stringify(jsonLd)} />

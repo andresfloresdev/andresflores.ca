@@ -1,0 +1,14 @@
+---
+/*
+  An arrow icon. `dir="out"` points to the top right (external links and
+  mail), `dir="right"` points ahead.
+*/
+interface Props {
+	dir?: 'out' | 'right';
+}
+const { dir = 'out' } = Astro.props;
+---
+
+<svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+	{dir === 'out' ? <path d="M3 9 9 3M4 3h5v5" /> : <path d="M2 6h8M6.5 2.5 10 6l-3.5 3.5" />}
+</svg>

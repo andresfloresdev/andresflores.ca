@@ -1,0 +1,39 @@
+{
+	"site.description": "Andrés Flores is a Montreal entrepreneur and web developer. He runs Agence Flores, cofounded Carte Blanche and has been building on the web since 2015.",
+
+	"seo.home.title": "Andrés Flores · Entrepreneur and web developer in Montreal",
+	"seo.home.description": "Andrés Flores has been building on the web since 2015. He runs Agence Flores, cofounded Carte Blanche and helps businesses adopt AI.",
+	"seo.about.title": "About Andrés Flores · Agence Flores, Carte Blanche",
+	"seo.about.description": "Who Andrés Flores is. His path since 2015, Agence Flores, Carte Blanche and his work with AI, in Montreal.",
+
+	"nav.skipToContent": "Skip to content",
+	"nav.main": "Main navigation",
+	"nav.home": "Home",
+	"nav.homeLink": "Andrés Flores, home",
+	"nav.about": "About",
+	"nav.work": "Work",
+	"nav.blog": "Writing",
+	"nav.privacy": "Privacy",
+	"nav.contact": "Contact",
+	"nav.language": "Language",
+	"nav.notAvailable": "not available in this language",
+	"nav.legal": "Legal",
+	"nav.backToTop": "Back to top",
+
+	"footer.time": "Montreal",
+	"footer.elsewhere": "Elsewhere",
+	"footer.rights": "All rights reserved.",
+
+	"placeholder.title": "This page is on its way.",
+	"placeholder.body": "I am writing it right now. In the meantime, the About page tells you who I am.",
+	"placeholder.back": "Read the About page",
+
+	"notFound.title": "This page does not exist.",
+	"notFound.description": "The link may be broken, or the page has moved.",
+	"notFound.home": "Back to home",
+
+	"privacy.lastUpdated": "Last updated",
+	"privacy.officerHeading": "Officer",
+
+	"loader.label": "From 2015 to today"
+}

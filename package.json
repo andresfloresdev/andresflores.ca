@@ -1,42 +1,37 @@
 {
-  "name": "andresflores-2018",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "config": {
-    "nuxt": {
-      "host": "0.0.0.0",
-      "port": "3000"
-    }
+  "name": "andresflores.ca",
+  "type": "module",
+  "version": "0.0.1",
+  "engines": {
+    "node": ">=22.12.0"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nuxt",
-    "build": "nuxt build",
-    "generate": "nuxt generate",
-    "start": "nuxt start"
+    "dev": "astro dev",
+    "build": "node scripts/check-copy.mjs && astro check && astro build && node scripts/check-swup-scripts.mjs && node scripts/check-css-classes.mjs && node scripts/check-copy.mjs dist && node scripts/check-schema-offline.mjs dist",
+    "preview": "astro preview",
+    "astro": "astro",
+    "check": "astro check"
   },
-  "author": "Andres Flores <info@andresflores.ca>",
-  "license": "ISC",
   "dependencies": {
-    "@nuxtjs/axios": "5.0.0",
-    "@nuxtjs/google-analytics": "^2.0.2",
-    "axios": "^0.18.0",
-    "bootstrap": "^4.1.3",
-    "nuxt": "^2.0.0",
-    "vue-i18n": "^8.4.0",
-    "vue-scroll-reveal": "^1.0.11",
-    "vue-style-loader": "^3.1.2"
+    "@astrojs/mdx": "^7.0.3",
+    "@astrojs/sitemap": "^3.7.3",
+    "@fontsource-variable/bricolage-grotesque": "^5.3.0",
+    "@fontsource-variable/jetbrains-mono": "^5.3.0",
+    "@fontsource-variable/newsreader": "^5.3.0",
+    "@swup/astro": "^1.8.0",
+    "@tailwindcss/typography": "^0.5.20",
+    "@tailwindcss/vite": "^4.3.3",
+    "astro": "^7.1.3",
+    "gsap": "^3.15.0",
+    "lenis": "^1.3.25",
+    "sharp": "^0.35.0",
+    "tailwindcss": "^4.3.3"
   },
   "devDependencies": {
-    "autoprefixer": "^7.2.6",
-    "sass": "^1.62.1",
-    "postcss-loader": "^2.1.6",
-    "sass-loader": "^10.1.1",
-    "babel-eslint": "^8.2.1",
-    "eslint": "^5.0.1",
-    "eslint-loader": "^2.0.0",
-    "eslint-plugin-vue": "^4.0.0",
-    "eslint-friendly-formatter": "^3.0.0"
+    "@astrojs/check": "^0.9.9",
+    "typescript": "^6.0.3"
+  },
+  "overrides": {
+    "typescript": "$typescript"
   }
 }

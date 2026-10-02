@@ -1,0 +1,92 @@
+---
+/*
+  Page shell.
+
+  swup containers (astro.config.mjs): `header` and `#swup`, which holds
+  <main> and the footer. The loader and the transition band sit outside
+  them, so they persist across navigations. The transition itself is
+  src/scripts/transition.ts.
+
+  Views ship no scripts. Every behaviour is bound once, on `document`, by
+  src/scripts/app.ts, which this layout loads on every page.
+*/
+import BaseHead from '../components/BaseHead.astro';
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
+import JsonLd from '../components/JsonLd.astro';
+import { PERSON } from '../config/site';
+import { getAlternates } from '../i18n/alternates';
+import { LOCALES, type Locale } from '../i18n/config';
+import type { ViewKey } from '../i18n/routes';
+import { useOptionalTranslation, useTranslations } from '../i18n/utils';
+import { unjoin } from '../lib/rich';
+
+interface Props {
+	locale: Locale;
+	/** Which manifest route this page is, so alternates can be resolved. */
+	view: ViewKey;
+	title?: string;
+	description?: string;
+	/** Exclude this page from search engines. Preview builds already are. */
+	noindex?: boolean;
+	ogType?: 'website' | 'profile';
+}
+
+const { locale, view, title, description, noindex, ogType } = Astro.props;
+
+const t = useTranslations(locale);
+const tOptional = useOptionalTranslation(locale);
+const alternates = await getAlternates(view);
+
+// seo.<view>.title / .description override the page's own title/description.
+const seoTitle = view !== 'post' ? tOptional(`seo.${view}.title`) : undefined;
+const seoDescription = view !== 'post' ? tOptional(`seo.${view}.description`) : undefined;
+
+// Meta tags and JSON-LD get plain text: no word joiners from `nb`.
+const resolvedTitle = unjoin(seoTitle ?? title ?? PERSON.name);
+const resolvedDescription = unjoin(seoDescription ?? description ?? t('site.description'));
+---
+
+<!doctype html>
+<html lang={LOCALES[locale].htmlLang} id="top">
+	<head>
+		<BaseHead
+			locale={locale}
+			title={resolvedTitle}
+			description={resolvedDescription}
+			alternates={alternates}
+			noindex={noindex}
+			ogType={ogType}
+		/>
+		<JsonLd locale={locale} view={view} title={resolvedTitle} description={resolvedDescription} />
+	</head>
+	<body>
+		<a
+			href="#main"
+			class="sr-only focus-visible:not-sr-only focus-visible:fixed focus-visible:top-3 focus-visible:left-3 focus-visible:z-[110] focus-visible:rounded-full focus-visible:bg-ink focus-visible:px-5 focus-visible:py-3 focus-visible:text-sm focus-visible:text-paper"
+		>
+			{t('nav.skipToContent')}
+		</a>
+
+		<div class="loader" aria-hidden="true" data-loader>
+			<p class="mono text-steel">{t('loader.label')}</p>
+			<span class="loader__count"><span class="block" data-loader-count data-from="2015" data-to={new Date().getFullYear()}>2015</span></span>
+		</div>
+		<div class="page-band" aria-hidden="true" data-page-band>
+			<span class="page-band__mark" data-band-mark>Andrés Flores</span>
+		</div>
+
+		<Header locale={locale} view={view} alternates={alternates} />
+
+		<div id="swup" data-view={view}>
+			<main id="main" tabindex="-1" class="block outline-none">
+				<slot />
+			</main>
+			<Footer locale={locale} alternates={alternates} />
+		</div>
+
+		<script>
+			import '../scripts/app';
+		</script>
+	</body>
+</html>

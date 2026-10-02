@@ -1,0 +1,33 @@
+---
+import Button from '../components/Button.astro';
+import type { Locale } from '../i18n/config';
+import type { RouteKey } from '../i18n/routes';
+import { pathTo, useTranslations } from '../i18n/utils';
+import Layout from '../layouts/Layout.astro';
+
+/*
+  Rendered for every manifest route that is not in BUILT_ROUTES (work,
+  writing). Always noindex, kept out of the sitemap and llms.txt, and out of
+  the header nav, so a thin page never reaches a search engine.
+*/
+interface Props {
+	locale: Locale;
+	view: RouteKey;
+}
+
+const { locale, view } = Astro.props;
+const t = useTranslations(locale);
+const about = pathTo(locale, 'about') ?? `/${locale}/`;
+const label = t(`nav.${view}` as 'nav.home');
+---
+
+<Layout locale={locale} view={view} title={`${label} · Andrés Flores`} description={t('placeholder.body')} noindex>
+	<section class="wrap flex min-h-[85svh] flex-col justify-end pt-[var(--header-h)] pb-[var(--section-y)]" data-intro>
+		<p class="label" data-anim="label" data-delay="0.2">{label}</p>
+		<h1 class="text-h1 mt-6 max-w-[14ch]" data-anim="lines" data-delay="0.05">{t('placeholder.title')}</h1>
+		<p class="mt-8 max-w-[40ch] text-xl text-muted" data-anim="rise" data-delay="0.5">{t('placeholder.body')}</p>
+		<div class="mt-10" data-anim="rise" data-delay="0.6">
+			<Button href={about}>{t('placeholder.back')}</Button>
+		</div>
+	</section>
+</Layout>
